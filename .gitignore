@@ -25,3 +25,6 @@ DerivedData
 -#
 -# Pods/
 
+# PVN config file distributed via the control panel
+incoming-ios-sdk.plist
+
