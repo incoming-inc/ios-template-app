@@ -7,11 +7,11 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		852709141947F3AA0018A0CF /* incoming-ios-sdk.plist in Resources */ = {isa = PBXBuildFile; fileRef = 852709131947F3AA0018A0CF /* incoming-ios-sdk.plist */; };
 		852709161947F4D30018A0CF /* Accelerate.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 852709151947F4D30018A0CF /* Accelerate.framework */; };
-		8539F1A51963E89A00A903D2 /* default_policy.json in Resources */ = {isa = PBXBuildFile; fileRef = 8539F1941963E89A00A903D2 /* default_policy.json */; };
-		8539F1A71963E89A00A903D2 /* IncomingSDK.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 8539F1961963E89A00A903D2 /* IncomingSDK.xcdatamodeld */; };
-		8539F1A81963E89A00A903D2 /* libincoming-ios-sdk.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 8539F1A41963E89A00A903D2 /* libincoming-ios-sdk.a */; };
+		854FCB5119B988E800A6FB00 /* default_policy.json in Resources */ = {isa = PBXBuildFile; fileRef = 854FCB4A19B988E800A6FB00 /* default_policy.json */; };
+		854FCB5419B988E800A6FB00 /* IncomingSDK.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 854FCB4D19B988E800A6FB00 /* IncomingSDK.xcdatamodeld */; };
+		854FCB5519B988E800A6FB00 /* libincoming-ios-sdk.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 854FCB5019B988E800A6FB00 /* libincoming-ios-sdk.a */; };
+		854FCB5719B98DA300A6FB00 /* incoming-ios-sdk.plist in Resources */ = {isa = PBXBuildFile; fileRef = 854FCB5619B98DA300A6FB00 /* incoming-ios-sdk.plist */; };
 		858610A71946A0FC008E86EB /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 858610A61946A0FC008E86EB /* Foundation.framework */; };
 		858610A91946A0FC008E86EB /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 858610A81946A0FC008E86EB /* CoreGraphics.framework */; };
 		858610AB1946A0FC008E86EB /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 858610AA1946A0FC008E86EB /* UIKit.framework */; };
@@ -48,12 +48,12 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
-		852709131947F3AA0018A0CF /* incoming-ios-sdk.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = "incoming-ios-sdk.plist"; path = "../incoming-ios-sdk.plist"; sourceTree = "<group>"; };
 		852709151947F4D30018A0CF /* Accelerate.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Accelerate.framework; path = System/Library/Frameworks/Accelerate.framework; sourceTree = SDKROOT; };
-		8539F1941963E89A00A903D2 /* default_policy.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = default_policy.json; sourceTree = "<group>"; };
-		8539F1971963E89A00A903D2 /* IncomingSDK.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = IncomingSDK.xcdatamodel; sourceTree = "<group>"; };
-		8539F1981963E89A00A903D2 /* ISDKAppDelegateHelper.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ISDKAppDelegateHelper.h; sourceTree = "<group>"; };
-		8539F1A41963E89A00A903D2 /* libincoming-ios-sdk.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; path = "libincoming-ios-sdk.a"; sourceTree = "<group>"; };
+		854FCB4A19B988E800A6FB00 /* default_policy.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = default_policy.json; sourceTree = "<group>"; };
+		854FCB4E19B988E800A6FB00 /* IncomingSDK.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = IncomingSDK.xcdatamodel; sourceTree = "<group>"; };
+		854FCB4F19B988E800A6FB00 /* ISDKAppDelegateHelper.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ISDKAppDelegateHelper.h; sourceTree = "<group>"; };
+		854FCB5019B988E800A6FB00 /* libincoming-ios-sdk.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; path = "libincoming-ios-sdk.a"; sourceTree = "<group>"; };
+		854FCB5619B98DA300A6FB00 /* incoming-ios-sdk.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "incoming-ios-sdk.plist"; sourceTree = "<group>"; };
 		858610A31946A0FC008E86EB /* PVNTemplate.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; name = PVNTemplate.app; path = PushVideoTemplate.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		858610A61946A0FC008E86EB /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		858610A81946A0FC008E86EB /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
@@ -94,7 +94,7 @@
 			files = (
 				852709161947F4D30018A0CF /* Accelerate.framework in Frameworks */,
 				858611121946CFCE008E86EB /* CoreLocation.framework in Frameworks */,
-				8539F1A81963E89A00A903D2 /* libincoming-ios-sdk.a in Frameworks */,
+				854FCB5519B988E800A6FB00 /* libincoming-ios-sdk.a in Frameworks */,
 				858611101946CF38008E86EB /* CoreMedia.framework in Frameworks */,
 				8586110E1946CF00008E86EB /* CoreData.framework in Frameworks */,
 				8586110C1946CEC0008E86EB /* CoreTelephony.framework in Frameworks */,
@@ -121,13 +121,14 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		8539F1931963E89A00A903D2 /* incoming-ios-sdk */ = {
+		854FCB4919B988E800A6FB00 /* incoming-ios-sdk */ = {
 			isa = PBXGroup;
 			children = (
-				8539F1941963E89A00A903D2 /* default_policy.json */,
-				8539F1961963E89A00A903D2 /* IncomingSDK.xcdatamodeld */,
-				8539F1981963E89A00A903D2 /* ISDKAppDelegateHelper.h */,
-				8539F1A41963E89A00A903D2 /* libincoming-ios-sdk.a */,
+				854FCB5619B98DA300A6FB00 /* incoming-ios-sdk.plist */,
+				854FCB4A19B988E800A6FB00 /* default_policy.json */,
+				854FCB4D19B988E800A6FB00 /* IncomingSDK.xcdatamodeld */,
+				854FCB4F19B988E800A6FB00 /* ISDKAppDelegateHelper.h */,
+				854FCB5019B988E800A6FB00 /* libincoming-ios-sdk.a */,
 			);
 			path = "incoming-ios-sdk";
 			sourceTree = "<group>";
@@ -135,7 +136,7 @@
 		8586109A1946A0FC008E86EB = {
 			isa = PBXGroup;
 			children = (
-				8539F1931963E89A00A903D2 /* incoming-ios-sdk */,
+				854FCB4919B988E800A6FB00 /* incoming-ios-sdk */,
 				858610AC1946A0FC008E86EB /* PVNTemplate */,
 				858610CE1946A0FD008E86EB /* PVNTemplateTests */,
 				858610A51946A0FC008E86EB /* Frameworks */,
@@ -193,7 +194,6 @@
 		858610AD1946A0FC008E86EB /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
-				852709131947F3AA0018A0CF /* incoming-ios-sdk.plist */,
 				858610AE1946A0FC008E86EB /* PVNTemplate-Info.plist */,
 				858610AF1946A0FC008E86EB /* InfoPlist.strings */,
 				858610B21946A0FC008E86EB /* main.m */,
@@ -301,8 +301,8 @@
 				858610C21946A0FC008E86EB /* Images.xcassets in Resources */,
 				858610BA1946A0FC008E86EB /* Main_iPhone.storyboard in Resources */,
 				858610B11946A0FC008E86EB /* InfoPlist.strings in Resources */,
-				852709141947F3AA0018A0CF /* incoming-ios-sdk.plist in Resources */,
-				8539F1A51963E89A00A903D2 /* default_policy.json in Resources */,
+				854FCB5719B98DA300A6FB00 /* incoming-ios-sdk.plist in Resources */,
+				854FCB5119B988E800A6FB00 /* default_policy.json in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -323,7 +323,7 @@
 			files = (
 				858610B31946A0FC008E86EB /* main.m in Sources */,
 				858610C01946A0FC008E86EB /* PVTViewController.m in Sources */,
-				8539F1A71963E89A00A903D2 /* IncomingSDK.xcdatamodeld in Sources */,
+				854FCB5419B988E800A6FB00 /* IncomingSDK.xcdatamodeld in Sources */,
 				858610B71946A0FC008E86EB /* PVTAppDelegate.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -565,12 +565,12 @@
 /* End XCConfigurationList section */
 
 /* Begin XCVersionGroup section */
-		8539F1961963E89A00A903D2 /* IncomingSDK.xcdatamodeld */ = {
+		854FCB4D19B988E800A6FB00 /* IncomingSDK.xcdatamodeld */ = {
 			isa = XCVersionGroup;
 			children = (
-				8539F1971963E89A00A903D2 /* IncomingSDK.xcdatamodel */,
+				854FCB4E19B988E800A6FB00 /* IncomingSDK.xcdatamodel */,
 			);
-			currentVersion = 8539F1971963E89A00A903D2 /* IncomingSDK.xcdatamodel */;
+			currentVersion = 854FCB4E19B988E800A6FB00 /* IncomingSDK.xcdatamodel */;
 			path = IncomingSDK.xcdatamodeld;
 			sourceTree = "<group>";
 			versionGroupType = wrapper.xcdatamodel;

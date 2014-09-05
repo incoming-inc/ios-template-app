@@ -20,6 +20,29 @@
     UIRemoteNotificationType allowedNotifications = UIRemoteNotificationTypeAlert | UIRemoteNotificationTypeSound |UIRemoteNotificationTypeBadge | UIRemoteNotificationTypeNewsstandContentAvailability;
     [[UIApplication sharedApplication] registerForRemoteNotificationTypes:allowedNotifications];
     
+    
+    // register for notifications
+#if __IPHONE_OS_VERSION_MAX_ALLOWED >= 80000 // let this code compile on Xcode 5
+    if ([application respondsToSelector:@selector(registerUserNotificationSettings:)]){
+        // ios > 8
+        UIUserNotificationType allowedTypes = UIUserNotificationTypeBadge |UIUserNotificationTypeSound |UIUserNotificationTypeAlert;
+        UIUserNotificationSettings *settings = [UIUserNotificationSettings settingsForTypes:allowedTypes
+                                                                                 categories:nil];
+        
+        if (settings!=nil){
+            [[UIApplication sharedApplication] registerUserNotificationSettings:settings];
+        }
+        // also register for remote notifications
+        [[UIApplication sharedApplication] registerForRemoteNotifications];
+    } else {
+        // iOS < 8, use registerForRemoteNotifications
+        [[UIApplication sharedApplication] registerForRemoteNotificationTypes:allowedNotifications];
+    }
+#else
+    // xcode < 6 (and therefore iOS < 8), use old-style registerForRemoteNotifications
+    [[UIApplication sharedApplication] registerForRemoteNotificationTypes:allowedNotifications];
+#endif
+    
     [delegateHelper handleLaunchOptions:launchOptions];
     
     return YES;
@@ -56,17 +79,17 @@
     [delegateHelper handleRemoteNotificationRegistrationFailed:error];
 }
 
-/** 
+/**
  Called only when app is in foreground. Background notifications handled in didFinishLaunchingWithOptions.
  */
 - (void)application:(UIApplication *)application didReceiveRemoteNotification:(NSDictionary *)userInfo
 {
-    [delegateHelper handleRemoteNotification:userInfo];
+    [delegateHelper handleRemoteNotification:userInfo completionHandler:nil];
 }
 
 - (void)application:(UIApplication *)application didReceiveRemoteNotification:(NSDictionary *)userInfo fetchCompletionHandler:(void (^)(UIBackgroundFetchResult))completionHandler
 {
-    [delegateHelper handleRemoteNotif:userInfo completionHandler:^(UIBackgroundFetchResult result){
+    [delegateHelper handleRemoteNotification:userInfo completionHandler:^(UIBackgroundFetchResult result){
         completionHandler(result);
     }];
 }
@@ -77,6 +100,13 @@
 - (void)application:(UIApplication *)application didReceiveLocalNotification:(UILocalNotification *)notification
 {
     [delegateHelper handleLocalNotification:notification];
+}
+
+/**
+ Introduced in iOS8 for didReceiveLocalNotification.
+ */
+- (void)application:(UIApplication *)application handleActionWithIdentifier:(NSString *)identifier forLocalNotification:(UILocalNotification *)userInfo completionHandler:(void (^)())completionHandler {
+    [delegateHelper handleLocalNotification:userInfo];
 }
 
 #pragma - mark XCode Template Methods
