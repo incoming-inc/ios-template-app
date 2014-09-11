@@ -54,7 +54,7 @@
 		854FCB4F19B988E800A6FB00 /* ISDKAppDelegateHelper.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ISDKAppDelegateHelper.h; sourceTree = "<group>"; };
 		854FCB5019B988E800A6FB00 /* libincoming-ios-sdk.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; path = "libincoming-ios-sdk.a"; sourceTree = "<group>"; };
 		854FCB5619B98DA300A6FB00 /* incoming-ios-sdk.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "incoming-ios-sdk.plist"; sourceTree = "<group>"; };
-		858610A31946A0FC008E86EB /* PVNTemplate.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; name = PVNTemplate.app; path = PushVideoTemplate.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		858610A31946A0FC008E86EB /* PushVideoTemplate.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = PushVideoTemplate.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		858610A61946A0FC008E86EB /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		858610A81946A0FC008E86EB /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
 		858610AA1946A0FC008E86EB /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
@@ -147,7 +147,7 @@
 		858610A41946A0FC008E86EB /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				858610A31946A0FC008E86EB /* PVNTemplate.app */,
+				858610A31946A0FC008E86EB /* PushVideoTemplate.app */,
 				858610C71946A0FC008E86EB /* PVNTemplateTests.xctest */,
 			);
 			name = Products;
@@ -237,7 +237,7 @@
 			);
 			name = PushVideoTemplate;
 			productName = PVNTemplate;
-			productReference = 858610A31946A0FC008E86EB /* PVNTemplate.app */;
+			productReference = 858610A31946A0FC008E86EB /* PushVideoTemplate.app */;
 			productType = "com.apple.product-type.application";
 		};
 		858610C61946A0FC008E86EB /* PVNTemplateTests */ = {
@@ -462,6 +462,7 @@
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "PVNTemplate/PVNTemplate-Prefix.pch";
 				INFOPLIST_FILE = "PVNTemplate/PVNTemplate-Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
 				LIBRARY_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(PROJECT_DIR)/sdk",
@@ -481,6 +482,7 @@
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "PVNTemplate/PVNTemplate-Prefix.pch";
 				INFOPLIST_FILE = "PVNTemplate/PVNTemplate-Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
 				LIBRARY_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(PROJECT_DIR)/sdk",
