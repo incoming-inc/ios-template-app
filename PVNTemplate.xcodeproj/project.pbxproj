@@ -22,11 +22,6 @@
 		858610BD1946A0FC008E86EB /* Main_iPad.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 858610BB1946A0FC008E86EB /* Main_iPad.storyboard */; };
 		858610C01946A0FC008E86EB /* PVTViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 858610BF1946A0FC008E86EB /* PVTViewController.m */; };
 		858610C21946A0FC008E86EB /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 858610C11946A0FC008E86EB /* Images.xcassets */; };
-		858610C91946A0FC008E86EB /* XCTest.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 858610C81946A0FC008E86EB /* XCTest.framework */; };
-		858610CA1946A0FC008E86EB /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 858610A61946A0FC008E86EB /* Foundation.framework */; };
-		858610CB1946A0FD008E86EB /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 858610AA1946A0FC008E86EB /* UIKit.framework */; };
-		858610D31946A0FD008E86EB /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 858610D11946A0FD008E86EB /* InfoPlist.strings */; };
-		858610D51946A0FD008E86EB /* PVNTemplateTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 858610D41946A0FD008E86EB /* PVNTemplateTests.m */; };
 		858610FB1946CCD2008E86EB /* AVFoundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 858610FA1946CCD2008E86EB /* AVFoundation.framework */; };
 		858610FD1946CD1F008E86EB /* MediaPlayer.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 858610FC1946CD1F008E86EB /* MediaPlayer.framework */; };
 		858611061946CDF0008E86EB /* SystemConfiguration.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 858611051946CDF0008E86EB /* SystemConfiguration.framework */; };
@@ -35,17 +30,8 @@
 		8586110E1946CF00008E86EB /* CoreData.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8586110D1946CF00008E86EB /* CoreData.framework */; };
 		858611101946CF38008E86EB /* CoreMedia.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8586110F1946CF38008E86EB /* CoreMedia.framework */; };
 		858611121946CFCE008E86EB /* CoreLocation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 858611111946CFCE008E86EB /* CoreLocation.framework */; };
+		96ECF7C11A7F31D00016432E /* libz.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 96ECF7C01A7F31D00016432E /* libz.dylib */; };
 /* End PBXBuildFile section */
-
-/* Begin PBXContainerItemProxy section */
-		858610CC1946A0FD008E86EB /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = 8586109B1946A0FC008E86EB /* Project object */;
-			proxyType = 1;
-			remoteGlobalIDString = 858610A21946A0FC008E86EB;
-			remoteInfo = PVNTemplate;
-		};
-/* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
 		852709151947F4D30018A0CF /* Accelerate.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Accelerate.framework; path = System/Library/Frameworks/Accelerate.framework; sourceTree = SDKROOT; };
@@ -69,7 +55,6 @@
 		858610BE1946A0FC008E86EB /* PVTViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = PVTViewController.h; sourceTree = "<group>"; };
 		858610BF1946A0FC008E86EB /* PVTViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = PVTViewController.m; sourceTree = "<group>"; };
 		858610C11946A0FC008E86EB /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
-		858610C71946A0FC008E86EB /* PVNTemplateTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = PVNTemplateTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		858610C81946A0FC008E86EB /* XCTest.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = XCTest.framework; path = Library/Frameworks/XCTest.framework; sourceTree = DEVELOPER_DIR; };
 		858610D01946A0FD008E86EB /* PVNTemplateTests-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "PVNTemplateTests-Info.plist"; sourceTree = "<group>"; };
 		858610D21946A0FD008E86EB /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
@@ -85,6 +70,7 @@
 		8586110D1946CF00008E86EB /* CoreData.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreData.framework; path = System/Library/Frameworks/CoreData.framework; sourceTree = SDKROOT; };
 		8586110F1946CF38008E86EB /* CoreMedia.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreMedia.framework; path = System/Library/Frameworks/CoreMedia.framework; sourceTree = SDKROOT; };
 		858611111946CFCE008E86EB /* CoreLocation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreLocation.framework; path = System/Library/Frameworks/CoreLocation.framework; sourceTree = SDKROOT; };
+		96ECF7C01A7F31D00016432E /* libz.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libz.dylib; path = usr/lib/libz.dylib; sourceTree = SDKROOT; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -92,6 +78,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				96ECF7C11A7F31D00016432E /* libz.dylib in Frameworks */,
 				852709161947F4D30018A0CF /* Accelerate.framework in Frameworks */,
 				858611121946CFCE008E86EB /* CoreLocation.framework in Frameworks */,
 				854FCB5519B988E800A6FB00 /* libincoming-ios-sdk.a in Frameworks */,
@@ -105,16 +92,6 @@
 				858610A91946A0FC008E86EB /* CoreGraphics.framework in Frameworks */,
 				858610AB1946A0FC008E86EB /* UIKit.framework in Frameworks */,
 				858610A71946A0FC008E86EB /* Foundation.framework in Frameworks */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		858610C41946A0FC008E86EB /* Frameworks */ = {
-			isa = PBXFrameworksBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				858610C91946A0FC008E86EB /* XCTest.framework in Frameworks */,
-				858610CB1946A0FD008E86EB /* UIKit.framework in Frameworks */,
-				858610CA1946A0FC008E86EB /* Foundation.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -148,7 +125,6 @@
 			isa = PBXGroup;
 			children = (
 				858610A31946A0FC008E86EB /* PushVideoTemplate.app */,
-				858610C71946A0FC008E86EB /* PVNTemplateTests.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -156,6 +132,7 @@
 		858610A51946A0FC008E86EB /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				96ECF7C01A7F31D00016432E /* libz.dylib */,
 				852709151947F4D30018A0CF /* Accelerate.framework */,
 				858611111946CFCE008E86EB /* CoreLocation.framework */,
 				8586110F1946CF38008E86EB /* CoreMedia.framework */,
@@ -240,24 +217,6 @@
 			productReference = 858610A31946A0FC008E86EB /* PushVideoTemplate.app */;
 			productType = "com.apple.product-type.application";
 		};
-		858610C61946A0FC008E86EB /* PVNTemplateTests */ = {
-			isa = PBXNativeTarget;
-			buildConfigurationList = 858610DB1946A0FD008E86EB /* Build configuration list for PBXNativeTarget "PVNTemplateTests" */;
-			buildPhases = (
-				858610C31946A0FC008E86EB /* Sources */,
-				858610C41946A0FC008E86EB /* Frameworks */,
-				858610C51946A0FC008E86EB /* Resources */,
-			);
-			buildRules = (
-			);
-			dependencies = (
-				858610CD1946A0FD008E86EB /* PBXTargetDependency */,
-			);
-			name = PVNTemplateTests;
-			productName = PVNTemplateTests;
-			productReference = 858610C71946A0FC008E86EB /* PVNTemplateTests.xctest */;
-			productType = "com.apple.product-type.bundle.unit-test";
-		};
 /* End PBXNativeTarget section */
 
 /* Begin PBXProject section */
@@ -267,11 +226,6 @@
 				CLASSPREFIX = PVT;
 				LastUpgradeCheck = 0510;
 				ORGANIZATIONNAME = "Incoming Pty Ltd";
-				TargetAttributes = {
-					858610C61946A0FC008E86EB = {
-						TestTargetID = 858610A21946A0FC008E86EB;
-					};
-				};
 			};
 			buildConfigurationList = 8586109E1946A0FC008E86EB /* Build configuration list for PBXProject "PVNTemplate" */;
 			compatibilityVersion = "Xcode 3.2";
@@ -287,7 +241,6 @@
 			projectRoot = "";
 			targets = (
 				858610A21946A0FC008E86EB /* PushVideoTemplate */,
-				858610C61946A0FC008E86EB /* PVNTemplateTests */,
 			);
 		};
 /* End PBXProject section */
@@ -306,14 +259,6 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		858610C51946A0FC008E86EB /* Resources */ = {
-			isa = PBXResourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				858610D31946A0FD008E86EB /* InfoPlist.strings in Resources */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
@@ -328,23 +273,7 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		858610C31946A0FC008E86EB /* Sources */ = {
-			isa = PBXSourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				858610D51946A0FD008E86EB /* PVNTemplateTests.m in Sources */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
 /* End PBXSourcesBuildPhase section */
-
-/* Begin PBXTargetDependency section */
-		858610CD1946A0FD008E86EB /* PBXTargetDependency */ = {
-			isa = PBXTargetDependency;
-			target = 858610A21946A0FC008E86EB /* PushVideoTemplate */;
-			targetProxy = 858610CC1946A0FD008E86EB /* PBXContainerItemProxy */;
-		};
-/* End PBXTargetDependency section */
 
 /* Begin PBXVariantGroup section */
 		858610AF1946A0FC008E86EB /* InfoPlist.strings */ = {
@@ -494,46 +423,6 @@
 			};
 			name = Release;
 		};
-		858610DC1946A0FD008E86EB /* Debug */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				BUNDLE_LOADER = "$(BUILT_PRODUCTS_DIR)/PVNTemplate.app/PVNTemplate";
-				FRAMEWORK_SEARCH_PATHS = (
-					"$(SDKROOT)/Developer/Library/Frameworks",
-					"$(inherited)",
-					"$(DEVELOPER_FRAMEWORKS_DIR)",
-				);
-				GCC_PRECOMPILE_PREFIX_HEADER = YES;
-				GCC_PREFIX_HEADER = "PVNTemplate/PVNTemplate-Prefix.pch";
-				GCC_PREPROCESSOR_DEFINITIONS = (
-					"DEBUG=1",
-					"$(inherited)",
-				);
-				INFOPLIST_FILE = "PVNTemplateTests/PVNTemplateTests-Info.plist";
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				TEST_HOST = "$(BUNDLE_LOADER)";
-				WRAPPER_EXTENSION = xctest;
-			};
-			name = Debug;
-		};
-		858610DD1946A0FD008E86EB /* Release */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				BUNDLE_LOADER = "$(BUILT_PRODUCTS_DIR)/PVNTemplate.app/PVNTemplate";
-				FRAMEWORK_SEARCH_PATHS = (
-					"$(SDKROOT)/Developer/Library/Frameworks",
-					"$(inherited)",
-					"$(DEVELOPER_FRAMEWORKS_DIR)",
-				);
-				GCC_PRECOMPILE_PREFIX_HEADER = YES;
-				GCC_PREFIX_HEADER = "PVNTemplate/PVNTemplate-Prefix.pch";
-				INFOPLIST_FILE = "PVNTemplateTests/PVNTemplateTests-Info.plist";
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				TEST_HOST = "$(BUNDLE_LOADER)";
-				WRAPPER_EXTENSION = xctest;
-			};
-			name = Release;
-		};
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
@@ -551,15 +440,6 @@
 			buildConfigurations = (
 				858610D91946A0FD008E86EB /* Debug */,
 				858610DA1946A0FD008E86EB /* Release */,
-			);
-			defaultConfigurationIsVisible = 0;
-			defaultConfigurationName = Release;
-		};
-		858610DB1946A0FD008E86EB /* Build configuration list for PBXNativeTarget "PVNTemplateTests" */ = {
-			isa = XCConfigurationList;
-			buildConfigurations = (
-				858610DC1946A0FD008E86EB /* Debug */,
-				858610DD1946A0FD008E86EB /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
