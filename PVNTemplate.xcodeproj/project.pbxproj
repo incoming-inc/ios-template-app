@@ -8,10 +8,6 @@
 
 /* Begin PBXBuildFile section */
 		852709161947F4D30018A0CF /* Accelerate.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 852709151947F4D30018A0CF /* Accelerate.framework */; };
-		854FCB5119B988E800A6FB00 /* default_policy.json in Resources */ = {isa = PBXBuildFile; fileRef = 854FCB4A19B988E800A6FB00 /* default_policy.json */; };
-		854FCB5419B988E800A6FB00 /* IncomingSDK.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 854FCB4D19B988E800A6FB00 /* IncomingSDK.xcdatamodeld */; };
-		854FCB5519B988E800A6FB00 /* libincoming-ios-sdk.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 854FCB5019B988E800A6FB00 /* libincoming-ios-sdk.a */; };
-		854FCB5719B98DA300A6FB00 /* incoming-ios-sdk.plist in Resources */ = {isa = PBXBuildFile; fileRef = 854FCB5619B98DA300A6FB00 /* incoming-ios-sdk.plist */; };
 		858610A71946A0FC008E86EB /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 858610A61946A0FC008E86EB /* Foundation.framework */; };
 		858610A91946A0FC008E86EB /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 858610A81946A0FC008E86EB /* CoreGraphics.framework */; };
 		858610AB1946A0FC008E86EB /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 858610AA1946A0FC008E86EB /* UIKit.framework */; };
@@ -35,11 +31,6 @@
 
 /* Begin PBXFileReference section */
 		852709151947F4D30018A0CF /* Accelerate.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Accelerate.framework; path = System/Library/Frameworks/Accelerate.framework; sourceTree = SDKROOT; };
-		854FCB4A19B988E800A6FB00 /* default_policy.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = default_policy.json; sourceTree = "<group>"; };
-		854FCB4E19B988E800A6FB00 /* IncomingSDK.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = IncomingSDK.xcdatamodel; sourceTree = "<group>"; };
-		854FCB4F19B988E800A6FB00 /* ISDKAppDelegateHelper.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ISDKAppDelegateHelper.h; sourceTree = "<group>"; };
-		854FCB5019B988E800A6FB00 /* libincoming-ios-sdk.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; path = "libincoming-ios-sdk.a"; sourceTree = "<group>"; };
-		854FCB5619B98DA300A6FB00 /* incoming-ios-sdk.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "incoming-ios-sdk.plist"; sourceTree = "<group>"; };
 		858610A31946A0FC008E86EB /* PushVideoTemplate.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = PushVideoTemplate.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		858610A61946A0FC008E86EB /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		858610A81946A0FC008E86EB /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
@@ -56,9 +47,6 @@
 		858610BF1946A0FC008E86EB /* PVTViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = PVTViewController.m; sourceTree = "<group>"; };
 		858610C11946A0FC008E86EB /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
 		858610C81946A0FC008E86EB /* XCTest.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = XCTest.framework; path = Library/Frameworks/XCTest.framework; sourceTree = DEVELOPER_DIR; };
-		858610D01946A0FD008E86EB /* PVNTemplateTests-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "PVNTemplateTests-Info.plist"; sourceTree = "<group>"; };
-		858610D21946A0FD008E86EB /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
-		858610D41946A0FD008E86EB /* PVNTemplateTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = PVNTemplateTests.m; sourceTree = "<group>"; };
 		858610FA1946CCD2008E86EB /* AVFoundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AVFoundation.framework; path = System/Library/Frameworks/AVFoundation.framework; sourceTree = SDKROOT; };
 		858610FC1946CD1F008E86EB /* MediaPlayer.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MediaPlayer.framework; path = System/Library/Frameworks/MediaPlayer.framework; sourceTree = SDKROOT; };
 		858610FE1946CD44008E86EB /* AssetsLibrary.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AssetsLibrary.framework; path = System/Library/Frameworks/AssetsLibrary.framework; sourceTree = SDKROOT; };
@@ -71,6 +59,7 @@
 		8586110F1946CF38008E86EB /* CoreMedia.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreMedia.framework; path = System/Library/Frameworks/CoreMedia.framework; sourceTree = SDKROOT; };
 		858611111946CFCE008E86EB /* CoreLocation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreLocation.framework; path = System/Library/Frameworks/CoreLocation.framework; sourceTree = SDKROOT; };
 		96ECF7C01A7F31D00016432E /* libz.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libz.dylib; path = usr/lib/libz.dylib; sourceTree = SDKROOT; };
+		96ECF7C61A8049910016432E /* README.md */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -81,7 +70,6 @@
 				96ECF7C11A7F31D00016432E /* libz.dylib in Frameworks */,
 				852709161947F4D30018A0CF /* Accelerate.framework in Frameworks */,
 				858611121946CFCE008E86EB /* CoreLocation.framework in Frameworks */,
-				854FCB5519B988E800A6FB00 /* libincoming-ios-sdk.a in Frameworks */,
 				858611101946CF38008E86EB /* CoreMedia.framework in Frameworks */,
 				8586110E1946CF00008E86EB /* CoreData.framework in Frameworks */,
 				8586110C1946CEC0008E86EB /* CoreTelephony.framework in Frameworks */,
@@ -98,26 +86,13 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		854FCB4919B988E800A6FB00 /* incoming-ios-sdk */ = {
-			isa = PBXGroup;
-			children = (
-				854FCB5619B98DA300A6FB00 /* incoming-ios-sdk.plist */,
-				854FCB4A19B988E800A6FB00 /* default_policy.json */,
-				854FCB4D19B988E800A6FB00 /* IncomingSDK.xcdatamodeld */,
-				854FCB4F19B988E800A6FB00 /* ISDKAppDelegateHelper.h */,
-				854FCB5019B988E800A6FB00 /* libincoming-ios-sdk.a */,
-			);
-			path = "incoming-ios-sdk";
-			sourceTree = "<group>";
-		};
 		8586109A1946A0FC008E86EB = {
 			isa = PBXGroup;
 			children = (
-				854FCB4919B988E800A6FB00 /* incoming-ios-sdk */,
 				858610AC1946A0FC008E86EB /* PVNTemplate */,
-				858610CE1946A0FD008E86EB /* PVNTemplateTests */,
 				858610A51946A0FC008E86EB /* Frameworks */,
 				858610A41946A0FC008E86EB /* Products */,
+				96ECF7C61A8049910016432E /* README.md */,
 			);
 			sourceTree = "<group>";
 		};
@@ -179,24 +154,6 @@
 			name = "Supporting Files";
 			sourceTree = "<group>";
 		};
-		858610CE1946A0FD008E86EB /* PVNTemplateTests */ = {
-			isa = PBXGroup;
-			children = (
-				858610D41946A0FD008E86EB /* PVNTemplateTests.m */,
-				858610CF1946A0FD008E86EB /* Supporting Files */,
-			);
-			path = PVNTemplateTests;
-			sourceTree = "<group>";
-		};
-		858610CF1946A0FD008E86EB /* Supporting Files */ = {
-			isa = PBXGroup;
-			children = (
-				858610D01946A0FD008E86EB /* PVNTemplateTests-Info.plist */,
-				858610D11946A0FD008E86EB /* InfoPlist.strings */,
-			);
-			name = "Supporting Files";
-			sourceTree = "<group>";
-		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -254,8 +211,6 @@
 				858610C21946A0FC008E86EB /* Images.xcassets in Resources */,
 				858610BA1946A0FC008E86EB /* Main_iPhone.storyboard in Resources */,
 				858610B11946A0FC008E86EB /* InfoPlist.strings in Resources */,
-				854FCB5719B98DA300A6FB00 /* incoming-ios-sdk.plist in Resources */,
-				854FCB5119B988E800A6FB00 /* default_policy.json in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -268,7 +223,6 @@
 			files = (
 				858610B31946A0FC008E86EB /* main.m in Sources */,
 				858610C01946A0FC008E86EB /* PVTViewController.m in Sources */,
-				854FCB5419B988E800A6FB00 /* IncomingSDK.xcdatamodeld in Sources */,
 				858610B71946A0FC008E86EB /* PVTAppDelegate.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -298,14 +252,6 @@
 				858610BC1946A0FC008E86EB /* Base */,
 			);
 			name = Main_iPad.storyboard;
-			sourceTree = "<group>";
-		};
-		858610D11946A0FD008E86EB /* InfoPlist.strings */ = {
-			isa = PBXVariantGroup;
-			children = (
-				858610D21946A0FD008E86EB /* en */,
-			);
-			name = InfoPlist.strings;
 			sourceTree = "<group>";
 		};
 /* End PBXVariantGroup section */
@@ -445,19 +391,6 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
-
-/* Begin XCVersionGroup section */
-		854FCB4D19B988E800A6FB00 /* IncomingSDK.xcdatamodeld */ = {
-			isa = XCVersionGroup;
-			children = (
-				854FCB4E19B988E800A6FB00 /* IncomingSDK.xcdatamodel */,
-			);
-			currentVersion = 854FCB4E19B988E800A6FB00 /* IncomingSDK.xcdatamodel */;
-			path = IncomingSDK.xcdatamodeld;
-			sourceTree = "<group>";
-			versionGroupType = wrapper.xcdatamodel;
-		};
-/* End XCVersionGroup section */
 	};
 	rootObject = 8586109B1946A0FC008E86EB /* Project object */;
 }
