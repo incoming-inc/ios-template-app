@@ -31,10 +31,10 @@
     <!-- MAIN CONTENT -->
     <div id="main_content_wrap" class="outer">
       <section id="main_content" class="inner">
-        <p>The Incoming Push Video SDK can be used in a <a href="##new-project">new project</a> by cloning the simple template application,  or can be <a href="##adding-the-push-video-notification-to-an-existing-project">added to an existing application</a> by dropping the SDK distribution folder into your project, and adding a small amount of code.</p>
+        <p>The Incoming Push Video SDK can be used in a <a href="##Creating-a-new-Project">new project</a> by cloning the simple template application,  or can be <a href="##Adding-the-Push-Video-Notification-SDK%20to%20an%20existing%20Project">added to an existing application</a> by dropping the SDK distribution folder into your project, and adding a small amount of code.</p>
 
 <h2>
-<a id="new-project" class="anchor" href="#new-project" aria-hidden="true"><span class="octicon octicon-link"></span></a>New Project</h2>
+<a id="creating-a-new-project" class="anchor" href="#creating-a-new-project" aria-hidden="true"><span class="octicon octicon-link"></span></a>Creating a new Project</h2>
 
 <p>We provide a template application to make the SDK integration easy in a new project. </p>
 
@@ -74,7 +74,7 @@ You will find both these values in the control panel, by going to the “App” 
 </ul>
 
 <h2>
-<a id="adding-the-push-video-notification-to-an-existing-project" class="anchor" href="#adding-the-push-video-notification-to-an-existing-project" aria-hidden="true"><span class="octicon octicon-link"></span></a>Adding the Push Video Notification to an Existing Project</h2>
+<a id="adding-the-push-video-notification-sdk-to-an-existing-project" class="anchor" href="#adding-the-push-video-notification-sdk-to-an-existing-project" aria-hidden="true"><span class="octicon octicon-link"></span></a>Adding the Push Video Notification SDK to an existing Project</h2>
 
 <p>Adding the PVN SDK to an existing project consist of the following steps. </p>
 
@@ -135,7 +135,73 @@ iOS7</li>
 <a id="add-a-few-lines-of-code-to-your-application-delegate" class="anchor" href="#add-a-few-lines-of-code-to-your-application-delegate" aria-hidden="true"><span class="octicon octicon-link"></span></a>Add a few lines of code to your application delegate.</h3>
 
 <p>The host application delegate must to forward several calls from the operating system to the SDK. These are all implemented in the template application and can be conveniently copied from there. Take a look into the sample application’s delegate code.
-<a href="https://github.com/incoming%C2%AD-inc/ios%C2%AD-template-%C2%ADapp/blob/master/PVNTemplate/PVTAppDelegate.m">https://github.com/incoming­-inc/ios­-template-­app/blob/master/PVNTemplate/PVTAppDelegate.m</a></p>
+<a href="https://github.com/incoming-inc/ios-template-app/blob/master/PVNTemplate/PVTAppDelegate.m">https://github.com/incoming-inc/ios-template-app/blob/master/PVNTemplate/PVTAppDelegate.m</a></p>
+
+<p>The minimum code to add to your application delegate is: </p>
+
+<p>``</p>
+
+<h1>
+<a id="import-isdkappdelegatehelperh" class="anchor" href="#import-isdkappdelegatehelperh" aria-hidden="true"><span class="octicon octicon-link"></span></a>import "ISDKAppDelegateHelper.h"</h1>
+
+<p>...</p>
+
+<ul>
+<li>
+<p>(BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions
+{
+[ISDKAppDelegateHelper application:[UIApplication sharedApplication] didFinishLaunchingWithOptions:launchOptions];</p>
+
+<p>[ISDKAppDelegateHelper registerForNotifications];
+/* perform your own initialization here */</p>
+
+<p>return YES;
+}</p>
+</li>
+<li><p>(BOOL)application:(UIApplication <em>)application openURL:(NSURL *)url sourceApplication:(NSString *)sourceApplication annotation:(id)annotation
+{
+[ISDKAppDelegateHelper handleOpenURL:url sourceApplication:sourceApplication annotation:annotation];
+/</em> perform your handling here */
+return YES;
+}</p></li>
+<li><p>(void) application:(UIApplication *)application performFetchWithCompletionHandler:(void (^)(UIBackgroundFetchResult))completionHandler{
+[ISDKAppDelegateHelper application:application performFetchWithCompletionHandler:completionHandler];
+}</p></li>
+<li><p>(void)application:(UIApplication *)application handleEventsForBackgroundURLSession:(NSString *)identifier completionHandler:(void (^)())completionHandler
+{
+[ISDKAppDelegateHelper application:application handleEventsForBackgroundURLSession:identifier completionHandler:completionHandler];
+}</p></li>
+<li><p>(void)application:(UIApplication *)application didRegisterForRemoteNotificationsWithDeviceToken:(NSData *)deviceToken
+{
+[ISDKAppDelegateHelper application:application didRegisterForRemoteNotificationsWithDeviceToken:deviceToken];
+}</p></li>
+<li><p>(void)application:(UIApplication *)application didFailToRegisterForRemoteNotificationsWithError:(NSError *)error
+{
+[ISDKAppDelegateHelper application:application didFailToRegisterForRemoteNotificationsWithError:error];
+}</p></li>
+<li><p>(void)application:(UIApplication *)application didReceiveRemoteNotification:(NSDictionary *)userInfo
+fetchCompletionHandler:(void (^)(UIBackgroundFetchResult))completionHandler
+{
+[ISDKAppDelegateHelper application:application didReceiveRemoteNotification:userInfo fetchCompletionHandler:completionHandler];
+}</p></li>
+<li><p>(void)application:(UIApplication *)application didReceiveRemoteNotification:(NSDictionary *)userInfo
+{
+[ISDKAppDelegateHelper application:application didReceiveRemoteNotification:userInfo];
+}</p></li>
+<li><p>(void)application:(UIApplication *)application didReceiveLocalNotification:(UILocalNotification *)notification
+{
+[ISDKAppDelegateHelper application:application didReceiveLocalNotification:notification];
+}</p></li>
+<li><p>(void)application:(UIApplication *)application handleActionWithIdentifier:(NSString *)identifier forLocalNotification:(UILocalNotification *)userInfo completionHandler:(void (^)())completionHandler {
+[ISDKAppDelegateHelper application:application handleActionWithIdentifier:identifier forLocalNotification:userInfo completionHandler:completionHandler];
+}</p></li>
+<li><p>(void)application:(UIApplication *)application didRegisterUserNotificationSettings:(UIUserNotificationSettings *)notificationSettings
+{
+[ISDKAppDelegateHelper application:application didRegisterUserNotificationSettings:notificationSettings];
+}</p></li>
+</ul>
+
+<p>``</p>
       </section>
     </div>
 
