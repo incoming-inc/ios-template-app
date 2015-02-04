@@ -31,22 +31,23 @@
     <!-- MAIN CONTENT -->
     <div id="main_content_wrap" class="outer">
       <section id="main_content" class="inner">
-        <p>The Incoming Push Video SDK can be used in a <a href="#new-project">new project</a> by cloning the simple template application,  or can be <a href="#add-to-existing-project">added to an existing application</a> by dropping the SDK distribution folder into your project, and adding a small amount of code.</p>
-
-<h1>
-<a id="new-project" class="anchor" href="#new-project" aria-hidden="true"><span class="octicon octicon-link"></span></a>New Project</h1>
+        <p>The Incoming Push Video SDK can be used in a <a href="##new-project">new project</a> by cloning the simple template application,  or can be <a href="##adding-the-push-video-notification-to-an-existing-project">added to an existing application</a> by dropping the SDK distribution folder into your project, and adding a small amount of code.</p>
 
 <h2>
-<a id="clone-the-template-application" class="anchor" href="#clone-the-template-application" aria-hidden="true"><span class="octicon octicon-link"></span></a>Clone the Template Application</h2>
+<a id="new-project" class="anchor" href="#new-project" aria-hidden="true"><span class="octicon octicon-link"></span></a>New Project</h2>
 
-<p>Clone the iOS template application at <a href="https://github.com/incoming-inc/ios-template-app">https://github.com/incoming-inc/ios-template-app</a>.</p>
+<p>We provide a template application to make the SDK integration easy in a new project. </p>
 
-<p>The Push Video template application PVNTemplate.xcodeproj, it can be opened width Xcode 6.</p>
+<h3>
+<a id="clone-the-template-application" class="anchor" href="#clone-the-template-application" aria-hidden="true"><span class="octicon octicon-link"></span></a>Clone the Template Application</h3>
 
-<h2>
-<a id="import-the-ios-sdk-zip" class="anchor" href="#import-the-ios-sdk-zip" aria-hidden="true"><span class="octicon octicon-link"></span></a>Import the iOS SDK zip</h2>
+<p>Clone the iOS template application at <a href="https://github.com/incoming-inc/ios-template-app">https://github.com/incoming-inc/ios-template-app</a>.
+The Push Video template application PVNTemplate.xcodeproj, it can be opened width Xcode 6.</p>
 
-<p>The PVN SDK distribution zip can be downloaded from your project, in the Incoming control panel. 
+<h3>
+<a id="import-the-ios-sdk-zip" class="anchor" href="#import-the-ios-sdk-zip" aria-hidden="true"><span class="octicon octicon-link"></span></a>Import the iOS SDK zip</h3>
+
+<p>The PVN SDK distribution zip can be downloaded from your project in the Incoming control panel. 
 The distribution zip file contains a directory named incoming-ios-sdk, which itself contains:</p>
 
 <ul>
@@ -57,8 +58,8 @@ The distribution zip file contains a directory named incoming-ios-sdk, which its
 
 <p>Drag and drop the incoming-ios-sdk onto your XCode project. Tick "Copy items if needed". </p>
 
-<h2>
-<a id="add-the-incoming-sdk-configuration-file" class="anchor" href="#add-the-incoming-sdk-configuration-file" aria-hidden="true"><span class="octicon octicon-link"></span></a>Add the Incoming SDK Configuration File</h2>
+<h3>
+<a id="create-or-edit-the-incoming-sdk-configuration-file" class="anchor" href="#create-or-edit-the-incoming-sdk-configuration-file" aria-hidden="true"><span class="octicon octicon-link"></span></a>Create or Edit the Incoming SDK Configuration File</h3>
 
 <p>The SDK relies on a configuration file named "incoming-ios-sdk.plist" which must be in you app main's target "Copy Bundle Resources" Build Phase. </p>
 
@@ -72,22 +73,69 @@ The distribution zip file contains a directory named incoming-ios-sdk, which its
 You will find both these values in the control panel, by going to the “App” page, in the top­left section titled “Download the push video SDK for iOS”.</li>
 </ul>
 
-<h1>
-<a id="adding-the-push-video-notification-to-an-existing-project" class="anchor" href="#adding-the-push-video-notification-to-an-existing-project" aria-hidden="true"><span class="octicon octicon-link"></span></a>Adding the Push Video Notification to an Existing Project</h1>
+<h2>
+<a id="adding-the-push-video-notification-to-an-existing-project" class="anchor" href="#adding-the-push-video-notification-to-an-existing-project" aria-hidden="true"><span class="octicon octicon-link"></span></a>Adding the Push Video Notification to an Existing Project</h2>
 
-<p>Adding the PVN SDK to an existing project consist of the following steps: </p>
+<p>Adding the PVN SDK to an existing project consist of the following steps. </p>
+
+<h3>
+<a id="import-the-push-video-sdk-distribution-folder" class="anchor" href="#import-the-push-video-sdk-distribution-folder" aria-hidden="true"><span class="octicon octicon-link"></span></a>Import the Push Video SDK distribution folder</h3>
+
+<p>C.f. <a href="##Import-the-iOS-SDK-zip">above</a> </p>
+
+<h3>
+<a id="create-or-edit-the-incoming-ios-sdkplist" class="anchor" href="#create-or-edit-the-incoming-ios-sdkplist" aria-hidden="true"><span class="octicon octicon-link"></span></a>Create or edit the incoming-ios-sdk.plist</h3>
+
+<p>C.f. <a href="##Create-or-Edit-the-Incoming-SDK-Configuration-File">above</a></p>
+
+<h3>
+<a id="add-framework-dependencies-to-your-project-linked-framework-list" class="anchor" href="#add-framework-dependencies-to-your-project-linked-framework-list" aria-hidden="true"><span class="octicon octicon-link"></span></a>Add framework dependencies to your project Linked framework list</h3>
+
+<p>Go into your app’s target’s Build Phases screen and add the following frameworks to the “Link Binary With Libraries” section.</p>
 
 <ul>
-<li>Drop SDK distribution folder into your project</li>
-<li>Add / edit the incoming-ios-sdk.plist configuration file. Your project key and API endpoint should be entered in this file. </li>
-<li>Add framework dependencies to your project Linked framework list </li>
-<li>Add a few lines of code to your application delegate. </li>
+<li>AVFoundation.framework</li>
+<li>MediaPlayer.framework</li>
+<li>SystemConfiguration.framework</li>
+<li>CoreMotion.framework</li>
+<li>CoreTelephony.framework</li>
+<li>CoreData.framework</li>
+<li>CoreMedia.framework</li>
+<li>MediaPlayer.framework</li>
+<li>MobileCoreServices.framework</li>
+<li>SystemConfiguration.framework</li>
+<li>Foundation.framework</li>
+<li>CoreImage.framework</li>
+<li>Accelerate.framework</li>
+<li>UIKit.framework</li>
+<li>libz.dylib</li>
+<li>NotificationCenter.framework (status can be set to “Optional” if you want to support
+iOS7</li>
 </ul>
 
-<h1>
-<a id="api-documentation" class="anchor" href="#api-documentation" aria-hidden="true"><span class="octicon octicon-link"></span></a>API Documentation</h1>
+<h3>
+<a id="configure-background-modes" class="anchor" href="#configure-background-modes" aria-hidden="true"><span class="octicon octicon-link"></span></a>Configure Background Modes</h3>
 
-<p><a href="apidocs/index.html">PVN SDK API Documentation</a></p>
+<p>Using XCode, configure the application background modes:</p>
+
+<ul>
+<li>click on your app target, then select ‘Capabilities’.</li>
+<li>Turn on “Background Modes”,</li>
+<li>In Background Modes, enable “Background fetch” and “Remote Notification</li>
+</ul>
+
+<p>In your app ‘Info’ pane, add the location data purpose, by setting NSLocationAlwaysUsageDescription and NSLocationWhenInUsageDescription to e.g. “To compute the best place and time to send you content updates”</p>
+
+<h3>
+<a id="set-linker-flags" class="anchor" href="#set-linker-flags" aria-hidden="true"><span class="octicon octicon-link"></span></a>Set linker flags</h3>
+
+<p>Enable a linker flag that allows the use of categories in the Incoming SDK static library. Start by choosing the main target for your app, selecting the “Build Settings” tab, and then search for “other linker”. Under “Other Linker Flags”, add the “­ObjC”.</p>
+
+<h3>
+<a id="add-a-few-lines-of-code-to-your-application-delegate" class="anchor" href="#add-a-few-lines-of-code-to-your-application-delegate" aria-hidden="true"><span class="octicon octicon-link"></span></a>Add a few lines of code to your application delegate.</h3>
+
+<p>The host application delegate must to forward several calls from the operating system to the SDK. These are all implemented in the template application and can be conveniently copied from there. Take a look into the sample application’s delegate code.
+<a href="https://github.com/incoming%C2%AD-inc/ios%C2%AD-template-%C2%ADapp/blob/master/PVNTemplate/PVTAppDelegate.m">https://github.com/incoming­-inc/ios­-template-­app/blob/master/PVNTemplate/PVTAppDelegate.m</a></p>
       </section>
     </div>
 
