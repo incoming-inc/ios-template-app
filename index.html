@@ -139,72 +139,73 @@ iOS7</li>
 
 <p>The minimum code to add to your application delegate is: </p>
 
-<div class="highlight highlight-objective-c"><pre>
-#<span class="pl-k">import</span> <span class="pl-s1"><span class="pl-pds">"</span>ISDKAppDelegateHelper.h<span class="pl-pds">"</span></span>
+<pre><code>
+#import "ISDKAppDelegateHelper.h"
 ...
 
 
-- (<span class="pl-st">BOOL</span>)application:(UIApplication *)application didFinishLaunchingWithOptions:(<span class="pl-s3">NSDictionary</span> *)launchOptions
+- (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions
 {
-    [ISDKAppDelegateHelper <span class="pl-s3">application:</span>[UIApplication <span class="pl-s3">sharedApplication</span>] <span class="pl-s3">didFinishLaunchingWithOptions:</span>launchOptions];
+    [ISDKAppDelegateHelper application:[UIApplication sharedApplication] didFinishLaunchingWithOptions:launchOptions];
 
-    [ISDKAppDelegateHelper <span class="pl-s3">registerForNotifications</span>];
-    <span class="pl-c">/* perform your own initialization here */</span>
+    [ISDKAppDelegateHelper registerForNotifications];
+    /* perform your own initialization here */
 
-    <span class="pl-k">return</span> <span class="pl-c1">YES</span>;
+    return YES;
 }
 
-- (<span class="pl-st">BOOL</span>)application:(UIApplication *)application openURL:(<span class="pl-s3">NSURL</span> *)url sourceApplication:(<span class="pl-s3">NSString</span> *)sourceApplication annotation:(<span class="pl-st">id</span>)annotation
+- (BOOL)application:(UIApplication *)application openURL:(NSURL *)url sourceApplication:(NSString *)sourceApplication annotation:(id)annotation
 {
-    [ISDKAppDelegateHelper <span class="pl-s3">handleOpenURL:</span>url <span class="pl-s3">sourceApplication:</span>sourceApplication <span class="pl-s3">annotation:</span>annotation];
-    <span class="pl-c">/* perform your handling here */</span>
-    <span class="pl-k">return</span> <span class="pl-c1">YES</span>;
+    [ISDKAppDelegateHelper handleOpenURL:url sourceApplication:sourceApplication annotation:annotation];
+    /* perform your handling here */
+    return YES;
 }
 
-- (<span class="pl-st">void</span>) application:(UIApplication *)application performFetchWithCompletionHandler:(<span class="pl-st">void</span> (^)(UIBackgroundFetchResult))completionHandler{
-    [ISDKAppDelegateHelper <span class="pl-s3">application:</span>application <span class="pl-s3">performFetchWithCompletionHandler:</span>completionHandler];
+- (void) application:(UIApplication *)application performFetchWithCompletionHandler:(void (^)(UIBackgroundFetchResult))completionHandler{
+    [ISDKAppDelegateHelper application:application performFetchWithCompletionHandler:completionHandler];
 }
 
-- (<span class="pl-st">void</span>)application:(UIApplication *)application handleEventsForBackgroundURLSession:(<span class="pl-s3">NSString</span> *)identifier completionHandler:(<span class="pl-st">void</span> (^)())completionHandler
+- (void)application:(UIApplication *)application handleEventsForBackgroundURLSession:(NSString *)identifier completionHandler:(void (^)())completionHandler
 {
-    [ISDKAppDelegateHelper <span class="pl-s3">application:</span>application <span class="pl-s3">handleEventsForBackgroundURLSession:</span>identifier <span class="pl-s3">completionHandler:</span>completionHandler];
+    [ISDKAppDelegateHelper application:application handleEventsForBackgroundURLSession:identifier completionHandler:completionHandler];
 }
 
-- (<span class="pl-st">void</span>)application:(UIApplication *)application didRegisterForRemoteNotificationsWithDeviceToken:(<span class="pl-s3">NSData</span> *)deviceToken
+- (void)application:(UIApplication *)application didRegisterForRemoteNotificationsWithDeviceToken:(NSData *)deviceToken
 {
-    [ISDKAppDelegateHelper <span class="pl-s3">application:</span>application <span class="pl-s3">didRegisterForRemoteNotificationsWithDeviceToken:</span>deviceToken];
+    [ISDKAppDelegateHelper application:application didRegisterForRemoteNotificationsWithDeviceToken:deviceToken];
 }
 
-- (<span class="pl-st">void</span>)application:(UIApplication *)application didFailToRegisterForRemoteNotificationsWithError:(<span class="pl-s3">NSError</span> *)error
+- (void)application:(UIApplication *)application didFailToRegisterForRemoteNotificationsWithError:(NSError *)error
 {
-    [ISDKAppDelegateHelper <span class="pl-s3">application:</span>application <span class="pl-s3">didFailToRegisterForRemoteNotificationsWithError:</span>error];
+    [ISDKAppDelegateHelper application:application didFailToRegisterForRemoteNotificationsWithError:error];
 }
 
-- (<span class="pl-st">void</span>)application:(UIApplication *)application didReceiveRemoteNotification:(<span class="pl-s3">NSDictionary</span> *)userInfo
-fetchCompletionHandler:(<span class="pl-st">void</span> (^)(UIBackgroundFetchResult))completionHandler
+- (void)application:(UIApplication *)application didReceiveRemoteNotification:(NSDictionary *)userInfo
+fetchCompletionHandler:(void (^)(UIBackgroundFetchResult))completionHandler
 {
-    [ISDKAppDelegateHelper <span class="pl-s3">application:</span>application <span class="pl-s3">didReceiveRemoteNotification:</span>userInfo <span class="pl-s3">fetchCompletionHandler:</span>completionHandler];
+    [ISDKAppDelegateHelper application:application didReceiveRemoteNotification:userInfo fetchCompletionHandler:completionHandler];
 }
 
-- (<span class="pl-st">void</span>)application:(UIApplication *)application didReceiveRemoteNotification:(<span class="pl-s3">NSDictionary</span> *)userInfo
+- (void)application:(UIApplication *)application didReceiveRemoteNotification:(NSDictionary *)userInfo
 {
-    [ISDKAppDelegateHelper <span class="pl-s3">application:</span>application <span class="pl-s3">didReceiveRemoteNotification:</span>userInfo];
+    [ISDKAppDelegateHelper application:application didReceiveRemoteNotification:userInfo];
 }
 
-- (<span class="pl-st">void</span>)application:(UIApplication *)application didReceiveLocalNotification:(UILocalNotification *)notification
+- (void)application:(UIApplication *)application didReceiveLocalNotification:(UILocalNotification *)notification
 {
-    [ISDKAppDelegateHelper <span class="pl-s3">application:</span>application <span class="pl-s3">didReceiveLocalNotification:</span>notification];
+    [ISDKAppDelegateHelper application:application didReceiveLocalNotification:notification];
 }
 
-- (<span class="pl-st">void</span>)application:(UIApplication *)application handleActionWithIdentifier:(<span class="pl-s3">NSString</span> *)identifier forLocalNotification:(UILocalNotification *)userInfo completionHandler:(<span class="pl-st">void</span> (^)())completionHandler {
-    [ISDKAppDelegateHelper <span class="pl-s3">application:</span>application <span class="pl-s3">handleActionWithIdentifier:</span>identifier <span class="pl-s3">forLocalNotification:</span>userInfo <span class="pl-s3">completionHandler:</span>completionHandler];
+- (void)application:(UIApplication *)application handleActionWithIdentifier:(NSString *)identifier forLocalNotification:(UILocalNotification *)userInfo completionHandler:(void (^)())completionHandler {
+    [ISDKAppDelegateHelper application:application handleActionWithIdentifier:identifier forLocalNotification:userInfo completionHandler:completionHandler];
 }
 
-- (<span class="pl-st">void</span>)application:(UIApplication *)application didRegisterUserNotificationSettings:(UIUserNotificationSettings *)notificationSettings
+- (void)application:(UIApplication *)application didRegisterUserNotificationSettings:(UIUserNotificationSettings *)notificationSettings
 {
-    [ISDKAppDelegateHelper <span class="pl-s3">application:</span>application <span class="pl-s3">didRegisterUserNotificationSettings:</span>notificationSettings];
+    [ISDKAppDelegateHelper application:application didRegisterUserNotificationSettings:notificationSettings];
 }
-</pre></div>
+
+</code></pre>
       </section>
     </div>
 
