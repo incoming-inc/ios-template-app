@@ -7,11 +7,10 @@
 //
 
 #import "PVTAppDelegate.h"
+#import "ISDKAppDelegateHelper.h"
+
 
 @implementation PVTAppDelegate
-
-@synthesize delegateHelper;
-
 
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions

@@ -8,12 +8,10 @@
 
 #import <UIKit/UIKit.h>
 
-#import "ISDKAppDelegateHelper.h"
+
 
 @interface PVTAppDelegate : UIResponder <UIApplicationDelegate>
 
 @property (strong, nonatomic) UIWindow *window;
-
-@property(strong,nonatomic) ISDKAppDelegateHelper *delegateHelper;
 
 @end
