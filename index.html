@@ -31,7 +31,7 @@
     <!-- MAIN CONTENT -->
     <div id="main_content_wrap" class="outer">
       <section id="main_content" class="inner">
-        <p>The Incoming Push Video SDK can be used in a <a href="#creating-a-new-project">new project</a> by cloning the simple template application,  or can be <a href="#adding-the-push-video-notification-sdk-to-an-existing-project">added to an existing application</a> by dropping the SDK distribution folder into your project, and adding a small amount of code.</p>
+        <p>The Incoming Push Video SDK can be used in a <a href="#creating-a-new-project">new project</a> by cloning the simple template application, or can be <a href="#adding-the-push-video-notification-sdk-to-an-existing-project">added to an existing application</a> by dropping the SDK distribution folder into your project, and adding a small amount of code.</p>
 
 <h2>
 <a id="creating-a-new-project" class="anchor" href="#creating-a-new-project" aria-hidden="true"><span class="octicon octicon-link"></span></a>Creating a new Project</h2>
@@ -41,8 +41,7 @@
 <h3>
 <a id="clone-the-template-application" class="anchor" href="#clone-the-template-application" aria-hidden="true"><span class="octicon octicon-link"></span></a>Clone the Template Application</h3>
 
-<p>Clone the iOS template application at <a href="https://github.com/incoming-inc/ios-template-app">https://github.com/incoming-inc/ios-template-app</a>.
-The Push Video template application PVNTemplate.xcodeproj, it can be opened width Xcode 6.</p>
+<p>Clone the iOS template application at <a href="https://github.com/incoming-inc/ios-template-app">https://github.com/incoming-inc/ios-template-app</a>. Choose between the swift and objective-C version. The Push Video template application PVNTemplate.xcodeproj, it can be opened width Xcode 6.</p>
 
 <h3>
 <a id="import-the-ios-sdk-zip" class="anchor" href="#import-the-ios-sdk-zip" aria-hidden="true"><span class="octicon octicon-link"></span></a>Import the iOS SDK zip</h3>
@@ -91,7 +90,7 @@ You will find both these values in the control panel, by going to the “App” 
 <h3>
 <a id="add-framework-dependencies-to-your-project-linked-framework-list" class="anchor" href="#add-framework-dependencies-to-your-project-linked-framework-list" aria-hidden="true"><span class="octicon octicon-link"></span></a>Add framework dependencies to your project Linked framework list</h3>
 
-<p>Go into your app’s target’s Build Phases screen and add the following frameworks to the “Link Binary With Libraries” section.</p>
+<p>(if your project is in Swift, you can skip this phase) Go into your app’s target’s Build Phases screen and add the following frameworks to the “Link Binary With Libraries” section.</p>
 
 <ul>
 <li>AVFoundation.framework</li>
@@ -132,12 +131,20 @@ iOS7</li>
 <p>Enable a linker flag that allows the use of categories in the Incoming SDK static library. Start by choosing the main target for your app, selecting the “Build Settings” tab, and then search for “other linker”. Under “Other Linker Flags”, add the “­ObjC”.</p>
 
 <h3>
+<a id="add-bridging-header-swift-only" class="anchor" href="#add-bridging-header-swift-only" aria-hidden="true"><span class="octicon octicon-link"></span></a>Add bridging header (swift only)</h3>
+
+<p>Swift users must add this <a href="https://github.com/incoming-inc/ios-template-app/blob/master/Swift/ISDK-Bridging-Header.h">bridging header</a> to their project to be able to use the Incoming PVN sdk.</p>
+
+<h3>
 <a id="add-a-few-lines-of-code-to-your-application-delegate" class="anchor" href="#add-a-few-lines-of-code-to-your-application-delegate" aria-hidden="true"><span class="octicon octicon-link"></span></a>Add a few lines of code to your application delegate.</h3>
 
 <p>The host application delegate must to forward several calls from the operating system to the SDK. These are all implemented in the template application and can be conveniently copied from there. Take a look into the sample application’s delegate code.
 <a href="https://github.com/incoming-inc/ios-template-app/blob/master/PVNTemplate/PVTAppDelegate.m">https://github.com/incoming-inc/ios-template-app/blob/master/PVNTemplate/PVTAppDelegate.m</a></p>
 
 <p>The minimum code to add to your application delegate is: </p>
+
+<h4>
+<a id="objective-c" class="anchor" href="#objective-c" aria-hidden="true"><span class="octicon octicon-link"></span></a>Objective-C</h4>
 
 <pre><code>
 #import "ISDKAppDelegateHelper.h"
@@ -204,6 +211,91 @@ fetchCompletionHandler:(void (^)(UIBackgroundFetchResult))completionHandler
 {
     [ISDKAppDelegateHelper application:application didRegisterUserNotificationSettings:notificationSettings];
 }
+
+</code></pre>
+
+<h4>
+<a id="swift" class="anchor" href="#swift" aria-hidden="true"><span class="octicon octicon-link"></span></a>Swift</h4>
+
+<pre><code>
+import UIKit
+
+@UIApplicationMain
+class AppDelegate: UIResponder, UIApplicationDelegate {
+
+    var window: UIWindow?
+
+
+    func application(application: UIApplication, didFinishLaunchingWithOptions launchOptions: [NSObject: AnyObject]?) -&gt; Bool {
+
+        // ISDK method forward
+        ISDKAppDelegateHelper.application(application, didFinishLaunchingWithOptions:launchOptions)
+
+        // This will pop-up the OS permission dialog, feel free to
+        // integrate them differently in your workflow
+        ISDKAppDelegateHelper.registerForNotifications()
+        ISDKAppDelegateHelper.registerForLocationUpdates()
+
+        // &lt;insert your app initialization code here&gt;
+        return true
+    }
+
+
+    func application(application: UIApplication, openURL url: NSURL, sourceApplication: String?, annotation: AnyObject?) -&gt; Bool {
+
+        // ISDK method forward
+        ISDKAppDelegateHelper.handleOpenURL(url, sourceApplication: sourceApplication, annotation: annotation)
+
+        return true
+    }
+
+
+    func application(application: UIApplication, performFetchWithCompletionHandler completionHandler: (UIBackgroundFetchResult) -&gt; Void) {
+
+        // ISDK method forward
+        ISDKAppDelegateHelper.application(application, performFetchWithCompletionHandler:completionHandler)
+
+    }
+
+    func application(application: UIApplication, handleEventsForBackgroundURLSession identifier: String, completionHandler: () -&gt; Void) {
+
+        // ISDK method forward
+        ISDKAppDelegateHelper.application(application, handleEventsForBackgroundURLSession: identifier, completionHandler: completionHandler)
+
+    }
+
+    func application(application: UIApplication, didRegisterForRemoteNotificationsWithDeviceToken deviceToken: NSData) {
+
+        // ISDK method forward
+        ISDKAppDelegateHelper.application(application, didRegisterForRemoteNotificationsWithDeviceToken: deviceToken)
+
+    }
+
+
+    func application(application: UIApplication, didFailToRegisterForRemoteNotificationsWithError error: NSError) {
+
+        // ISDK method forward
+        ISDKAppDelegateHelper.application(application, didFailToRegisterForRemoteNotificationsWithError:error)
+    }
+
+    func application(application: UIApplication, didReceiveRemoteNotification userInfo: [NSObject : AnyObject]) {
+
+        // ISDK method forward
+        ISDKAppDelegateHelper.application(application, didReceiveRemoteNotification: userInfo)
+    }
+
+    func application(application: UIApplication, didReceiveLocalNotification notification: UILocalNotification) {
+
+        // ISDK method forward
+        ISDKAppDelegateHelper.application(application, didReceiveLocalNotification: notification)
+    }
+
+
+    func application(application: UIApplication, handleActionWithIdentifier identifier: String?, forLocalNotification notification: UILocalNotification, completionHandler: () -&gt; Void) {
+
+        // ISDK method forward
+        ISDKAppDelegateHelper.application(application, handleActionWithIdentifier: identifier, forLocalNotification: notification, completionHandler: completionHandler)
+    }
 
 </code></pre>
       </section>
