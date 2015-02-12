@@ -52,7 +52,7 @@ The distribution zip file contains a directory named incoming-ios-sdk, which its
 <ul>
 <li>the Incoming SDK static library</li>
 <li>header files </li>
-<li>resources that are required by a host application.</li>
+<li>a resource bundle required by the SDK</li>
 </ul>
 
 <p>Drag and drop the incoming-ios-sdk onto your XCode project. Tick "Copy items if needed". </p>
@@ -88,7 +88,7 @@ You will find both these values in the control panel, by going to the “App” 
 <p>C.f. <a href="#create-or-edit-the-incoming-sdk-configuration-file">above</a></p>
 
 <h3>
-<a id="add-framework-dependencies-to-your-project-linked-framework-list" class="anchor" href="#add-framework-dependencies-to-your-project-linked-framework-list" aria-hidden="true"><span class="octicon octicon-link"></span></a>Add framework dependencies to your project Linked framework list</h3>
+<a id="add-framework-dependencies-to-your-project-linked-framework-list-objective-c-only" class="anchor" href="#add-framework-dependencies-to-your-project-linked-framework-list-objective-c-only" aria-hidden="true"><span class="octicon octicon-link"></span></a>Add framework dependencies to your project Linked framework list (Objective-C only)</h3>
 
 <p>(if your project is in Swift, you can skip this phase) Go into your app’s target’s Build Phases screen and add the following frameworks to the “Link Binary With Libraries” section.</p>
 
@@ -138,8 +138,10 @@ iOS7</li>
 <h3>
 <a id="add-a-few-lines-of-code-to-your-application-delegate" class="anchor" href="#add-a-few-lines-of-code-to-your-application-delegate" aria-hidden="true"><span class="octicon octicon-link"></span></a>Add a few lines of code to your application delegate.</h3>
 
-<p>The host application delegate must to forward several calls from the operating system to the SDK. These are all implemented in the template application and can be conveniently copied from there. Take a look into the sample application’s delegate code.
-<a href="https://github.com/incoming-inc/ios-template-app/blob/master/PVNTemplate/PVTAppDelegate.m">https://github.com/incoming-inc/ios-template-app/blob/master/PVNTemplate/PVTAppDelegate.m</a></p>
+<p>The host application delegate must to forward several calls from the operating system to the SDK. These are all implemented in the template application and can be conveniently copied from there. Take a look into the sample application’s delegate code.</p>
+
+<p>*Objective-C <a href="https://github.com/incoming-inc/ios-template-app/blob/master/Objective-C/PVNTemplate/PVTAppDelegate.m">https://github.com/incoming-inc/ios-template-app/blob/master/Objective-C/PVNTemplate/PVTAppDelegate.m</a>
+*Swift <a href="https://github.com/incoming-inc/ios-template-app/blob/master/Swift/PVNSampleSwift/AppDelegate.swift">https://github.com/incoming-inc/ios-template-app/blob/master/Swift/PVNSampleSwift/AppDelegate.swift</a></p>
 
 <p>The minimum code to add to your application delegate is: </p>
 
