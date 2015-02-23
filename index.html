@@ -125,12 +125,18 @@ iOS7</li>
 <li>In Background Modes, enable “Background fetch” and “Remote Notification</li>
 </ul>
 
+<p><img src="images/setup_target_capabilities.png" alt="Setup background modes"></p>
+
 <p>In your app ‘Info’ pane, add the location data purpose, by setting NSLocationAlwaysUsageDescription and NSLocationWhenInUsageDescription to e.g. “To compute the best place and time to send you content updates”</p>
+
+<p><img src="images/setup_info_plist_location_privacy_key.png" alt="Setup location privacy key"></p>
 
 <h3>
 <a id="set-linker-flags" class="anchor" href="#set-linker-flags" aria-hidden="true"><span class="octicon octicon-link"></span></a>Set linker flags</h3>
 
 <p>Enable a linker flag that allows the use of categories in the Incoming SDK static library. Start by choosing the main target for your app, selecting the “Build Settings” tab, and then search for “other linker”. Under “Other Linker Flags”, add the “­ObjC”.</p>
+
+<p><img src="images/setup_linker_flag.png" alt="Setup linker flag"></p>
 
 <h3>
 <a id="add-bridging-header-swift-only" class="anchor" href="#add-bridging-header-swift-only" aria-hidden="true"><span class="octicon octicon-link"></span></a>Add bridging header (swift only)</h3>
