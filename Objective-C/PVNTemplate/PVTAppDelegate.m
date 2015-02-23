@@ -25,8 +25,10 @@
 
 - (BOOL)application:(UIApplication *)application openURL:(NSURL *)url sourceApplication:(NSString *)sourceApplication annotation:(id)annotation
 {
-    [ISDKAppDelegateHelper handleOpenURL:url sourceApplication:sourceApplication annotation:annotation];
-    /* perform your handling here */
+    if ([ISDKAppDelegateHelper handleOpenURL:url sourceApplication:sourceApplication annotation:annotation] == NO)
+    {
+        /* perform your handling here */
+    }
     return YES;
 }
 
