@@ -169,8 +169,9 @@ iOS7</li>
 
 - (BOOL)application:(UIApplication *)application openURL:(NSURL *)url sourceApplication:(NSString *)sourceApplication annotation:(id)annotation
 {
-    [ISDKAppDelegateHelper handleOpenURL:url sourceApplication:sourceApplication annotation:annotation];
-    /* perform your handling here */
+    if ([ISDKAppDelegateHelper handleOpenURL:url sourceApplication:sourceApplication annotation:annotation] == NO){
+       /* perform your handling here */
+    }
     return YES;
 }
 
@@ -250,8 +251,10 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     func application(application: UIApplication, openURL url: NSURL, sourceApplication: String?, annotation: AnyObject?) -&gt; Bool {
 
         // ISDK method forward
-        ISDKAppDelegateHelper.handleOpenURL(url, sourceApplication: sourceApplication, annotation: annotation)
-
+        if (ISDKAppDelegateHelper.handleOpenURL(url, sourceApplication: sourceApplication, annotation: annotation) == NO)
+        { 
+            // perform handling of app URL here
+        } 
         return true
     }
 
