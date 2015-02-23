@@ -41,7 +41,7 @@
 <h3>
 <a id="clone-the-template-application" class="anchor" href="#clone-the-template-application" aria-hidden="true"><span class="octicon octicon-link"></span></a>Clone the Template Application</h3>
 
-<p>Clone the iOS template application at <a href="https://github.com/incoming-inc/ios-template-app">https://github.com/incoming-inc/ios-template-app</a>. Choose between the swift and objective-C version. The Push Video template application PVNTemplate.xcodeproj, it can be opened width Xcode 6.</p>
+<p>Clone the iOS template application at <code>https://github.com/incoming-inc/ios-template-app</code>. Choose between the swift and objective-C version. The Push Video template application <code>PVNTemplate.xcodeproj</code>, it can be opened width Xcode 6.</p>
 
 <h3>
 <a id="import-the-ios-sdk-zip" class="anchor" href="#import-the-ios-sdk-zip" aria-hidden="true"><span class="octicon octicon-link"></span></a>Import the iOS SDK zip</h3>
@@ -62,7 +62,7 @@ The distribution zip file contains a directory named incoming-ios-sdk, which its
 <h3>
 <a id="create-or-edit-the-incoming-sdk-configuration-file" class="anchor" href="#create-or-edit-the-incoming-sdk-configuration-file" aria-hidden="true"><span class="octicon octicon-link"></span></a>Create or Edit the Incoming SDK Configuration File</h3>
 
-<p>The SDK relies on a configuration file named "incoming-ios-sdk.plist" which must be in you app main's target "Copy Bundle Resources" Build Phase. </p>
+<p>The SDK relies on a configuration file named <code>incoming-ios-sdk.plist</code> which must be in you app main's target <code>Copy Bundle Resources</code> Build Phase. </p>
 
 <p>If you downloaded the SDK distribution zip file from your project in the Incoming Push Video control panel, the archive may contains this file. In this case, go to the next step. To create the file, right click on the incoming­-ios-­sdk folder in the xcode explorer, and choose “New File” / “Resource” / “Property List”, name it incoming-ios-sdk.</p>
 
@@ -94,25 +94,24 @@ You will find both these values in the control panel, by going to the “App” 
 
 <p>(if your project is in Swift, you can skip this phase) Go into your app’s target’s Build Phases screen and add the following frameworks to the “Link Binary With Libraries” section.</p>
 
-<ul>
-<li>AVFoundation.framework</li>
-<li>MediaPlayer.framework</li>
-<li>SystemConfiguration.framework</li>
-<li>CoreMotion.framework</li>
-<li>CoreTelephony.framework</li>
-<li>CoreData.framework</li>
-<li>CoreMedia.framework</li>
-<li>MediaPlayer.framework</li>
-<li>MobileCoreServices.framework</li>
-<li>SystemConfiguration.framework</li>
-<li>Foundation.framework</li>
-<li>CoreImage.framework</li>
-<li>Accelerate.framework</li>
-<li>UIKit.framework</li>
-<li>libz.dylib</li>
-<li>NotificationCenter.framework (status can be set to “Optional” if you want to support
-iOS7</li>
-</ul>
+<pre><code>* AVFoundation.framework
+* MediaPlayer.framework
+* SystemConfiguration.framework
+* CoreMotion.framework
+* CoreTelephony.framework
+* CoreData.framework
+* CoreMedia.framework
+* MediaPlayer.framework
+* MobileCoreServices.framework
+* SystemConfiguration.framework
+* Foundation.framework
+* CoreImage.framework
+* Accelerate.framework
+* UIKit.framework
+* libz.dylib
+* NotificationCenter.framework (status can be set to “Optional” if you want to support
+iOS7
+</code></pre>
 
 <h3>
 <a id="configure-background-modes" class="anchor" href="#configure-background-modes" aria-hidden="true"><span class="octicon octicon-link"></span></a>Configure Background Modes</h3>
@@ -120,21 +119,22 @@ iOS7</li>
 <p>Using XCode, configure the application background modes:</p>
 
 <ul>
-<li>click on your app target, then select ‘Capabilities’.</li>
-<li>Turn on “Background Modes”,</li>
-<li>In Background Modes, enable “Background fetch” and “Remote Notification</li>
+<li>click on your app target, then select <code>Capabilities</code>.</li>
+<li>Turn on <code>Background Modes</code>,</li>
+<li>In Background Modes, enable <code>Background fetch</code> and <code>Remote Notification</code>
+</li>
 </ul>
 
 <p><img src="images/setup_target_capabilities.png" alt="Setup background modes"></p>
 
-<p>In your app ‘Info’ pane, add the location data purpose, by setting NSLocationAlwaysUsageDescription and NSLocationWhenInUsageDescription to e.g. “To compute the best place and time to send you content updates”</p>
+<p>In your app <code>Info</code> pane, add the location data collection purpose, by adding a new key for <code>Privacy - Location Usage Description</code> to e.g. “To compute the best place and time to send you content updates”</p>
 
 <p><img src="images/setup_info_plist_location_privacy_key.png" alt="Setup location privacy key"></p>
 
 <h3>
 <a id="set-linker-flags" class="anchor" href="#set-linker-flags" aria-hidden="true"><span class="octicon octicon-link"></span></a>Set linker flags</h3>
 
-<p>Enable a linker flag that allows the use of categories in the Incoming SDK static library. Start by choosing the main target for your app, selecting the “Build Settings” tab, and then search for “other linker”. Under “Other Linker Flags”, add the “­ObjC”.</p>
+<p>Enable a linker flag that allows the use of categories in the Incoming SDK static library. Start by choosing the main target for your app, selecting the <code>Build Settings</code> tab, and then search for <code>other linker flags</code>. Under <code>Other Linker Flags</code>, add the <code>-ObjC</code>.</p>
 
 <p><img src="images/setup_linker_flag.png" alt="Setup linker flag"></p>
 
@@ -160,8 +160,7 @@ iOS7</li>
 <h4>
 <a id="objective-c" class="anchor" href="#objective-c" aria-hidden="true"><span class="octicon octicon-link"></span></a>Objective-C</h4>
 
-<pre><code>
-#import "ISDKAppDelegateHelper.h"
+<pre><code>#import "ISDKAppDelegateHelper.h"
 ...
 
 
