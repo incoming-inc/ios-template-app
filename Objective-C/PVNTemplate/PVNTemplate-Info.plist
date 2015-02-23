@@ -24,6 +24,8 @@
 	<string>1.0</string>
 	<key>LSRequiresIPhoneOS</key>
 	<true/>
+	<key>NSLocationUsageDescription</key>
+	<string>To compute the best place and time to send you content updates</string>
 	<key>UIBackgroundModes</key>
 	<array>
 		<string>fetch</string>

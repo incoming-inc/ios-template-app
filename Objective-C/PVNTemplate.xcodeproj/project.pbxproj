@@ -59,7 +59,6 @@
 		8586110F1946CF38008E86EB /* CoreMedia.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreMedia.framework; path = System/Library/Frameworks/CoreMedia.framework; sourceTree = SDKROOT; };
 		858611111946CFCE008E86EB /* CoreLocation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreLocation.framework; path = System/Library/Frameworks/CoreLocation.framework; sourceTree = SDKROOT; };
 		96ECF7C01A7F31D00016432E /* libz.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libz.dylib; path = usr/lib/libz.dylib; sourceTree = SDKROOT; };
-		96ECF7C61A8049910016432E /* README.md */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -92,7 +91,6 @@
 				858610AC1946A0FC008E86EB /* PVNTemplate */,
 				858610A51946A0FC008E86EB /* Frameworks */,
 				858610A41946A0FC008E86EB /* Products */,
-				96ECF7C61A8049910016432E /* README.md */,
 			);
 			sourceTree = "<group>";
 		};
