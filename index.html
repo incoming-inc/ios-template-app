@@ -33,15 +33,18 @@
       <section id="main_content" class="inner">
         <p>This document describe the steps needed to integrate the Incoming Push Video Notification SDK with your application. To access the SDK distribution zip and obtain access to your project's control panel, contact your Incoming representative. </p>
 
-<p>Note: For instructions on how to integrate the iOS Today Extension widget, please refer to the documentation in the Incoming Push Video SDK widget add-on distribution zip.   </p>
+<p>Note: For instructions on how to integrate the iOS Today Extension widget, please refer to the documentation in <em>the Incoming Push Video SDK widget add-on distribution zip</em>.   </p>
 
 <h2>
 <a id="changelog" class="anchor" href="#changelog" aria-hidden="true"><span class="octicon octicon-link"></span></a>Changelog</h2>
 
 <ul>
-<li>Feb 27, 2015: Added optional location and motion data collection permission calls to code examples</li>
-<li>Feb 27, 2015: Added BOOL return value to - (BOOL)application:(UIApplication *)application openURL:(NSURL *)url so that host applications can handle their own app URLs. </li>
-<li>Feb 27, 2015: Added optional SDK config file flags <code>notification_prefix</code>, <code>sound_file</code> and <code>in_app_rich_notifications</code>
+<li>
+<em>Feb 27, 2015</em>: Added optional location and motion data collection permission calls to code examples</li>
+<li>
+<em>Feb 27, 2015</em>: Added BOOL return value to <code>- (BOOL)application:(UIApplication *)application openURL:(NSURL *)url</code> so that host applications can handle their own app URLs. </li>
+<li>
+<em>Feb 27, 2015</em>: Added optional SDK config file flags <code>notification_prefix</code>, <code>sound_file</code> and <code>in_app_rich_notifications</code>
 </li>
 </ul>
 
@@ -95,15 +98,15 @@ The distribution zip file contains a directory named incoming-ios-sdk, which its
 
 <p>You will find both these values in the control panel, by going to the “App” page, in the top­left section titled “Download the push video SDK for iOS”.</p>
 
-<p>In addition, this file may contain the following optional keys</p>
+<p>In addition, this file may contain the following optional keys:</p>
 
 <ul>
 <li>
-<code>notification_prefix</code>: A string to prefix the notification text. E.g. "New video!" </li>
+<code>notification_prefix</code>: (String) Prefix the notification text. E.g. "New video!" </li>
 <li>
-<code>in_app_rich_notifications</code>: A BOOL value. If set to true, the PVN SDK may display Rich Notifications when your app is in the foreground. If set to false, the PVN will not display notification when your app is in the foreground. </li>
+<code>in_app_rich_notifications</code>: (BOOL) If set to true, the PVN SDK may display Rich Notifications when your app is in the foreground. </li>
 <li>
-<code>notification_sound</code>: A string value. Filename of the sound file to play when showing a notification, e.g. <code>sound1.caf</code>. The corresponding sound file need to be added to your main app target's bundle. For information about supported sound file format, c.f. <a href="https://developer.apple.com/library/ios/documentation/NetworkingInternet/Conceptual/RemoteNotificationsPG/Chapters/IPhoneOSClientImp.html">here</a>
+<code>notification_sound</code>: (string) - Filename of the sound to play when showing a notification, e.g. <code>sound1.caf</code>. The corresponding sound file need to be added to your main app target's bundle. For information about supported sound file formats, c.f. <a href="https://developer.apple.com/library/ios/documentation/NetworkingInternet/Conceptual/RemoteNotificationsPG/Chapters/IPhoneOSClientImp.html#//apple_ref/doc/uid/TP40008194-CH103-SW6">here</a>
 </li>
 </ul>
 
