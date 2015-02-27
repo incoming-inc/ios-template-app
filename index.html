@@ -31,15 +31,24 @@
     <!-- MAIN CONTENT -->
     <div id="main_content_wrap" class="outer">
       <section id="main_content" class="inner">
-        <p>The Incoming Push Video SDK can be used in a <a href="#creating-a-new-project">new project</a> by cloning the simple template application, or can be <a href="#adding-the-push-video-notification-sdk-to-an-existing-project">added to an existing application</a> by dropping the SDK distribution folder into your project, and adding a small amount of code.</p>
+        <p>This document describe the steps needed to integrate the Incoming Push Video Notification SDK with your application. To access the SDK distribution zip and obtain access to your project's control panel, contact your Incoming representative. </p>
+
+<p>Note: For instructions on how to integrate the iOS Today Extension widget, please refer to the documentation in the Incoming Push Video SDK widget add-on distribution zip.   </p>
 
 <h2>
 <a id="changelog" class="anchor" href="#changelog" aria-hidden="true"><span class="octicon octicon-link"></span></a>Changelog</h2>
 
 <ul>
-<li>Feb 27, 2015: Added optional location and motion data collection permission calls</li>
+<li>Feb 27, 2015: Added optional location and motion data collection permission calls to code examples</li>
 <li>Feb 27, 2015: Added BOOL return value to - (BOOL)application:(UIApplication *)application openURL:(NSURL *)url so that host applications can handle their own app URLs. </li>
+<li>Feb 27, 2015: Added optional SDK config file flags <code>notification_prefix</code>, <code>sound_file</code> and <code>in_app_rich_notifications</code>
+</li>
 </ul>
+
+<h2>
+<a id="overview" class="anchor" href="#overview" aria-hidden="true"><span class="octicon octicon-link"></span></a>Overview</h2>
+
+<p>The Incoming Push Video SDK can be used in a <a href="#creating-a-new-project">new project</a> by cloning the simple template application, or can be <a href="#adding-the-push-video-notification-sdk-to-an-existing-project">added to an existing application</a> by dropping the SDK distribution folder into your project, and adding a small amount of code.</p>
 
 <h2>
 <a id="creating-a-new-project" class="anchor" href="#creating-a-new-project" aria-hidden="true"><span class="octicon octicon-link"></span></a>Creating a new Project</h2>
@@ -77,11 +86,28 @@ The distribution zip file contains a directory named incoming-ios-sdk, which its
 <p>​This file must contains at minimum the following keys</p>
 
 <ul>
-<li>api_endpoint: the Incoming API endpoint to connect to</li>
-<li>project_key: your Incoming PVN project key</li>
+<li>
+<code>api_endpoint</code>: the Incoming API endpoint to connect to, e.g. <code>api-sandbox.incoming.tv</code>
+</li>
+<li>
+<code>project_key</code>: your Incoming PVN project key</li>
 </ul>
 
 <p>You will find both these values in the control panel, by going to the “App” page, in the top­left section titled “Download the push video SDK for iOS”.</p>
+
+<p>In addition, this file may contain the following optional keys</p>
+
+<ul>
+<li>
+<code>notification_prefix</code>: A string to prefix the notification text. E.g. "New video!" </li>
+<li>
+<code>in_app_rich_notifications</code>: A BOOL value. If set to true, the PVN SDK may display Rich Notifications when your app is in the foreground. If set to false, the PVN will not display notification when your app is in the foreground. </li>
+<li>
+<code>notification_sound</code>: A string value. Filename of the sound file to play when showing a notification, e.g. <code>sound1.caf</code>. The corresponding sound file need to be added to your main app target's bundle. For information about supported sound file format, c.f. <a href="https://developer.apple.com/library/ios/documentation/NetworkingInternet/Conceptual/RemoteNotificationsPG/Chapters/IPhoneOSClientImp.html">here</a>
+</li>
+</ul>
+
+<p><strong>Note</strong>: if using the PVN SDK widget, you must also include a <code>app_url_scheme</code> entry, as described in the "iOS SDK Installation Add-on: Today widget" document. </p>
 
 <h2>
 <a id="adding-the-push-video-notification-sdk-to-an-existing-project" class="anchor" href="#adding-the-push-video-notification-sdk-to-an-existing-project" aria-hidden="true"><span class="octicon octicon-link"></span></a>Adding the Push Video Notification SDK to an existing Project</h2>
