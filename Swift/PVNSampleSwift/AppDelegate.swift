@@ -22,7 +22,15 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         // This will pop-up the OS permission dialog, feel free to
         // integrate them differently in your workflow
         ISDKAppDelegateHelper.registerForNotifications()
+        
+        
+        // the two following calls are optional. They enable location and motion data collection
+        // which improves the timing prediction of Push Video Notifications.
+        // Calling these methods may result in the OS permission dialog being presented
+        // to the user.
         ISDKAppDelegateHelper.registerForLocationUpdates()
+        ISDKAppDelegateHelper.registerForMotionActivity()
+        
         
         // <insert your app initialization code here>
         return true
@@ -34,7 +42,9 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         // ISDK method forward
         if (ISDKAppDelegateHelper.handleOpenURL(url, sourceApplication: sourceApplication, annotation: annotation) == NO)
         {
-            // handle the URL here
+           // perform handling of your app URL here
+            
+            
         }
         
         return true
@@ -72,20 +82,35 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     func application(application: UIApplication, didReceiveRemoteNotification userInfo: [NSObject : AnyObject]) {
         
         // ISDK method forward
-        ISDKAppDelegateHelper.application(application, didReceiveRemoteNotification: userInfo)
+        if ISDKAppDelegateHelper.application(application, didReceiveRemoteNotification: userInfo) == false
+        {
+            // process your app's remote notification here
+
+        }
     }
     
     func application(application: UIApplication, didReceiveLocalNotification notification: UILocalNotification) {
         
         // ISDK method forward
-        ISDKAppDelegateHelper.application(application, didReceiveLocalNotification: notification)
+        if (ISDKAppDelegateHelper.application(application, didReceiveLocalNotification: notification) == false)
+        {
+            // process your app local notification here
+            
+        }
     }
     
     
     func application(application: UIApplication, handleActionWithIdentifier identifier: String?, forLocalNotification notification: UILocalNotification, completionHandler: () -> Void) {
         
         // ISDK method forward
-        ISDKAppDelegateHelper.application(application, handleActionWithIdentifier: identifier, forLocalNotification: notification, completionHandler: completionHandler)
+        if (ISDKAppDelegateHelper.application(application, handleActionWithIdentifier: identifier, forLocalNotification: notification, completionHandler: completionHandler) == false)
+        {
+            // process your app local notification here
+            
+            
+            // call completion handler
+            completionHandler();
+        }
     }
     
 

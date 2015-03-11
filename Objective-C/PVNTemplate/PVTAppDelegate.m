@@ -17,7 +17,18 @@
 {
     [ISDKAppDelegateHelper application:[UIApplication sharedApplication] didFinishLaunchingWithOptions:launchOptions];
     
+    
+    // This will pop-up the OS permission dialog, feel free to
+    // integrate them differently in your workflow
     [ISDKAppDelegateHelper registerForNotifications];
+    
+    // the two following calls are optional. They enable location and motion data collection
+    // which improves the timing prediction of Push Video Notifications.
+    // Calling these methods may result in the OS permission dialog being presented
+    // to the user.
+    [ISDKAppDelegateHelper registerForMotionActivity];
+    [ISDKAppDelegateHelper registerForLocationUpdates];
+    
     /* perform your own initialization here */
     
     return YES;
@@ -27,7 +38,7 @@
 {
     if ([ISDKAppDelegateHelper handleOpenURL:url sourceApplication:sourceApplication annotation:annotation] == NO)
     {
-        /* perform your handling here */
+        // perform handling of your app URL here
     }
     return YES;
 }
@@ -54,12 +65,25 @@
 - (void)application:(UIApplication *)application didReceiveRemoteNotification:(NSDictionary *)userInfo
 fetchCompletionHandler:(void (^)(UIBackgroundFetchResult))completionHandler
 {
-    [ISDKAppDelegateHelper application:application didReceiveRemoteNotification:userInfo fetchCompletionHandler:completionHandler];
+    if ([ISDKAppDelegateHelper application:application didReceiveRemoteNotification:userInfo fetchCompletionHandler:completionHandler] == NO)
+    {
+        // process your remote notification here.
+        
+        
+        // call completion handler
+        if (completionHandler)
+        {
+            completionHandler();
+        }
+    }
 }
 
 - (void)application:(UIApplication *)application didReceiveRemoteNotification:(NSDictionary *)userInfo
 {
-    [ISDKAppDelegateHelper application:application didReceiveRemoteNotification:userInfo];
+    if ([ISDKAppDelegateHelper application:application didReceiveRemoteNotification:userInfo] == NO)
+    {
+        // process your remote notification here
+    }
 }
 
 - (void)application:(UIApplication *)application didReceiveLocalNotification:(UILocalNotification *)notification
@@ -68,7 +92,18 @@ fetchCompletionHandler:(void (^)(UIBackgroundFetchResult))completionHandler
 }
 
 - (void)application:(UIApplication *)application handleActionWithIdentifier:(NSString *)identifier forLocalNotification:(UILocalNotification *)userInfo completionHandler:(void (^)())completionHandler {
-    [ISDKAppDelegateHelper application:application handleActionWithIdentifier:identifier forLocalNotification:userInfo completionHandler:completionHandler];
+    
+    if ([ISDKAppDelegateHelper application:application handleActionWithIdentifier:identifier
+                      forLocalNotification:userInfo completionHandler:completionHandler] == NO)
+    {
+        // process your app local notification here
+        
+        // call completion handler
+        if (completionHandler)
+        {
+            completionHandler();
+        }
+    }
 }
 
 - (void)application:(UIApplication *)application didRegisterUserNotificationSettings:(UIUserNotificationSettings *)notificationSettings
