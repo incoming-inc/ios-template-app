@@ -31,7 +31,27 @@
     <!-- MAIN CONTENT -->
     <div id="main_content_wrap" class="outer">
       <section id="main_content" class="inner">
-        <p>The Incoming Push Video SDK can be used in a <a href="#creating-a-new-project">new project</a> by cloning the simple template application, or can be <a href="#adding-the-push-video-notification-sdk-to-an-existing-project">added to an existing application</a> by dropping the SDK distribution folder into your project, and adding a small amount of code.</p>
+        <p>This document describe the steps needed to integrate the Incoming Push Video Notification SDK with your application. To access the SDK distribution zip and obtain access to your project's control panel, contact your Incoming representative. </p>
+
+<p>Note: For instructions on how to integrate the iOS Today Extension widget, please refer to the documentation in <em>the Incoming Push Video SDK widget add-on distribution zip</em>.   </p>
+
+<h2>
+<a id="changelog" class="anchor" href="#changelog" aria-hidden="true"><span class="octicon octicon-link"></span></a>Changelog</h2>
+
+<ul>
+<li>
+<em>Feb 27, 2015</em>: Added optional location and motion data collection permission calls to code examples</li>
+<li>
+<em>Feb 27, 2015</em>: Added BOOL return value to <code>- (BOOL)application:(UIApplication *)application openURL:(NSURL *)url</code> so that host applications can handle their own app URLs. </li>
+<li>
+<em>Feb 27, 2015</em>: Added optional SDK config file flags <code>notification_prefix</code>, <code>sound_file</code> and <code>in_app_rich_notifications</code>
+</li>
+</ul>
+
+<h2>
+<a id="overview" class="anchor" href="#overview" aria-hidden="true"><span class="octicon octicon-link"></span></a>Overview</h2>
+
+<p>The Incoming Push Video SDK can be used in a <a href="#creating-a-new-project">new project</a> by cloning the simple template application, or can be <a href="#adding-the-push-video-notification-sdk-to-an-existing-project">added to an existing application</a> by dropping the SDK distribution folder into your project, and adding a small amount of code.</p>
 
 <h2>
 <a id="creating-a-new-project" class="anchor" href="#creating-a-new-project" aria-hidden="true"><span class="octicon octicon-link"></span></a>Creating a new Project</h2>
@@ -69,11 +89,28 @@ The distribution zip file contains a directory named incoming-ios-sdk, which its
 <p>​This file must contains at minimum the following keys</p>
 
 <ul>
-<li>api_endpoint: the Incoming API endpoint to connect to</li>
-<li>project_key: your Incoming PVN project key</li>
+<li>
+<code>api_endpoint</code>: the Incoming API endpoint to connect to, e.g. <code>api-sandbox.incoming.tv</code>
+</li>
+<li>
+<code>project_key</code>: your Incoming PVN project key</li>
 </ul>
 
 <p>You will find both these values in the control panel, by going to the “App” page, in the top­left section titled “Download the push video SDK for iOS”.</p>
+
+<p>In addition, this file may contain the following optional keys:</p>
+
+<ul>
+<li>
+<code>notification_prefix</code>: (String) Prefix the notification text. E.g. "New video!" </li>
+<li>
+<code>in_app_rich_notifications</code>: (BOOL) If set to true, the PVN SDK may display Rich Notifications when your app is in the foreground. </li>
+<li>
+<code>notification_sound</code>: (string) - Filename of the sound to play when showing a notification, e.g. <code>sound1.caf</code>. The corresponding sound file need to be added to your main app target's bundle. For information about supported sound file formats, c.f. <a href="https://developer.apple.com/library/ios/documentation/NetworkingInternet/Conceptual/RemoteNotificationsPG/Chapters/IPhoneOSClientImp.html#//apple_ref/doc/uid/TP40008194-CH103-SW6">here</a>
+</li>
+</ul>
+
+<p><strong>Note</strong>: if using the PVN SDK widget, you must also include a <code>app_url_scheme</code> entry, as described in the "iOS SDK Installation Add-on: Today widget" document. </p>
 
 <h2>
 <a id="adding-the-push-video-notification-sdk-to-an-existing-project" class="anchor" href="#adding-the-push-video-notification-sdk-to-an-existing-project" aria-hidden="true"><span class="octicon octicon-link"></span></a>Adding the Push Video Notification SDK to an existing Project</h2>
@@ -176,8 +213,16 @@ iOS7
 {
     [ISDKAppDelegateHelper application:[UIApplication sharedApplication] didFinishLaunchingWithOptions:launchOptions];
 
+    // This will pop-up the OS permission dialog, feel free to
+    // integrate them differently in your workflow
     [ISDKAppDelegateHelper registerForNotifications];
-    /* perform your own initialization here */
+
+    // the two following calls are optional. They enable location and motion data collection
+    // which improves the timing prediction of Push Video Notifications
+    // calling these methods may also result in the OS permission dialog being presented
+    // to the user.
+    [ISDKAppDelegateHelper registerForMotionActivity];
+    [ISDKAppDelegateHelper registerForLocationUpdates];
 
     return YES;
 }
@@ -185,7 +230,7 @@ iOS7
 - (BOOL)application:(UIApplication *)application openURL:(NSURL *)url sourceApplication:(NSString *)sourceApplication annotation:(id)annotation
 {
     if ([ISDKAppDelegateHelper handleOpenURL:url sourceApplication:sourceApplication annotation:annotation] == NO){
-       /* perform your handling here */
+       // perform handling of your app URL here
     }
     return YES;
 }
@@ -243,32 +288,38 @@ fetchCompletionHandler:(void (^)(UIBackgroundFetchResult))completionHandler
 import UIKit
 
 @UIApplicationMain
-class AppDelegate: UIResponder, UIApplicationDelegate {
-
+class AppDelegate: UIResponder, UIApplicationDelegate 
+{
     var window: UIWindow?
-
-
-    func application(application: UIApplication, didFinishLaunchingWithOptions launchOptions: [NSObject: AnyObject]?) -&gt; Bool {
-
+    func application(application: UIApplication, didFinishLaunchingWithOptions launchOptions: [NSObject: AnyObject]?) -&gt; Bool     
+    { 
         // ISDK method forward
         ISDKAppDelegateHelper.application(application, didFinishLaunchingWithOptions:launchOptions)
 
         // This will pop-up the OS permission dialog, feel free to
         // integrate them differently in your workflow
         ISDKAppDelegateHelper.registerForNotifications()
+
+        // the two following calls are optional. They enable location and motion data collection
+        // which improves the timing prediction of Push Video Notifications.
+        // Calling these methods may result in the OS permission dialog being presented
+        // to the user.
         ISDKAppDelegateHelper.registerForLocationUpdates()
+        ISDKAppDelegateHelper.registerForMotionActivity()
+
 
         // &lt;insert your app initialization code here&gt;
         return true
     }
 
 
-    func application(application: UIApplication, openURL url: NSURL, sourceApplication: String?, annotation: AnyObject?) -&gt; Bool {
+    func application(application: UIApplication, openURL url: NSURL, sourceApplication: String?, annotation: AnyObject?) -&gt; Bool 
+    {
 
         // ISDK method forward
         if (ISDKAppDelegateHelper.handleOpenURL(url, sourceApplication: sourceApplication, annotation: annotation) == NO)
         { 
-            // perform handling of app URL here
+            // perform handling of your app URL here
         } 
         return true
     }
