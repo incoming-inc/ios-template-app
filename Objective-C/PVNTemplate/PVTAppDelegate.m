@@ -73,7 +73,7 @@ fetchCompletionHandler:(void (^)(UIBackgroundFetchResult))completionHandler
         // call completion handler
         if (completionHandler)
         {
-            completionHandler();
+            completionHandler(UIBackgroundFetchResultNewData);
         }
     }
 }
