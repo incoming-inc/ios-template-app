@@ -22,4 +22,7 @@ In addition, this file may contain the following optional keys:
 	The corresponding sound file need to be added to your main app target's bundle. For information about 
 	supported sound file formats, c.f. [the official doc](https://developer.apple.com/library/ios/documentation/NetworkingInternet/Conceptual/RemoteNotificationsPG/Chapters/IPhoneOSClientImp.html#//apple_ref/doc/uid/TP40008194-CH103-SW6) 
 
-Note: if using the PVN SDK widget, you must also include a `app_url_scheme` entry, as described in the `iOS SDK Installation Add-on: Today widget` document.
+The SDK is now operational. When running your app, the SDK will download video content in the background, and reveal push video notifications according to your project settings.  
+
+Next, if you intend on configuring the iOS8 Today widget, head to the [widget integration](./widget-integration.html) page. 
+
