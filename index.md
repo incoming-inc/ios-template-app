@@ -31,7 +31,7 @@ by dropping the SDK distribution folder into your project, and adding a small am
 
 # Release #
  * [Release notes](./release-notes.html)
- * [Upgrade instructions](./upgrade-instructions.html)
+ <!--* [Upgrade instructions](./upgrade-instructions.html) -->
 
 # iOS8 Today widget
  
