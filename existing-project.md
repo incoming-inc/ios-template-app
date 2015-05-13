@@ -258,4 +258,4 @@ The minimum code to add to your application delegate is as follows.
 	    ISDKAppDelegateHelper.application(application, handleActionWithIdentifier: identifier, forLocalNotification: notification, completionHandler: completionHandler)
 	}
 
-Once done, you may want to proceed to the [SDK settings configuration](/sdk-settings.html)
+Once done, you may want to proceed to the [SDK settings configuration](./sdk-settings.html)

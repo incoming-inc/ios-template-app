@@ -14,8 +14,8 @@ to the documentation in the Incoming Push Video SDK widget add-on distribution z
 
 # Integrate the Push Video SDK #
 
-The Incoming Push Video SDK can be used in a [new project](/new-project.html) by cloning the 
-simple template application (swift or Objective-C), or can be [Existing project](/existing-project.html),
+The Incoming Push Video SDK can be used in a [new project](./new-project.html) by cloning the 
+simple template application (swift or Objective-C), or can be [Existing project](./existing-project.html),
 by dropping the SDK distribution folder into your project, and adding a small amount of code.
 
  * [New project from template](./new-project.html)

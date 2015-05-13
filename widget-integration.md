@@ -25,7 +25,7 @@ You will need:
 
 * XCode 6 or above
 * Access to the apple developer portal for your app ID
-* Your app project, [configured to use the Incoming Push Video Notification SDK](/). 
+* Your app project, [configured to use the Incoming Push Video Notification SDK](./). 
 * the __incoming-ios-sdk-widget-*.zip_ supplementary archive, available from the Incoming Control Panel
 
 

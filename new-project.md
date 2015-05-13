@@ -24,6 +24,6 @@ The distribution zip file contains a directory named incoming-ios-sdk, which its
 Drag and drop the incoming-ios-sdk onto your XCode project. Tick "Copy items if needed".
 ![Add SDK to project dialog](./images/add_sdk_to_project_dialog.png)
 
-Proceed to the [SDK settings configuration](/sdk-settings.html)
+Proceed to the [SDK settings configuration](./sdk-settings.html)
 
 
