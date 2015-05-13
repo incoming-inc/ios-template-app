@@ -24,14 +24,15 @@ by dropping the SDK distribution folder into your project, and adding a small am
 
 
 # Configuration #
-
  * [SDK settings](/sdk-settings.html)
-
-
+ 
 # API documentation #
  * [PVN SDK API Documentation](/apidoc/index.html)
-
 
 # Release #
  * [Release notes](/release-notes.html)
  * [Upgrade instructions](/upgrade-instructions.html)
+
+# iOS8 Today widget
+ 
+ * [widget integration](/widget-integration.html) (optional)

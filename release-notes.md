@@ -3,6 +3,7 @@ title: Incoming iOS PVN SDK - Release notes
 layout: default 
 ---
 
+<!--
 
 PVN SDK v1.3-61 - 8 May 2015
 -------------------------------
@@ -11,7 +12,7 @@ PVN SDK v1.3-61 - 8 May 2015
 - FIX #92341456 - Crash in certain conditions when thumbnail downloads a corrupt image file or thumbnail download fails
 - FIX #92308604 - Crash in background under certain conditions "with iOS message this request has been neutered"
 - FIX #90868644 - Incoming Video player orientation problem: on lansdscape-supporting apps, when pausing and exiting the app while playing
-
+-->
 
 PVN SDK v1.2-63 - 16 march 2015
 -------------------------------
