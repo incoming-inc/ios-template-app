@@ -9,6 +9,7 @@
 #ifndef PVNSampleSwift_ISDK_Bridging_Header_h
 #define PVNSampleSwift_ISDK_Bridging_Header_h
 
-#import "ISDKAppDelegateHelper.h"
+#import <IncomingPVN/ISDKAppDelegateHelper.h>
+
 
 #endif

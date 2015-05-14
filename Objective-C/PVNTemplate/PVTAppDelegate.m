@@ -7,7 +7,7 @@
 //
 
 #import "PVTAppDelegate.h"
-#import "ISDKAppDelegateHelper.h"
+#import <IncomingPVN/ISDKAppDelegateHelper.h>
 
 
 @implementation PVTAppDelegate
