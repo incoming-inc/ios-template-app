@@ -25,9 +25,10 @@ by dropping the SDK distribution folder into your project, and adding a small am
 
 # Configuration #
  * [SDK settings](./sdk-settings.html)
+ * (optional) [Advertising support](./advertising.html)
  
 # API documentation #
- * [PVN SDK API Documentation](./apidoc/index.html)
+ * [PVN SDK API Documentation](./apidoc/html/index.html)
 
 # Release #
  * [Release notes](./release-notes.html)

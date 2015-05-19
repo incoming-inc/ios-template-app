@@ -7,7 +7,7 @@ The Incoming PVN widget uses the app extensions features of iOS8, to display a t
 
 __Note__:
 
-___The PVN SDK provide access to the meta data, and thumbnail image. You are therefore free to implement your own widget code and skip most of this document. In this case, you may want to only check the ISDKWidgetHelper class in the widget zip archive, and go through the 'Edit the widget configuration file' and 'Edit the Incoming PVN SDK configuration file' sections of this document___.
+___The This document provides an example of how to create and integrate a today widget, with source code provided alongside the ISDK. However, you are free to implement your own widget code and skip most of this document. In this case, the PVN SDK can provide access to the video meta-data, and thumbnail image to display in your widget. For this, you will want to check the ISDKWidget.h and ISDKWidgetHelper class in the widget zip archive, and go through the 'Edit the widget configuration file' and 'Edit the Incoming PVN SDK configuration file' sections of this document___.
 
 
 ## Widget designs ##
@@ -16,7 +16,7 @@ We provide two widget designs, large and compact which are shown below.
 ![Small widget example](./images/widget_small.png)
 ![Large widget example](./images/widget_large.png)
 
-All the widget code/XIBs is available for you to modify, you are therefore free to customise the look and feel of the widget.
+All the widget code/XIBs is available for you to modify, you are therefore free to customise the look and feel.
 
 
 ## Pre-requisites
@@ -26,7 +26,7 @@ You will need:
 * XCode 6 or above
 * Access to the apple developer portal for your app ID
 * Your app project, [configured to use the Incoming Push Video Notification SDK](./). 
-* the __incoming-ios-sdk-widget-*.zip_ supplementary archive, available from the Incoming Control Panel
+* the _incoming-ios-sdk-widget-*.zip_ supplementary archive, available from the Incoming Control Panel
 
 
 ## Apple developer portal configuration ##
@@ -51,9 +51,9 @@ Note: The host application cannot use a wildcard app id (in the form com.yourcom
 
 ### Create the app group ### 
 
-The widget and host application use a shared filesystem area to communicate and exchange data. To enable this shared filesystem, you app IDs need to be part of the same "App Group". 
+The widget and host application use a shared filesystem area to communicate and exchange data. To enable this shared filesystem, the containing app's main target and the widget app IDs need to be part of the same "App Group".
 
-To create the app group, still in the apple developer portal, create the app group by clicking Identifiers / App Groups / +. Name it e.g. `group.com.yourcompany.yourapp` (Apple recommends that the group name should start with ‘group’). 
+To create the app group, still in the apple developer portal, click Identifiers / App Groups / +. Name it e.g. `group.com.yourcompany.yourapp` (Apple recommends that the group name should start with ‘group’). 
 	
 ![Create app group screenshot](./images/widget_app_group.png)
 
@@ -82,6 +82,7 @@ Create a new target for the widget, using File > New > Target > Application Exte
 
 For the product name, enter e.g ‘widget’, which should automatically set the bundle ID to `com.yourcompany.yourapp.widget`. This bundle ID should match the app ID created previously in the Apple Developer Portal.
 
+Note: You may want to have the widget's target bundle version number identical to the containing app bundle version number, or you may get a warning when submitting your app to iTunes connect.
 
 ### Configure the app and widget target capabilities
 
