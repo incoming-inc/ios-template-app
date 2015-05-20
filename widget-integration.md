@@ -84,6 +84,10 @@ For the product name, enter e.g ‘widget’, which should automatically set the
 
 Note: You may want to have the widget's target bundle version number identical to the containing app bundle version number, or you may get a warning when submitting your app to iTunes connect.
 
+### Configure the widget target Deployment Target
+
+In XCode, click on the widget, the go to the "General" configuration tab. In the "Deployment Target" area, enter "8.0" (or higher if your app doesn't support 8.0) for the deployment target. 
+
 ### Configure the app and widget target capabilities
 
 In the XCode project navigator, select your project, then your application target, and select the Capability pane. Scroll down to “App Group”, and select the app group previously created in the Apple Developer Portal. If you don’t see your app group, click the reload button (next to the ‘+’ button). Repeat this step for the widget target. Both targets must be configured with the App Group capability.
@@ -132,9 +136,6 @@ Open the _incoming-widget.plist_ file, and replace the `security_application_gro
 
 ![Edit widget configuration file](./images/widget_edit_widget_config.png)
 
-### Edit the Incoming PVN SDK configuration file
-
-Open the _incoming-­ios-­sdk.plist_ file (in your main app target’s bundle) and add a key named `app_url_scheme` key, as defined in the ‘Add application launch URL scheme’ section above.
 
 
 

@@ -74,10 +74,6 @@ If your project doesn't use swift, you may skip to the next step. Swift users mu
 bridging header](https://github.com/incoming-inc/ios-template-app/blob/master/Swift/ISDK-Bridging-Header.h) 
 to their project to be able to use the Incoming PVN sdk.
 
-### Configure push remote notifications ### 
-
-*Note*: The SDK reverts to periodic polling in the absence of Apple Push Notifications provisioning. You 
-can therefore test the SDK functionality without completing this step, but it is necessary in production. 
 
 ### Add code to your app delegate ###
 

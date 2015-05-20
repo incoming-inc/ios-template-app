@@ -26,3 +26,13 @@ The SDK is now operational. When running your app, the SDK will download video c
 
 Next, if you intend on configuring the iOS8 Today widget, head to the [widget integration](./widget-integration.html) page. 
 
+### Configure push remote notifications ### 
+
+*Note*: The SDK reverts to periodic polling in the absence of Apple Push Notifications provisioning. You 
+can therefore test the SDK functionality without completing this step, but it is necessary in production. 
+
+To configure remote push notifications, follow the instructions in the "APNs certificate and keys" section
+at [https://push-video.incoming.tv/help](https://push-video.incoming.tv/help)
+
+
+
