@@ -1,5 +1,5 @@
 ---
-title: Incoming PVN iOS SDK
+title: Integration Instructions
 layout: default 
 ---
 
