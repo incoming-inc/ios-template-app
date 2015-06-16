@@ -15,6 +15,7 @@
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions
 {
+    // ISDK initialization
     [ISDKAppDelegateHelper application:[UIApplication sharedApplication] didFinishLaunchingWithOptions:launchOptions];
     
     
@@ -22,14 +23,7 @@
     // integrate them differently in your workflow
     [ISDKAppDelegateHelper registerForNotifications];
     
-    // the two following calls are optional. They enable location and motion data collection
-    // which improves the timing prediction of Push Video Notifications.
-    // Calling these methods may result in the OS permission dialog being presented
-    // to the user.
-    [ISDKAppDelegateHelper registerForMotionActivity];
-    [ISDKAppDelegateHelper registerForLocationUpdates];
-    
-    /* perform your own initialization here */
+    // perform your own initialization here
     
     return YES;
 }
