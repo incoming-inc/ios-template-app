@@ -3,16 +3,17 @@ title: Incoming iOS PVN SDK - Release notes
 layout: default 
 ---
 
-<!--
-
-PVN SDK v1.3-61 - 8 May 2015
--------------------------------
+PVN SDK v1.3-148 - 16th June 2015
+---------------------------------
 - SDK now packaged as a .bundle and a .framework for convenience
 - New feature: Advertising SDK adapters allow host applications to show ads before Push Video playback
+- FIX #95077772 - Video player orientation does not match notification and control center
+- FIX #95095918 - SDK will not download if notification user denies notification permissions
 - FIX #92341456 - Crash in certain conditions when thumbnail downloads a corrupt image file or thumbnail download fails
 - FIX #92308604 - Crash in background under certain conditions "with iOS message this request has been neutered"
 - FIX #90868644 - Incoming Video player orientation problem: on lansdscape-supporting apps, when pausing and exiting the app while playing
--->
+
+
 
 PVN SDK v1.2-63 - 16 march 2015
 -------------------------------
