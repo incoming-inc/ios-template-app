@@ -3,21 +3,21 @@ title: Widget Integration
 layout: default 
 ---
 
-The Incoming PVN widget uses the app extensions features of iOS8, to display a thumbnail of last shown notification in the Today view. When tapped, the widget opens your application and plays the PVN video. This document describes how to integrate the widget in your application. Download the widget supplementary archive from the Incoming Control panel, or speak to your Incoming representative. 
+The Incoming PVN widget uses the app extensions features of iOS8, to display a video preview of last notified video, within the iOS Notification centre. When tapped, the widget opens your application and plays the PVN video. This document describes how to integrate the widget in your application. Download the widget supplementary archive from the Incoming Control panel, or speak to your Incoming representative. 
 
 __Note__:
 
-___The This document provides an example of how to create and integrate a today widget, with source code provided alongside the ISDK. However, you are free to implement your own widget code and skip most of this document. In this case, the PVN SDK can provide access to the video meta-data, and thumbnail image to display in your widget. For this, you will want to check the ISDKWidget.h and ISDKWidgetHelper class in the widget zip archive, and go through the 'Edit the widget configuration file' and 'Edit the Incoming PVN SDK configuration file' sections of this document___.
+___The widget supplementary archive is supplied for evaluation purposes. To customize the user interface and user experience of the widget, speak to your Incoming representative.___
+
 
 
 ## Widget designs ##
 
-We provide two widget designs, large and compact which are shown below. 
+There are two widget designs, large and compact which are shown below. 
 ![Small widget example](./images/widget_small.png)
 ![Large widget example](./images/widget_large.png)
 
-All the widget code/XIBs is available for you to modify, you are therefore free to customise the look and feel.
-
+The large widget is shown when the Notification center is shown in landscape mode, and the small one for portrait.
 
 ## Pre-requisites
 
@@ -121,13 +121,15 @@ In addition, you need to add the URL to the _incoming­-ios-­sdk.plist_ file, i
 
 ![Configure SDK configuration file](./images/widget_app_url_sdk_config.png)
 
-### Add the Incoming widget code to your project
+### Add the Incoming widget library and assets to your project
 
 Unzip the _incoming-ios-sdk-widget-*.zip_ supplementary archive. Add all the files to your project, adding them to widget target.
 
 Set the widget target's main interface file, by clicking on your widget's target, then the 'General' tab, and the 'main interface' settings in the 'General' tab. 
 
 ![Configure widget target's main interface](./images/widget_setup_target.png)
+
+Note: the widget is entirely implemented in the supplied framework and bundle. However, the target must contain at least one compilable source file so that the framework can be linked against something. 
 
 
 ### Edit the widget configuration file
