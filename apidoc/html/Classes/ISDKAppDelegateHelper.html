@@ -78,7 +78,7 @@
 		
 		<option value="//api/name/application:performFetchWithCompletionHandler:">+ application:performFetchWithCompletionHandler:</option>
 		
-		<option value="//api/name/dataAccessService">+ dataAccessService</option>
+		<option value="//api/name/disableLocationDataCollection">+ disableLocationDataCollection</option>
 		
 		<option value="//api/name/getISDKUserNotificationSettings">+ getISDKUserNotificationSettings</option>
 		
@@ -86,7 +86,7 @@
 		
 		<option value="//api/name/handleOpenURL:sourceApplication:annotation:">+ handleOpenURL:sourceApplication:annotation:</option>
 		
-		<option value="//api/name/hasEverAnsweredNotificationPermissions">+ hasEverAnsweredNotificationPermissions</option>
+		<option value="//api/name/hasEverAskedForNotificationPermissions">+ hasEverAskedForNotificationPermissions</option>
 		
 		<option value="//api/name/notificationPermissionsOk">+ notificationPermissionsOk</option>
 		
@@ -103,6 +103,8 @@
 		<option value="//api/name/setProjectKey:">+ setProjectKey:</option>
 		
 		<option value="//api/name/sharedInstance">+ sharedInstance</option>
+		
+		<option value="//api/name/widgetWasEverShown">+ widgetWasEverShown</option>
 		
 	</optgroup>
 	
@@ -1039,57 +1041,6 @@ completionHandler:(void (^)(void))completionHandler method</p>
 		</div>
 	</div>
 </div><div class="section-method">
-	<a name="//api/name/dataAccessService" title="dataAccessService"></a>
-	<h3 class="method-title"><code><a href="#//api/name/dataAccessService">+&nbsp;dataAccessService</a></code>
-</h3>
-
-	<div class="method-info">
-		<div class="pointy-thing"></div>
-
-		<div class="method-info-container">
-			
-			
-			<div class="method-subsection brief-description">
-				<p>ISDK Data access service</p>
-			</div>
-			
-		    
-
-			<div class="method-subsection method-declaration"><code>+ (ISDKDataAccessService *)dataAccessService</code></div>
-
-		    
-			
-
-			
-			<div class="method-subsection return">
-				<h4 class="method-subtitle parameter-title">Return Value</h4>
-				<p>an ISDKDataAccessService instance to access ISDK data</p>
-			</div>
-			
-
-			
-
-			
-			<div class="method-subsection discussion-section">
-				<h4 class="method-subtitle">Discussion</h4>
-				<p>ISDK Data access service</p>
-			</div>
-			
-
-			
-
-			
-
-			
-			<div class="method-subsection declared-in-section">
-				<h4 class="method-subtitle">Declared In</h4>
-				<p><code class="declared-in-ref">ISDKAppDelegateHelper.h</code></p>
-			</div>
-			
-			
-		</div>
-	</div>
-</div><div class="section-method">
 	<a name="//api/name/registerForNotifications" title="registerForNotifications"></a>
 	<h3 class="method-title"><code><a href="#//api/name/registerForNotifications">+&nbsp;registerForNotifications</a></code>
 </h3>
@@ -1349,8 +1300,8 @@ choose to call this method at an appropriate time, e.g. after educating the user
 		</div>
 	</div>
 </div><div class="section-method">
-	<a name="//api/name/hasEverAnsweredNotificationPermissions" title="hasEverAnsweredNotificationPermissions"></a>
-	<h3 class="method-title"><code><a href="#//api/name/hasEverAnsweredNotificationPermissions">+&nbsp;hasEverAnsweredNotificationPermissions</a></code>
+	<a name="//api/name/widgetWasEverShown" title="widgetWasEverShown"></a>
+	<h3 class="method-title"><code><a href="#//api/name/widgetWasEverShown">+&nbsp;widgetWasEverShown</a></code>
 </h3>
 
 	<div class="method-info">
@@ -1360,12 +1311,12 @@ choose to call this method at an appropriate time, e.g. after educating the user
 			
 			
 			<div class="method-subsection brief-description">
-				<p>Convenience method to check the notifications permissions</p>
+				<p>Convenience method to check if the widget was ever shown (and therefore if the user has installed it)</p>
 			</div>
 			
 		    
 
-			<div class="method-subsection method-declaration"><code>+ (BOOL)hasEverAnsweredNotificationPermissions</code></div>
+			<div class="method-subsection method-declaration"><code>+ (BOOL)widgetWasEverShown</code></div>
 
 		    
 			
@@ -1373,7 +1324,7 @@ choose to call this method at an appropriate time, e.g. after educating the user
 			
 			<div class="method-subsection return">
 				<h4 class="method-subtitle parameter-title">Return Value</h4>
-				<p>YES if the notification OS alert dialog has ever been answered by the user</p>
+				<p>YES if the widget was ever shown</p>
 			</div>
 			
 
@@ -1382,7 +1333,58 @@ choose to call this method at an appropriate time, e.g. after educating the user
 			
 			<div class="method-subsection discussion-section">
 				<h4 class="method-subtitle">Discussion</h4>
-				<p>Convenience method to check the notifications permissions</p>
+				<p>Convenience method to check if the widget was ever shown (and therefore if the user has installed it)</p>
+			</div>
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection declared-in-section">
+				<h4 class="method-subtitle">Declared In</h4>
+				<p><code class="declared-in-ref">ISDKAppDelegateHelper.h</code></p>
+			</div>
+			
+			
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/hasEverAskedForNotificationPermissions" title="hasEverAskedForNotificationPermissions"></a>
+	<h3 class="method-title"><code><a href="#//api/name/hasEverAskedForNotificationPermissions">+&nbsp;hasEverAskedForNotificationPermissions</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+			
+			<div class="method-subsection brief-description">
+				<p>Convenience method to check the if the notifications permissions were ever asked</p>
+			</div>
+			
+		    
+
+			<div class="method-subsection method-declaration"><code>+ (BOOL)hasEverAskedForNotificationPermissions</code></div>
+
+		    
+			
+
+			
+			<div class="method-subsection return">
+				<h4 class="method-subtitle parameter-title">Return Value</h4>
+				<p>YES if the notification OS alert dialog has ever been shown to the user</p>
+			</div>
+			
+
+			
+
+			
+			<div class="method-subsection discussion-section">
+				<h4 class="method-subtitle">Discussion</h4>
+				<p>Convenience method to check the if the notifications permissions were ever asked</p>
 			</div>
 			
 
@@ -1411,10 +1413,7 @@ choose to call this method at an appropriate time, e.g. after educating the user
 			
 			
 			<div class="method-subsection brief-description">
-				<p>Set ISDK logging on or off
-@params log set to YES if you want to turn ISDK logging on.
-To additionally log to the console, one must also define an
-environment variable named ISDKConsoleLogging with a value to YES</p>
+				<p>Set ISDK logging on or off.</p>
 			</div>
 			
 		    
@@ -1429,7 +1428,7 @@ environment variable named ISDKConsoleLogging with a value to YES</p>
 				
 					<tr>
 						<th scope="row" class="argument-name"><code>log</code></th>
-						<td><p>if set to YES, will turn ISDK logging on</p></td>
+						<td><p>Set to YES if you want to turn ISDK logging on.</p></td>
 					</tr>
 				
 				</table>
@@ -1443,10 +1442,7 @@ environment variable named ISDKConsoleLogging with a value to YES</p>
 			
 			<div class="method-subsection discussion-section">
 				<h4 class="method-subtitle">Discussion</h4>
-				<p>Set ISDK logging on or off
-@params log set to YES if you want to turn ISDK logging on.
-To additionally log to the console, one must also define an
-environment variable named ISDKConsoleLogging with a value to YES</p>
+				<p>Set ISDK logging on or off.</p>
 			</div>
 			
 
@@ -1560,6 +1556,52 @@ environment variable named ISDKConsoleLogging with a value to YES</p>
 			
 		</div>
 	</div>
+</div><div class="section-method">
+	<a name="//api/name/disableLocationDataCollection" title="disableLocationDataCollection"></a>
+	<h3 class="method-title"><code><a href="#//api/name/disableLocationDataCollection">+&nbsp;disableLocationDataCollection</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+			
+			<div class="method-subsection brief-description">
+				<p>Call this method to disable all location data collection by the SDK.</p>
+			</div>
+			
+		    
+
+			<div class="method-subsection method-declaration"><code>+ (void)disableLocationDataCollection</code></div>
+
+		    
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection discussion-section">
+				<h4 class="method-subtitle">Discussion</h4>
+				<p>Call this method to disable all location data collection by the SDK.</p>
+			</div>
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection declared-in-section">
+				<h4 class="method-subtitle">Declared In</h4>
+				<p><code class="declared-in-ref">ISDKAppDelegateHelper.h</code></p>
+			</div>
+			
+			
+		</div>
+	</div>
 </div>
 						</div>
 						
@@ -1573,7 +1615,7 @@ environment variable named ISDKConsoleLogging with a value to YES</p>
 				<footer>
 					<div class="footer-copyright">
 						
-						<p class="copyright">Copyright &copy; 2015 Incoming Inc. All rights reserved. Updated: 2015-05-20</p>
+						<p class="copyright">Copyright &copy; 2015 Incoming Inc. All rights reserved. Updated: 2015-06-30</p>
 						
 						
 						<p class="generator">Generated by <a href="http://appledoc.gentlebytes.com">appledoc 2.2.1 (build 1333)</a>.</p>
