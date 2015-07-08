@@ -3,7 +3,7 @@
 <head>
 	<meta charset="utf-8">
 
-	<title>ISDKAdAdapter Protocol Reference</title>
+	<title>ISDKDelegate Protocol Reference</title>
 
 	<link rel="stylesheet" href="../css/style.css">
 	<meta name="viewport" content="initial-scale=1, maximum-scale=1.4">
@@ -60,9 +60,7 @@
 	
 	<optgroup label="Instance Methods">
 		
-		<option value="//api/name/prefetchAdIfPossible">- prefetchAdIfPossible</option>
-		
-		<option value="//api/name/showPrerollWithCompletionHandler:">- showPrerollWithCompletionHandler:</option>
+		<option value="//api/name/presentISDKVideoPlayer:completionHandler:">- presentISDKVideoPlayer:completionHandler:</option>
 		
 	</optgroup>
 	
@@ -79,16 +77,13 @@
 		<div id="overview_contents" class="container">
 			<div id="content">
 				<main role="main">
-					<h1 class="title">ISDKAdAdapter Protocol Reference</h1>
+					<h1 class="title">ISDKDelegate Protocol Reference</h1>
 
 					
 					<div class="section section-specification"><table cellspacing="0"><tbody>
 						<tr>
-	<th>Conforms to</th>
-	<td>NSObject</td>
-</tr><tr>
 	<th>Declared in</th>
-	<td>ISDKAdAdapter.h</td>
+	<td>ISDKDelegate.h</td>
 </tr>
 						</tbody></table></div>
 					
@@ -98,7 +93,7 @@
 					<div class="section section-overview">
 						<a title="Overview" name="overview"></a>
 						<h2 class="subtitle subtitle-overview">Overview</h2>
-						<p>Incoming PVN SDK AdAdapter protocol</p>
+						<p>Incoming PVN SDK Delegate protocol</p>
 					</div>
 					
 					
@@ -114,9 +109,9 @@
 
 						<div class="task-list">
 							<div class="section-method">
-	<a name="//api/name/prefetchAdIfPossible" title="prefetchAdIfPossible"></a>
-	<h3 class="method-title"><code><a href="#//api/name/prefetchAdIfPossible">&ndash;&nbsp;prefetchAdIfPossible</a></code>
-</h3>
+	<a name="//api/name/presentISDKVideoPlayer:completionHandler:" title="presentISDKVideoPlayer:completionHandler:"></a>
+	<h3 class="method-title"><code><a href="#//api/name/presentISDKVideoPlayer:completionHandler:">&ndash;&nbsp;presentISDKVideoPlayer:completionHandler:</a></code>
+<span class="task-item-suffix">required method</span></h3>
 
 	<div class="method-info">
 		<div class="pointy-thing"></div>
@@ -125,61 +120,12 @@
 			
 			
 			<div class="method-subsection brief-description">
-				<p>This method may be called by the Incoming SDK to give a chance
-to the Ad adapter to start loading an ad</p>
+				<p>Delegate method for the host application to present the ISDK video player</p>
 			</div>
 			
 		    
 
-			<div class="method-subsection method-declaration"><code>- (void)prefetchAdIfPossible</code></div>
-
-		    
-			
-
-			
-
-			
-
-			
-			<div class="method-subsection discussion-section">
-				<h4 class="method-subtitle">Discussion</h4>
-				<p>This method may be called by the Incoming SDK to give a chance
-to the Ad adapter to start loading an ad</p>
-			</div>
-			
-
-			
-
-			
-
-			
-			<div class="method-subsection declared-in-section">
-				<h4 class="method-subtitle">Declared In</h4>
-				<p><code class="declared-in-ref">ISDKAdAdapter.h</code></p>
-			</div>
-			
-			
-		</div>
-	</div>
-</div><div class="section-method">
-	<a name="//api/name/showPrerollWithCompletionHandler:" title="showPrerollWithCompletionHandler:"></a>
-	<h3 class="method-title"><code><a href="#//api/name/showPrerollWithCompletionHandler:">&ndash;&nbsp;showPrerollWithCompletionHandler:</a></code>
-</h3>
-
-	<div class="method-info">
-		<div class="pointy-thing"></div>
-
-		<div class="method-info-container">
-			
-			
-			<div class="method-subsection brief-description">
-				<p>Before showing the ISDK video player, this method will be called to allow the ad
-adapter to show an ad. The adapter should then call the supplied completion handler</p>
-			</div>
-			
-		    
-
-			<div class="method-subsection method-declaration"><code>- (void)showPrerollWithCompletionHandler:(void ( ^ ) ( BOOL adShown , BOOL shouldProceed , NSError **error ))<em>completionHandler</em></code></div>
+			<div class="method-subsection method-declaration"><code>- (void)presentISDKVideoPlayer:(UIViewController *)<em>videoPlayer</em> completionHandler:(void ( ^ ) ( BOOL presented ))<em>completionHandler</em></code></div>
 
 		    
 			
@@ -188,8 +134,13 @@ adapter to show an ad. The adapter should then call the supplied completion hand
 				<table class="argument-def parameter-def">
 				
 					<tr>
+						<th scope="row" class="argument-name"><code>videoPlayer</code></th>
+						<td><p>A UIViewController for the host app to present</p></td>
+					</tr>
+				
+					<tr>
 						<th scope="row" class="argument-name"><code>completionHandler</code></th>
-						<td><p>completionHandler to call once done</p></td>
+						<td><p>should be called once the supplied UIViewController has been presented, with the presented boolean parameter set to YES if the UIViewController was succesfully presented, NO if not.</p></td>
 					</tr>
 				
 				</table>
@@ -203,8 +154,7 @@ adapter to show an ad. The adapter should then call the supplied completion hand
 			
 			<div class="method-subsection discussion-section">
 				<h4 class="method-subtitle">Discussion</h4>
-				<p>Before showing the ISDK video player, this method will be called to allow the ad
-adapter to show an ad. The adapter should then call the supplied completion handler</p>
+				<p>Delegate method for the host application to present the ISDK video player</p>
 			</div>
 			
 
@@ -215,7 +165,7 @@ adapter to show an ad. The adapter should then call the supplied completion hand
 			
 			<div class="method-subsection declared-in-section">
 				<h4 class="method-subtitle">Declared In</h4>
-				<p><code class="declared-in-ref">ISDKAdAdapter.h</code></p>
+				<p><code class="declared-in-ref">ISDKDelegate.h</code></p>
 			</div>
 			
 			

@@ -3,6 +3,16 @@ title: Incoming iOS PVN SDK - Release notes
 layout: default 
 ---
 
+
+PVN SDK v1.4-17 - 8th July 2015
+-------------------------------
+- Provide the host application with the opportunity to present the ISDK PVN video player using the delegate pattern
+- In-widget video player (binary distribution)
+- Explicit API for location data opt-out
+- Improvement to notification timing algorithm
+
+
+
 PVN SDK v1.3-148 - 16th June 2015
 ---------------------------------
 - SDK now packaged as a .bundle and a .framework for convenience
