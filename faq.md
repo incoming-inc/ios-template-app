@@ -14,6 +14,9 @@ layout: default
 
 	Yes. The SDK reverts to periodic polling in the absence of Apple Push Notifications provisioning. 
 
+* **I would prefer to handle the presentation of the ISDK video player myself, is that possible?**
+
+	Yes, from version 1.4, implement the ISDKDelegate protocol to achieve this. 
 
 * **Which version of Apple XCode is supported by the template apps?** 
 
