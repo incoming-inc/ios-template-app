@@ -7,7 +7,7 @@ layout: default
 
 * **Can my app make use of Apple remote push notifications as well as the Incoming SDK notifications?**
 
-	Yes. c.f. the [ISDKAppDelegateHelper application:(UIApplication *)application didReceiveRemoteNotification:(NSDictionary *)userInfo fetchCompletionHandler:(void (^)(UIBackgroundFetchResult))completionHandler] method. 
+	Yes. c.f. [ISDKAppDelegateHelper application:(UIApplication *)application didReceiveRemoteNotification:(NSDictionary *)userInfo fetchCompletionHandler:(void (^)(UIBackgroundFetchResult))completionHandler] method of [ISDKAppDelegateHelper](./apidoc/html/Classes/ISDKAppDelegateHelper.html)
 
 
 * **Can I test the SDK functionality without Apple Push Notifications working (e.g. without the correct provisioning)?**
@@ -16,7 +16,8 @@ layout: default
 
 * **I would prefer to handle the presentation of the ISDK video player myself, is that possible?**
 
-	Yes, from version 1.4, implement the ISDKDelegate protocol to achieve this. 
+	Yes, from version 1.4, implement the [ISDKDelegate protocol](./apidoc/html/Protocols/ISDKDelegate.html) to achieve this. 
+
 
 * **Which version of Apple XCode is supported by the template apps?** 
 
