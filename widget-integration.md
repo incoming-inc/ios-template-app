@@ -88,6 +88,12 @@ Note: You may want to have the widget's target bundle version number identical t
 
 In XCode, click on the widget, the go to the "General" configuration tab. In the "Deployment Target" area, enter "8.0" (or higher if your app doesn't support 8.0) for the deployment target. 
 
+### Configure the widget target Linker Flags
+
+In XCode, click on the widget's target, then on the "Build Settings" tag. Search for 'Other Linker Flags' in the top right search box, and enter '-ObjC' for the 'Other Linker Flags' option.  
+
+![Configure widget target linker flags in Xcode](./images/widget_other_linker_flags.png)
+
 ### Configure the app and widget target capabilities
 
 In the XCode project navigator, select your project, then your application target, and select the Capability pane. Scroll down to “App Group”, and select the app group previously created in the Apple Developer Portal. If you don’t see your app group, click the reload button (next to the ‘+’ button). Repeat this step for the widget target. Both targets must be configured with the App Group capability.
