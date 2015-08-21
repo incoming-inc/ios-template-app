@@ -6,7 +6,7 @@ layout: default
 
 v1.6-39 - 21st August 2015
 ----------------------------------
-- No breaking API change introduced in this version. Just remove the old Incoming-PVN.{bundle,framework} from your project, and add the new ones. If upgrading directly from v1.2, have a look at the 1.3 upgrade instructions below. 
+- No breaking API change introduced in this version. Just remove the old Incoming-PVN.{bundle,framework} from your project, and add the new ones. If upgrading directly from v1.2, have a look at the 1.3 and 1.4 upgrade instructions below. If upgrading from 1.3 take a look at the 1.4 upgrade instructions below. 
 
 
 v1.4-17 - 8th July 2015
