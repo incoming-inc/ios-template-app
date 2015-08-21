@@ -3,6 +3,16 @@ title: Incoming iOS PVN SDK - Release notes
 layout: default 
 ---
 
+PVN SDK v1.6-39 - 21st August 2015
+----------------------------------
+- 'ASAP' scheduling
+- Post-roll ad support
+- Provide the host application with the opportunity to dismiss the PVN video player
+- Cache eviction algorithm improvement
+- Widget tap starts in-app video player at same playback position 
+- FIX #100484088 Explicitly disable airplay in widget video player
+
+
 
 PVN SDK v1.4-17 - 8th July 2015
 -------------------------------
