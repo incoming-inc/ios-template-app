@@ -7,7 +7,7 @@ The Incoming PVN widget uses the app extensions features of iOS8, to display a v
 
 __Note__:
 
-___The widget supplementary archive is supplied for evaluation purposes. To customize the user interface and user experience of the widget, speak to your Incoming representative.___
+___The widget supplementary archive is supplied for evaluation purposes. To customize the widget user experience, speak to your Incoming representative.___
 
 
 
@@ -17,7 +17,7 @@ There are two widget designs, large and compact which are shown below.
 ![Small widget example](./images/widget_small.png)
 ![Large widget example](./images/widget_large.png)
 
-The large widget is shown when the Notification center is shown in landscape mode, and the small one for portrait.
+Broadly speaking, the large widget is shown when the Notification Center is shown in landscape mode, and the small one for portrait. 
 
 ## Pre-requisites
 
@@ -145,10 +145,33 @@ Open the _incoming-widget.plist_ file, and replace the `security_application_gro
 ![Edit widget configuration file](./images/widget_edit_widget_config.png)
 
 
+### Testing
+
+The widget needs to be installed manually (this a limitation of iOS), by pulling down Notification Center, scrolling to the bottom, clicking "Edit", then the "+" button next to the widget's name. 
+
+To test that the widget is working correctly, start your application, background the application, and wait until one video push notification appears (note that notifications are not revealed when the application is in the foreground). 
+
+ * Pull down Notification Center, you should see the widget, with the video playing back
+ * The widget shows the video from the last notification.
+ * When tapping the animated volume control button, the video audio should un-mute. When closing Notification Center, or scrolling past the widget, the audio should mute again. 
+ * When tapping the widget, the app should start and play the same video, starting at the same timecode the user left off in the widget.
+ * When hitting the close button, the widget should be hidden, only to be revealed again when the next push notification is fired 
 
 
+### Customisation
 
+As of version 1.8, the widget supplied with the Incoming PVN SDK includes allows for a limited customisation opportunity, as the Interface Builder file implementing the widget design is included in the archive. The ISDKWidget.storyboard file includes both portrait and landscape designs, which are coded using [iOS size classes](https://developer.apple.com/library/ios/documentation/UserExperience/Conceptual/MobileHIG/LayoutandAppearance.html). 
 
+The "portrait" widget layout is adopted for (wCompact,hRegular) class - i.e. all iPhones in portrait, while the "lansdcape" widget layout is used for the (wRegular,hAny) and (wAny,hCompact) size classes (all iPhones in landscape, and all iPads). 
+
+For both designs, the following UI elements can be safely customised:
+
+- Background color
+- Label sizes and position, font size and color 
+
+Note that to display properly using any thumbnail / video aspect ratio, additional constraints are applied to the landscape design at run time, in code. This may interfere with any change in the constraints you make. 
+
+Please contact your Incoming representative for further customisation opportunities. 
 
 
 

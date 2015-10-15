@@ -21,11 +21,15 @@ by dropping the SDK distribution folder into your project, and adding a small am
  * [New project from template](./new-project.html)
  * [Existing project](./existing-project.html)
  * Integration [FAQ](./faq.html)
-
-
-# Configuration #
  * [SDK settings](./sdk-settings.html)
- * (optional) [Advertising support](./advertising.html)
+ * [Today widget integration](./widget-integration.html)
+
+# Optional configuration #
+ 
+
+ * (optional) [Third Party Advertising SDK Integration](./advertising.html)
+ * (optional) [Audience segmentation](./targeting.html)
+ * [Testing](./testing.html)
  
 # API documentation #
  * [PVN SDK API Documentation](./apidoc/html/index.html)
@@ -34,6 +38,5 @@ by dropping the SDK distribution folder into your project, and adding a small am
  * [Release notes](./release-notes.html)
  * [Upgrade instructions](./upgrade-instructions.html)
 
-# iOS8 Today widget
  
- * [widget integration](./widget-integration.html) (optional)
+ 

@@ -3,9 +3,19 @@ title: Incoming iOS PVN SDK - Release notes
 layout: default 
 ---
 
+PVN SDK v1.8- - October 2014
+------------------------------
+- Add support to target videos to different audience segments.
+- Allow unwatched videos that have been discarded due to the expiry or deadline passing to be re-considered if these are changed on the control panel.
+- Improved video widget design, widget video UI now exposed in package for easier customization
+- SDK Data Access API, to allows host applications to access pre-positioned video content currently stored on disk
+- Improved debug logging to facilitate integration
+
+
+
 PVN SDK v1.6-39 - 21st August 2015
 ----------------------------------
-- 'ASAP' scheduling
+- ASAP' video scheduling
 - Post-roll ad support
 - Provide the host application with the opportunity to dismiss the PVN video player
 - Cache eviction algorithm improvement

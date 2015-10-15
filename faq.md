@@ -5,6 +5,12 @@ layout: default
 
 # FAQ
 
+
+* **Is there a debug log level to have some understanding of what's going on with the SDK?**
+
+	Yes, c.f. [ISDKAppDelegateHelper setLogOn:YES] in [ISDKAppDelegateHelper](./apidoc/html/Classes/ISDKAppDelegateHelper.html
+	
+
 * **Can my app make use of Apple remote push notifications as well as the Incoming SDK notifications?**
 
 	Yes. c.f. [ISDKAppDelegateHelper application:(UIApplication *)application didReceiveRemoteNotification:(NSDictionary *)userInfo fetchCompletionHandler:(void (^)(UIBackgroundFetchResult))completionHandler] method of [ISDKAppDelegateHelper](./apidoc/html/Classes/ISDKAppDelegateHelper.html)
@@ -34,6 +40,13 @@ layout: default
 * **Does the SDK require access to the user's location, motion data ?**
 
  	No, this is optional, to improve the accuracy of Push Video Notifications.
+
+
+* **I have configured the widget as per instructions, but when I tap on it, the app opens and the video does not play**
+
+	Check that you have correctly configured the app_url_scheme key in the incoming-ios-sdk.plist configuration file. 
+	
+	
 
 
 

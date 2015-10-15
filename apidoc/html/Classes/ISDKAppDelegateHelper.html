@@ -78,7 +78,11 @@
 		
 		<option value="//api/name/application:performFetchWithCompletionHandler:">+ application:performFetchWithCompletionHandler:</option>
 		
+		<option value="//api/name/areDownloadsEnabled">+ areDownloadsEnabled</option>
+		
 		<option value="//api/name/disableLocationDataCollection">+ disableLocationDataCollection</option>
+		
+		<option value="//api/name/getDataAccessService">+ getDataAccessService</option>
 		
 		<option value="//api/name/getISDKUserNotificationSettings">+ getISDKUserNotificationSettings</option>
 		
@@ -87,6 +91,8 @@
 		<option value="//api/name/handleOpenURL:sourceApplication:annotation:">+ handleOpenURL:sourceApplication:annotation:</option>
 		
 		<option value="//api/name/hasEverAskedForNotificationPermissions">+ hasEverAskedForNotificationPermissions</option>
+		
+		<option value="//api/name/isNotificationDisplayActive">+ isNotificationDisplayActive</option>
 		
 		<option value="//api/name/notificationPermissionsOk">+ notificationPermissionsOk</option>
 		
@@ -100,7 +106,11 @@
 		
 		<option value="//api/name/setDelegate:">+ setDelegate:</option>
 		
+		<option value="//api/name/setDownloadsEnabled:">+ setDownloadsEnabled:</option>
+		
 		<option value="//api/name/setLogOn:">+ setLogOn:</option>
+		
+		<option value="//api/name/setNotificationsDisplayActive:">+ setNotificationsDisplayActive:</option>
 		
 		<option value="//api/name/setProjectKey:">+ setProjectKey:</option>
 		
@@ -1420,7 +1430,7 @@ choose to call this method at an appropriate time, e.g. after educating the user
 			
 			
 			<div class="method-subsection brief-description">
-				<p>Set ISDK logging on or off.</p>
+				<p>Enable/Disable ISDK debug logging</p>
 			</div>
 			
 		    
@@ -1435,7 +1445,7 @@ choose to call this method at an appropriate time, e.g. after educating the user
 				
 					<tr>
 						<th scope="row" class="argument-name"><code>log</code></th>
-						<td><p>Set to YES if you want to turn ISDK logging on.</p></td>
+						<td><p>Set to YES if you want to turn ISDK debug logging on</p></td>
 					</tr>
 				
 				</table>
@@ -1449,7 +1459,233 @@ choose to call this method at an appropriate time, e.g. after educating the user
 			
 			<div class="method-subsection discussion-section">
 				<h4 class="method-subtitle">Discussion</h4>
-				<p>Set ISDK logging on or off.</p>
+				<p>Enable/Disable ISDK debug logging</p>
+			</div>
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection declared-in-section">
+				<h4 class="method-subtitle">Declared In</h4>
+				<p><code class="declared-in-ref">ISDKAppDelegateHelper.h</code></p>
+			</div>
+			
+			
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/isNotificationDisplayActive" title="isNotificationDisplayActive"></a>
+	<h3 class="method-title"><code><a href="#//api/name/isNotificationDisplayActive">+&nbsp;isNotificationDisplayActive</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+			
+			<div class="method-subsection brief-description">
+				<p>Query if notifications are being displayed to the user</p>
+			</div>
+			
+		    
+
+			<div class="method-subsection method-declaration"><code>+ (BOOL)isNotificationDisplayActive</code></div>
+
+		    
+			
+
+			
+			<div class="method-subsection return">
+				<h4 class="method-subtitle parameter-title">Return Value</h4>
+				<p>YES if notifications are enabled</p>
+			</div>
+			
+
+			
+
+			
+			<div class="method-subsection discussion-section">
+				<h4 class="method-subtitle">Discussion</h4>
+				<p>Query if notifications are being displayed to the user</p>
+			</div>
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection declared-in-section">
+				<h4 class="method-subtitle">Declared In</h4>
+				<p><code class="declared-in-ref">ISDKAppDelegateHelper.h</code></p>
+			</div>
+			
+			
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/setNotificationsDisplayActive:" title="setNotificationsDisplayActive:"></a>
+	<h3 class="method-title"><code><a href="#//api/name/setNotificationsDisplayActive:">+&nbsp;setNotificationsDisplayActive:</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+			
+			<div class="method-subsection brief-description">
+				<p>Activate or de-activate ISDK notifications display
+By default, notifications are enabled. As notifications and widget
+are synchronized, a side effect of this method is that disabling notifications
+will disable widget updates.</p>
+			</div>
+			
+		    
+
+			<div class="method-subsection method-declaration"><code>+ (void)setNotificationsDisplayActive:(BOOL)<em>displayNotifications</em></code></div>
+
+		    
+			
+			<div class="method-subsection arguments-section parameters">
+				<h4 class="method-subtitle parameter-title">Parameters</h4>
+				<table class="argument-def parameter-def">
+				
+					<tr>
+						<th scope="row" class="argument-name"><code>displayNotifications</code></th>
+						<td><p>set to YES to enable notifications</p></td>
+					</tr>
+				
+				</table>
+			</div>
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection discussion-section">
+				<h4 class="method-subtitle">Discussion</h4>
+				<p>Activate or de-activate ISDK notifications display
+By default, notifications are enabled. As notifications and widget
+are synchronized, a side effect of this method is that disabling notifications
+will disable widget updates.</p>
+			</div>
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection declared-in-section">
+				<h4 class="method-subtitle">Declared In</h4>
+				<p><code class="declared-in-ref">ISDKAppDelegateHelper.h</code></p>
+			</div>
+			
+			
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/setDownloadsEnabled:" title="setDownloadsEnabled:"></a>
+	<h3 class="method-title"><code><a href="#//api/name/setDownloadsEnabled:">+&nbsp;setDownloadsEnabled:</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+			
+			<div class="method-subsection brief-description">
+				<p>Enable or disable video downloads.
+By default, video downloads are enabled.</p>
+			</div>
+			
+		    
+
+			<div class="method-subsection method-declaration"><code>+ (void)setDownloadsEnabled:(BOOL)<em>enabled</em></code></div>
+
+		    
+			
+			<div class="method-subsection arguments-section parameters">
+				<h4 class="method-subtitle parameter-title">Parameters</h4>
+				<table class="argument-def parameter-def">
+				
+					<tr>
+						<th scope="row" class="argument-name"><code>enabled</code></th>
+						<td><p>set to YES to enable video downloads</p></td>
+					</tr>
+				
+				</table>
+			</div>
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection discussion-section">
+				<h4 class="method-subtitle">Discussion</h4>
+				<p>Enable or disable video downloads.
+By default, video downloads are enabled.</p>
+			</div>
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection declared-in-section">
+				<h4 class="method-subtitle">Declared In</h4>
+				<p><code class="declared-in-ref">ISDKAppDelegateHelper.h</code></p>
+			</div>
+			
+			
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/areDownloadsEnabled" title="areDownloadsEnabled"></a>
+	<h3 class="method-title"><code><a href="#//api/name/areDownloadsEnabled">+&nbsp;areDownloadsEnabled</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+			
+			<div class="method-subsection brief-description">
+				<p>Query if video downloads are enabled</p>
+			</div>
+			
+		    
+
+			<div class="method-subsection method-declaration"><code>+ (BOOL)areDownloadsEnabled</code></div>
+
+		    
+			
+
+			
+			<div class="method-subsection return">
+				<h4 class="method-subtitle parameter-title">Return Value</h4>
+				<p>YES if video downloads are enabled</p>
+			</div>
+			
+
+			
+
+			
+			<div class="method-subsection discussion-section">
+				<h4 class="method-subtitle">Discussion</h4>
+				<p>Query if video downloads are enabled</p>
 			</div>
 			
 
@@ -1609,6 +1845,57 @@ choose to call this method at an appropriate time, e.g. after educating the user
 			
 		</div>
 	</div>
+</div><div class="section-method">
+	<a name="//api/name/getDataAccessService" title="getDataAccessService"></a>
+	<h3 class="method-title"><code><a href="#//api/name/getDataAccessService">+&nbsp;getDataAccessService</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+			
+			<div class="method-subsection brief-description">
+				<p>Returns an <a href="../Classes/ISDKDataAccessService.html">ISDKDataAccessService</a> object</p>
+			</div>
+			
+		    
+
+			<div class="method-subsection method-declaration"><code>+ (ISDKDataAccessService *)getDataAccessService</code></div>
+
+		    
+			
+
+			
+			<div class="method-subsection return">
+				<h4 class="method-subtitle parameter-title">Return Value</h4>
+				<p>the ISDKDataAccesService object, used to access video assets</p>
+			</div>
+			
+
+			
+
+			
+			<div class="method-subsection discussion-section">
+				<h4 class="method-subtitle">Discussion</h4>
+				<p>Returns an <a href="../Classes/ISDKDataAccessService.html">ISDKDataAccessService</a> object</p>
+			</div>
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection declared-in-section">
+				<h4 class="method-subtitle">Declared In</h4>
+				<p><code class="declared-in-ref">ISDKAppDelegateHelper.h</code></p>
+			</div>
+			
+			
+		</div>
+	</div>
 </div>
 						</div>
 						
@@ -1622,7 +1909,7 @@ choose to call this method at an appropriate time, e.g. after educating the user
 				<footer>
 					<div class="footer-copyright">
 						
-						<p class="copyright">Copyright &copy; 2015 Incoming Inc. All rights reserved. Updated: 2015-07-08</p>
+						<p class="copyright">Copyright &copy; 2015 Incoming Inc. All rights reserved. Updated: 2015-10-15</p>
 						
 						
 						<p class="generator">Generated by <a href="http://appledoc.gentlebytes.com">appledoc 2.2.1 (build 1333)</a>.</p>

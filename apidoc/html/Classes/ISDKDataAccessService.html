@@ -1,0 +1,398 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+
+	<title>ISDKDataAccessService Class Reference</title>
+
+	<link rel="stylesheet" href="../css/style.css">
+	<meta name="viewport" content="initial-scale=1, maximum-scale=1.4">
+	<meta name="generator" content="appledoc 2.2.1 (build 1333)">
+</head>
+<body class="appledoc">
+	<header>
+		<div class="container" class="hide-in-xcode">
+			
+			<h1 id="library-title">
+				<a href="../index.html">Incoming-PVN-SDK </a>
+			</h1>
+
+			<p id="developer-home">
+				<a href="../index.html">Incoming Inc.</a>
+			</p>
+			
+		</div>
+	</header>
+
+	<aside>
+		<div class="container">
+			<nav>
+				<ul id="header-buttons" role="toolbar">
+					<li><a href="../index.html">Index</a></li>
+<li><a href="../hierarchy.html">Hierarchy</a></li>
+
+					<li id="on-this-page" role="navigation">
+						<label>
+							On This Page
+
+							<div class="chevron">
+								<div class="chevy chevron-left"></div>
+								<div class="chevy chevron-right"></div>
+							</div>
+
+							<select id="jump-to">
+	<option value="top">Jump To&#133;</option>
+	
+	<option value="overview">Overview</option>
+	
+
+	
+	
+	<option value="tasks">Tasks</option>
+	
+	
+
+	
+	
+
+	
+
+	
+	<optgroup label="Instance Methods">
+		
+		<option value="//api/name/getDownloadedVideosWithCompletionHandler:">- getDownloadedVideosWithCompletionHandler:</option>
+		
+		<option value="//api/name/getInProgressVideosWithCompletionHandler:">- getInProgressVideosWithCompletionHandler:</option>
+		
+		<option value="//api/name/getVideoWithID:">- getVideoWithID:</option>
+		
+		<option value="//api/name/setUserFilteringKeys:error:">- setUserFilteringKeys:error:</option>
+		
+	</optgroup>
+	
+	
+</select>
+						</label>
+					</li>
+				</ul>
+			</nav>
+		</div>
+	</aside>
+
+	<article>
+		<div id="overview_contents" class="container">
+			<div id="content">
+				<main role="main">
+					<h1 class="title">ISDKDataAccessService Class Reference</h1>
+
+					
+					<div class="section section-specification"><table cellspacing="0"><tbody>
+						<tr>
+	<th>Inherits from</th>
+	<td>NSObject</td>
+</tr><tr>
+	<th>Declared in</th>
+	<td>ISDKDataAccessService.h</td>
+</tr>
+						</tbody></table></div>
+					
+
+                    
+					
+					<div class="section section-overview">
+						<a title="Overview" name="overview"></a>
+						<h2 class="subtitle subtitle-overview">Overview</h2>
+						<p>This class is used to access video data from the Incominv PVN SDK.</p>
+					</div>
+					
+					
+
+					
+					
+					<div class="section section-tasks">
+						<a title="Tasks" name="tasks"></a>
+						
+
+						
+						
+
+						<div class="task-list">
+							<div class="section-method">
+	<a name="//api/name/getDownloadedVideosWithCompletionHandler:" title="getDownloadedVideosWithCompletionHandler:"></a>
+	<h3 class="method-title"><code><a href="#//api/name/getDownloadedVideosWithCompletionHandler:">&ndash;&nbsp;getDownloadedVideosWithCompletionHandler:</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+			
+			<div class="method-subsection brief-description">
+				<p>Asynchronously retrieve the list of videos available on disk</p>
+			</div>
+			
+		    
+
+			<div class="method-subsection method-declaration"><code>- (void)getDownloadedVideosWithCompletionHandler:(void ( ^ ) ( NSArray *currentVideos ))<em>completionHandler</em></code></div>
+
+		    
+			
+			<div class="method-subsection arguments-section parameters">
+				<h4 class="method-subtitle parameter-title">Parameters</h4>
+				<table class="argument-def parameter-def">
+				
+					<tr>
+						<th scope="row" class="argument-name"><code>completionHandler</code></th>
+						<td><p>will be called when completed, passing an NSArray of <a href="../Classes/ISDKVideoDescriptor.html">ISDKVideoDescriptor</a> objects</p></td>
+					</tr>
+				
+				</table>
+			</div>
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection discussion-section">
+				<h4 class="method-subtitle">Discussion</h4>
+				<p>Asynchronously retrieve the list of videos available on disk</p>
+			</div>
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection declared-in-section">
+				<h4 class="method-subtitle">Declared In</h4>
+				<p><code class="declared-in-ref">ISDKDataAccessService.h</code></p>
+			</div>
+			
+			
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/getInProgressVideosWithCompletionHandler:" title="getInProgressVideosWithCompletionHandler:"></a>
+	<h3 class="method-title"><code><a href="#//api/name/getInProgressVideosWithCompletionHandler:">&ndash;&nbsp;getInProgressVideosWithCompletionHandler:</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+			
+			<div class="method-subsection brief-description">
+				<p>Asynchronously query the SDK for videos which are currently being downloaded. When a video
+is being downloaded, not all properties may be available</p>
+			</div>
+			
+		    
+
+			<div class="method-subsection method-declaration"><code>- (void)getInProgressVideosWithCompletionHandler:(void ( ^ ) ( NSArray *currentVideos ))<em>completionHandler</em></code></div>
+
+		    
+			
+			<div class="method-subsection arguments-section parameters">
+				<h4 class="method-subtitle parameter-title">Parameters</h4>
+				<table class="argument-def parameter-def">
+				
+					<tr>
+						<th scope="row" class="argument-name"><code>completionHandler</code></th>
+						<td><p>will be called when completed, passing an NSArray of <a href="../Classes/ISDKVideoDescriptor.html">ISDKVideoDescriptor</a> objects</p></td>
+					</tr>
+				
+				</table>
+			</div>
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection discussion-section">
+				<h4 class="method-subtitle">Discussion</h4>
+				<p>Asynchronously query the SDK for videos which are currently being downloaded. When a video
+is being downloaded, not all properties may be available</p>
+			</div>
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection declared-in-section">
+				<h4 class="method-subtitle">Declared In</h4>
+				<p><code class="declared-in-ref">ISDKDataAccessService.h</code></p>
+			</div>
+			
+			
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/getVideoWithID:" title="getVideoWithID:"></a>
+	<h3 class="method-title"><code><a href="#//api/name/getVideoWithID:">&ndash;&nbsp;getVideoWithID:</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+			
+			<div class="method-subsection brief-description">
+				<p>Query the SDK for a particular video ID</p>
+			</div>
+			
+		    
+
+			<div class="method-subsection method-declaration"><code>- (ISDKVideoDescriptor *)getVideoWithID:(NSString *)<em>videoId</em></code></div>
+
+		    
+			
+			<div class="method-subsection arguments-section parameters">
+				<h4 class="method-subtitle parameter-title">Parameters</h4>
+				<table class="argument-def parameter-def">
+				
+					<tr>
+						<th scope="row" class="argument-name"><code>videoId</code></th>
+						<td><p>the videoId being queried</p></td>
+					</tr>
+				
+				</table>
+			</div>
+			
+
+			
+			<div class="method-subsection return">
+				<h4 class="method-subtitle parameter-title">Return Value</h4>
+				<p>the <a href="../Classes/ISDKVideoDescriptor.html">ISDKVideoDescriptor</a>, or nil</p>
+			</div>
+			
+
+			
+
+			
+			<div class="method-subsection discussion-section">
+				<h4 class="method-subtitle">Discussion</h4>
+				<p>Query the SDK for a particular video ID</p>
+			</div>
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection declared-in-section">
+				<h4 class="method-subtitle">Declared In</h4>
+				<p><code class="declared-in-ref">ISDKDataAccessService.h</code></p>
+			</div>
+			
+			
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/setUserFilteringKeys:error:" title="setUserFilteringKeys:error:"></a>
+	<h3 class="method-title"><code><a href="#//api/name/setUserFilteringKeys:error:">&ndash;&nbsp;setUserFilteringKeys:error:</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+			
+			<div class="method-subsection brief-description">
+				<p>Set content-filtering user target data. All keys passed in this dictionary will
+appear as a targeting option in the Incoming control panel, and can be used to target specific
+videos to specific users.</p>
+			</div>
+			
+		    
+
+			<div class="method-subsection method-declaration"><code>- (void)setUserFilteringKeys:(NSDictionary *)<em>filterInfo</em> error:(NSError **)<em>error</em></code></div>
+
+		    
+			
+			<div class="method-subsection arguments-section parameters">
+				<h4 class="method-subtitle parameter-title">Parameters</h4>
+				<table class="argument-def parameter-def">
+				
+					<tr>
+						<th scope="row" class="argument-name"><code>filterInfo</code></th>
+						<td><p>a dictionary of key-values to be used for targeting the user. All keys of this dictionary should be NSString instances. All values should be NSArray. (any other type will be discarded, and the error parameter set).</p></td>
+					</tr>
+				
+					<tr>
+						<th scope="row" class="argument-name"><code>error</code></th>
+						<td><p>will points to an NSError instance if an error occured</p></td>
+					</tr>
+				
+				</table>
+			</div>
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection discussion-section">
+				<h4 class="method-subtitle">Discussion</h4>
+				<p>Set content-filtering user target data. All keys passed in this dictionary will
+appear as a targeting option in the Incoming control panel, and can be used to target specific
+videos to specific users.</p>
+
+<p>Example: the host app may want to pass on the user&rsquo;s favourite team
+as: @{@&ldquo;team&rdquo;:@[@&ldquo;swans&rdquo;,@&ldquo;rabbitoh&rdquo;]}. All videos targeted to swans OR rabbitohs fans will be shown to the
+user</p>
+			</div>
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection declared-in-section">
+				<h4 class="method-subtitle">Declared In</h4>
+				<p><code class="declared-in-ref">ISDKDataAccessService.h</code></p>
+			</div>
+			
+			
+		</div>
+	</div>
+</div>
+						</div>
+						
+					</div>
+					
+					
+
+                    
+				</main>
+
+				<footer>
+					<div class="footer-copyright">
+						
+						<p class="copyright">Copyright &copy; 2015 Incoming Inc. All rights reserved. Updated: 2015-10-15</p>
+						
+						
+						<p class="generator">Generated by <a href="http://appledoc.gentlebytes.com">appledoc 2.2.1 (build 1333)</a>.</p>
+						
+					</div>
+				</footer>
+			</div>
+		</div>
+	</article>
+
+	<script src="../js/script.js"></script>
+</body>
+</html>
