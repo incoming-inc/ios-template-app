@@ -144,10 +144,22 @@ Set the widget target's main interface file, by clicking on your widget's target
 
 Note: the widget is entirely implemented in the supplied framework and bundle. However, the target must contain at least one compilable source file so that the framework can be linked against something. 
 
+### Edit widget configuration
+
+Edit the _incoming-widget.plist_ file as follows:
+
+* edit the `widget_type` key using the a number, with values 0, 1 or 2, as follows:
+  * 0 : Video widget: the widget plays video straight in the Today view. The video player start muted by default, and can be unmuted by the user.
+  * 1 : Static thumbnail: the widget shows the thumbnail
+  * 2 : Animated thumbnail: the widget shows a series of thumbnails in sequence, automatically extracted from the video
+
+* replace the `security_application_group` entry with the security group previously defined in the Apple Developer portal, e.g. `group.com.yourcompany.yourapp`
+* replace the `app_url_scheme` key, and enter the url scheme defined in the ‘Add application launch URL scheme’ section above
+
 
 ### Edit the widget configuration file
 
-Open the _incoming-widget.plist_ file, and replace the `security_application_group` entry with the security group previously defined in the Apple Developer portal, e.g. `group.com.yourcompany.yourapp`. In addition, edit the `app_url_scheme` key, and enter the url scheme defined in the ‘Add application launch URL scheme’ section above.
+ and . In addition, edit .
 
 ![Edit widget configuration file](./images/widget_edit_widget_config.png)
 
