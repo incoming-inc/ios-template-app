@@ -3,27 +3,34 @@ title: Widget Integration
 layout: default 
 ---
 
-The Incoming PVN widget uses the app extensions features of iOS8, to display a video preview of last notified video, within the iOS Notification centre. When tapped, the widget opens your application and plays the PVN video. This document describes how to integrate the widget in your application. Download the widget supplementary archive from the Incoming Control panel, or speak to your Incoming representative. 
+The Incoming PVN widget uses the app extensions feature of iOS8, and shows a summary of the last notified video, within the iOS Notification centre. When tapped, the widget opens your application and plays the PVN video. This document describes how to integrate the widget in your application. 
 
-__Note__:
+## Widget types ##
 
-___The widget supplementary archive is supplied for evaluation purposes. To customize the widget user experience, speak to your Incoming representative.___
+The Incoming PVN widget can be configured in three mode: 
 
-
+* Video widget: the widget plays video straight in the Today view. The video player start muted by default, and can be unmuted by the user. 
+* Static thumbnail: the widget shows the thumbnail, 
+* Animated thumbnail: the widget shows a series of thumbnails in sequence, automatically extracted from the video
 
 ## Widget designs ##
 
-There are two widget designs, large and compact which are shown below. 
-![Small widget example](./images/widget_small.png)
-![Large widget example](./images/widget_large.png)
+The widget appearance can be customised. The Incoming SDK supplementary archive provides an implementation with two widget designs, which are automatically shown depending on the iOS device screen size and orientation.
 
-Broadly speaking, the large widget is shown when the Notification Center is shown in landscape mode, and the small one for portrait. 
+![Portrait widget example](./images/portrait_widget.png){: .center-image }
 
+![Landscape widget example](./images/landscape_widget.png){: .center-image }
+
+Which widget is shown is implemented using iOS [size classes](https://developer.apple.com/library/ios/documentation/UserExperience/Conceptual/MobileHIG/LayoutandAppearance.html). The "portrait" widget layout is adopted for (wCompact, hRegular) class - i.e. all iPhones in portrait, while the "landscape" widget layout is used for the (wRegular, hAny) and (wAny, hCompact) size classes (all iPhones in landscape, and all iPads). 
+
+As of v1.8, the widget zip archive now includes the interface builder source, so this can be customised to suit your needs, c.f. [customisation](#customisation) section below. 
+
+ 
 ## Pre-requisites
 
 You will need: 
 
-* XCode 6 or above
+* XCode 7 or above
 * Access to the apple developer portal for your app ID
 * Your app project, [configured to use the Incoming Push Video Notification SDK](./). 
 * the _incoming-ios-sdk-widget-*.zip_ supplementary archive, available from the Incoming Control Panel
@@ -158,7 +165,7 @@ To test that the widget is working correctly, start your application, background
  * When hitting the close button, the widget should be hidden, only to be revealed again when the next push notification is fired 
 
 
-### Customisation
+### <a name="customisation">Customisation</a>
 
 As of version 1.8, the widget supplied with the Incoming PVN SDK includes allows for a limited customisation opportunity, as the Interface Builder file implementing the widget design is included in the archive. The ISDKWidget.storyboard file includes both portrait and landscape designs, which are coded using [iOS size classes](https://developer.apple.com/library/ios/documentation/UserExperience/Conceptual/MobileHIG/LayoutandAppearance.html). 
 
