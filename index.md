@@ -26,9 +26,9 @@ by dropping the SDK distribution folder into your project, and adding a small am
 
 # Optional configuration #
  
-
- * (optional) [Third Party Advertising SDK Integration](./advertising.html)
- * (optional) [Audience segmentation](./targeting.html)
+ * [Re-engagement deep-linking](./deep-linking.html)
+ * [Third Party Advertising SDK Integration](./advertising.html)
+ * [Audience segmentation](./targeting.html)
  * [Testing](./testing.html)
  
 # API documentation #
