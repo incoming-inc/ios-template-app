@@ -3,14 +3,22 @@ title: Incoming iOS PVN SDK - Release notes
 layout: default 
 ---
 
-PVN SDK v1.8- - October 2014
-------------------------------
+
+PVN SDK v1.9 - January 2016
+----------------------------
+- Configurable widget mode: play video, static thumbnails or animated thumbnails in the widget
+- Custom notification text, configurable per-video in control panel
+- Improved download and notification speed for ASAP videos
+- Ability to download ASAP videos over cellular data if configured in control panel
+
+
+PVN SDK v1.8- - October 2015
+----------------------------
 - Add support to target videos to different audience segments.
 - Allow unwatched videos that have been discarded due to the expiry or deadline passing to be re-considered if these are changed on the control panel.
 - Improved video widget design, widget video UI now exposed in package for easier customization
 - SDK Data Access API, to allows host applications to access pre-positioned video content currently stored on disk
 - Improved debug logging to facilitate integration
-
 
 
 PVN SDK v1.6-39 - 21st August 2015
@@ -23,14 +31,12 @@ PVN SDK v1.6-39 - 21st August 2015
 - FIX #100484088 Explicitly disable airplay in widget video player
 
 
-
 PVN SDK v1.4-17 - 8th July 2015
 -------------------------------
 - Provide the host application with the opportunity to present the ISDK PVN video player using the delegate pattern
 - In-widget video player (binary distribution)
 - Explicit API for location data opt-out
 - Improvement to notification timing algorithm
-
 
 
 PVN SDK v1.3-148 - 16th June 2015
