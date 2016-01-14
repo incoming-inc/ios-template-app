@@ -80,6 +80,8 @@
 		
 		<option value="//api/name/areDownloadsEnabled">+ areDownloadsEnabled</option>
 		
+		<option value="//api/name/canHandleBackgroundURLSession:">+ canHandleBackgroundURLSession:</option>
+		
 		<option value="//api/name/disableLocationDataCollection">+ disableLocationDataCollection</option>
 		
 		<option value="//api/name/getDataAccessService">+ getDataAccessService</option>
@@ -428,6 +430,71 @@ handleEventsForBackgroundURLSession:(NSString </em>)identifier completionHandler
 handleEventsForBackgroundURLSession:(NSString </em>)identifier completionHandler:(void (^)(void))completionHandler</code> method</p>
 
 <p>The completion handler is called by the incoming-ios-sdk once the events related to a URL session have been processed.</p>
+			</div>
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection declared-in-section">
+				<h4 class="method-subtitle">Declared In</h4>
+				<p><code class="declared-in-ref">ISDKAppDelegateHelper.h</code></p>
+			</div>
+			
+			
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/canHandleBackgroundURLSession:" title="canHandleBackgroundURLSession:"></a>
+	<h3 class="method-title"><code><a href="#//api/name/canHandleBackgroundURLSession:">+&nbsp;canHandleBackgroundURLSession:</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+			
+			<div class="method-subsection brief-description">
+				<p>If the application uses NSURLSession for background downloads other than ISDK,
+use this method to check if a NSURLSession identifier belongs to the ISDK or not.</p>
+			</div>
+			
+		    
+
+			<div class="method-subsection method-declaration"><code>+ (BOOL)canHandleBackgroundURLSession:(NSString *)<em>identifier</em></code></div>
+
+		    
+			
+			<div class="method-subsection arguments-section parameters">
+				<h4 class="method-subtitle parameter-title">Parameters</h4>
+				<table class="argument-def parameter-def">
+				
+					<tr>
+						<th scope="row" class="argument-name"><code>identifier</code></th>
+						<td><p>an NSURLSession identifier</p></td>
+					</tr>
+				
+				</table>
+			</div>
+			
+
+			
+			<div class="method-subsection return">
+				<h4 class="method-subtitle parameter-title">Return Value</h4>
+				<p>YES if the provided NSURLSession identifier is an ISDK session, NO otherwise.</p>
+			</div>
+			
+
+			
+
+			
+			<div class="method-subsection discussion-section">
+				<h4 class="method-subtitle">Discussion</h4>
+				<p>If the application uses NSURLSession for background downloads other than ISDK,
+use this method to check if a NSURLSession identifier belongs to the ISDK or not.</p>
 			</div>
 			
 
@@ -1058,6 +1125,63 @@ completionHandler:(void (^)(void))completionHandler method</p>
 		</div>
 	</div>
 </div><div class="section-method">
+	<a name="//api/name/getISDKUserNotificationSettings" title="getISDKUserNotificationSettings"></a>
+	<h3 class="method-title"><code><a href="#//api/name/getISDKUserNotificationSettings">+&nbsp;getISDKUserNotificationSettings</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+			
+			<div class="method-subsection brief-description">
+				<p>Obtain the UIUserNotificationSettings needed for the Incoming PVN SDK. Use this
+method to merge your own application UIUserNotificationSettings and call UIApplication&rsquo;s
+registerForRemoteNotificationTypes method. Note that if you use this method, you shouldn&rsquo;t have
+to use the <a href="#//api/name/registerForNotifications">registerForNotifications</a> method below. Also note</p>
+			</div>
+			
+		    
+
+			<div class="method-subsection method-declaration"><code>+ (UIUserNotificationSettings *)getISDKUserNotificationSettings</code></div>
+
+		    
+			
+
+			
+			<div class="method-subsection return">
+				<h4 class="method-subtitle parameter-title">Return Value</h4>
+				<p>the Incoming PVN UIUserNotificationSettings</p>
+			</div>
+			
+
+			
+
+			
+			<div class="method-subsection discussion-section">
+				<h4 class="method-subtitle">Discussion</h4>
+				<p>Obtain the UIUserNotificationSettings needed for the Incoming PVN SDK. Use this
+method to merge your own application UIUserNotificationSettings and call UIApplication&rsquo;s
+registerForRemoteNotificationTypes method. Note that if you use this method, you shouldn&rsquo;t have
+to use the <a href="#//api/name/registerForNotifications">registerForNotifications</a> method below. Also note</p>
+			</div>
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection declared-in-section">
+				<h4 class="method-subtitle">Declared In</h4>
+				<p><code class="declared-in-ref">ISDKAppDelegateHelper.h</code></p>
+			</div>
+			
+			
+		</div>
+	</div>
+</div><div class="section-method">
 	<a name="//api/name/registerForNotifications" title="registerForNotifications"></a>
 	<h3 class="method-title"><code><a href="#//api/name/registerForNotifications">+&nbsp;registerForNotifications</a></code>
 </h3>
@@ -1069,9 +1193,10 @@ completionHandler:(void (^)(void))completionHandler method</p>
 			
 			
 			<div class="method-subsection brief-description">
-				<p>The host application must call this method at some point after starting. Calling this method
-may result in the iOS notification permission dialog being shown to the user. The host application may therefore
-choose to call this method at an appropriate time, e.g. after educating the user about the value of those notifications.</p>
+				<p>Register for notifications, using the Incoming PVN SDK notification settings.
+Calling this method may result in the iOS notification permission dialog being shown to the user.
+The host application may therefore choose to call this method at an appropriate time, e.g. after
+educating the user about the value of those notifications.</p>
 			</div>
 			
 		    
@@ -1088,9 +1213,10 @@ choose to call this method at an appropriate time, e.g. after educating the user
 			
 			<div class="method-subsection discussion-section">
 				<h4 class="method-subtitle">Discussion</h4>
-				<p>The host application must call this method at some point after starting. Calling this method
-may result in the iOS notification permission dialog being shown to the user. The host application may therefore
-choose to call this method at an appropriate time, e.g. after educating the user about the value of those notifications.</p>
+				<p>Register for notifications, using the Incoming PVN SDK notification settings.
+Calling this method may result in the iOS notification permission dialog being shown to the user.
+The host application may therefore choose to call this method at an appropriate time, e.g. after
+educating the user about the value of those notifications.</p>
 			</div>
 			
 
@@ -1703,57 +1829,6 @@ By default, video downloads are enabled.</p>
 		</div>
 	</div>
 </div><div class="section-method">
-	<a name="//api/name/getISDKUserNotificationSettings" title="getISDKUserNotificationSettings"></a>
-	<h3 class="method-title"><code><a href="#//api/name/getISDKUserNotificationSettings">+&nbsp;getISDKUserNotificationSettings</a></code>
-</h3>
-
-	<div class="method-info">
-		<div class="pointy-thing"></div>
-
-		<div class="method-info-container">
-			
-			
-			<div class="method-subsection brief-description">
-				<p>Retrieve the ISDK user notification settings</p>
-			</div>
-			
-		    
-
-			<div class="method-subsection method-declaration"><code>+ (UIUserNotificationSettings *)getISDKUserNotificationSettings</code></div>
-
-		    
-			
-
-			
-			<div class="method-subsection return">
-				<h4 class="method-subtitle parameter-title">Return Value</h4>
-				<p>a configured UIUserNotificationSettings object useable with iOS notification permissions.</p>
-			</div>
-			
-
-			
-
-			
-			<div class="method-subsection discussion-section">
-				<h4 class="method-subtitle">Discussion</h4>
-				<p>Retrieve the ISDK user notification settings</p>
-			</div>
-			
-
-			
-
-			
-
-			
-			<div class="method-subsection declared-in-section">
-				<h4 class="method-subtitle">Declared In</h4>
-				<p><code class="declared-in-ref">ISDKAppDelegateHelper.h</code></p>
-			</div>
-			
-			
-		</div>
-	</div>
-</div><div class="section-method">
 	<a name="//api/name/getISDKVersionString" title="getISDKVersionString"></a>
 	<h3 class="method-title"><code><a href="#//api/name/getISDKVersionString">+&nbsp;getISDKVersionString</a></code>
 </h3>
@@ -1909,7 +1984,7 @@ By default, video downloads are enabled.</p>
 				<footer>
 					<div class="footer-copyright">
 						
-						<p class="copyright">Copyright &copy; 2015 Incoming Inc. All rights reserved. Updated: 2015-10-15</p>
+						<p class="copyright">Copyright &copy; 2016 Incoming Inc. All rights reserved. Updated: 2016-01-14</p>
 						
 						
 						<p class="generator">Generated by <a href="http://appledoc.gentlebytes.com">appledoc 2.2.1 (build 1333)</a>.</p>

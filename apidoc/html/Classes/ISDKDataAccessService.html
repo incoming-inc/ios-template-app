@@ -66,7 +66,11 @@
 		
 		<option value="//api/name/getVideoWithID:">- getVideoWithID:</option>
 		
+		<option value="//api/name/markVideoWithID:asLockedUntil:completionHandler:">- markVideoWithID:asLockedUntil:completionHandler:</option>
+		
 		<option value="//api/name/setUserFilteringKeys:error:">- setUserFilteringKeys:error:</option>
+		
+		<option value="//api/name/unlockVideoWithID:completionHandler:">- unlockVideoWithID:completionHandler:</option>
 		
 	</optgroup>
 	
@@ -369,6 +373,141 @@ user</p>
 			
 		</div>
 	</div>
+</div><div class="section-method">
+	<a name="//api/name/markVideoWithID:asLockedUntil:completionHandler:" title="markVideoWithID:asLockedUntil:completionHandler:"></a>
+	<h3 class="method-title"><code><a href="#//api/name/markVideoWithID:asLockedUntil:completionHandler:">&ndash;&nbsp;markVideoWithID:asLockedUntil:completionHandler:</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+			
+			<div class="method-subsection brief-description">
+				<p>Lock a video until a given date. While locked, the video is guaranteed not to be deleted by the storage cleanup
+Note that storage cleanup is not performed when the application is in the foreground or inactive state</p>
+			</div>
+			
+		    
+
+			<div class="method-subsection method-declaration"><code>- (void)markVideoWithID:(NSString *)<em>videoID</em> asLockedUntil:(NSDate *)<em>lockedDate</em> completionHandler:(void ( ^ ) ( ))<em>completionHandler</em></code></div>
+
+		    
+			
+			<div class="method-subsection arguments-section parameters">
+				<h4 class="method-subtitle parameter-title">Parameters</h4>
+				<table class="argument-def parameter-def">
+				
+					<tr>
+						<th scope="row" class="argument-name"><code>videoID</code></th>
+						<td><p>the video ID to be locked</p></td>
+					</tr>
+				
+					<tr>
+						<th scope="row" class="argument-name"><code>lockedDate</code></th>
+						<td><p>date until which the video should be locked</p></td>
+					</tr>
+				
+					<tr>
+						<th scope="row" class="argument-name"><code>completionHandler</code></th>
+						<td><p>block to be called upon completion</p></td>
+					</tr>
+				
+				</table>
+			</div>
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection discussion-section">
+				<h4 class="method-subtitle">Discussion</h4>
+				<p>Lock a video until a given date. While locked, the video is guaranteed not to be deleted by the storage cleanup
+Note that storage cleanup is not performed when the application is in the foreground or inactive state</p>
+			</div>
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection declared-in-section">
+				<h4 class="method-subtitle">Declared In</h4>
+				<p><code class="declared-in-ref">ISDKDataAccessService.h</code></p>
+			</div>
+			
+			
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/unlockVideoWithID:completionHandler:" title="unlockVideoWithID:completionHandler:"></a>
+	<h3 class="method-title"><code><a href="#//api/name/unlockVideoWithID:completionHandler:">&ndash;&nbsp;unlockVideoWithID:completionHandler:</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+			
+			<div class="method-subsection brief-description">
+				<p>Unlock a video, allowing it to be deleted at any time by the storage cleanup.
+Note that storage cleanup is not performed when the application is in the foreground or inactive state</p>
+			</div>
+			
+		    
+
+			<div class="method-subsection method-declaration"><code>- (void)unlockVideoWithID:(NSString *)<em>videoID</em> completionHandler:(void ( ^ ) ( ))<em>completionHandler</em></code></div>
+
+		    
+			
+			<div class="method-subsection arguments-section parameters">
+				<h4 class="method-subtitle parameter-title">Parameters</h4>
+				<table class="argument-def parameter-def">
+				
+					<tr>
+						<th scope="row" class="argument-name"><code>videoID</code></th>
+						<td><p>the video ID to be locked</p></td>
+					</tr>
+				
+					<tr>
+						<th scope="row" class="argument-name"><code>completionHandler</code></th>
+						<td><p>block to be called upon completi</p></td>
+					</tr>
+				
+				</table>
+			</div>
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection discussion-section">
+				<h4 class="method-subtitle">Discussion</h4>
+				<p>Unlock a video, allowing it to be deleted at any time by the storage cleanup.
+Note that storage cleanup is not performed when the application is in the foreground or inactive state</p>
+			</div>
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection declared-in-section">
+				<h4 class="method-subtitle">Declared In</h4>
+				<p><code class="declared-in-ref">ISDKDataAccessService.h</code></p>
+			</div>
+			
+			
+		</div>
+	</div>
 </div>
 						</div>
 						
@@ -382,7 +521,7 @@ user</p>
 				<footer>
 					<div class="footer-copyright">
 						
-						<p class="copyright">Copyright &copy; 2015 Incoming Inc. All rights reserved. Updated: 2015-10-15</p>
+						<p class="copyright">Copyright &copy; 2016 Incoming Inc. All rights reserved. Updated: 2016-01-14</p>
 						
 						
 						<p class="generator">Generated by <a href="http://appledoc.gentlebytes.com">appledoc 2.2.1 (build 1333)</a>.</p>

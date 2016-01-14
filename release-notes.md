@@ -3,6 +3,17 @@ title: Incoming iOS PVN SDK - Release notes
 layout: default 
 ---
 
+PVN SDK v1.10 - January 2016
+----------------------------
+- Enhance video download retry mechanism, leading to improved download reliability in highly transient networking environments (wifi on/off)
+- Add SDK API to facilitate host apps background downloads other than ISDK
+- FIX #109941526 - PVN bundle contains executable key which result in failing iTunes connect validation
+- FIX #111389234 - Video in widget can appear to flicker if storage cleanup performed while widget it playing
+- FIX #111119648 - Rare occurence of unresponsive player when it is left open with a video loaded and the app is backgrounded for extended period of time
+- FIX #111027930 - Download failures with specific providers  
+- FIX #107959332 - Notification data collection accuracy affecting the CTR calculation on control panel
+
+
 
 PVN SDK v1.9 - January 2016
 ----------------------------

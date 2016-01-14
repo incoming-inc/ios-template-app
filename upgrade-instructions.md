@@ -3,9 +3,13 @@ title: Incoming iOS PVN SDK - Upgrade instructions
 layout: default 
 ---
 
-
-Pv1.9 - January 2016
+v1.10 - January 2016
 --------------------
+- No breaking API change introduced in this version. Just remove the old Incoming-PVN.{bundle,framework} from your project, and add the new ones.
+
+
+v1.9 - January 2016
+-------------------
 - No breaking API change introduced in this version. Just remove the old Incoming-PVN.{bundle,framework} from your project, and add the new ones.
 
 
