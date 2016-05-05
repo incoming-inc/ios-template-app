@@ -19,6 +19,10 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         // ISDK method forward
         ISDKAppDelegateHelper.application(application, didFinishLaunchingWithOptions:launchOptions)
         
+        // Register for remote notifications. The Incoming PVN uses silent remote notifications for content updates. 
+        // You must call this method at some stage for the push video service to operate correctly. 
+        ISDKAppDelegateHelper.registerForRemoteNotifications()
+        
         // This will pop-up the OS permission dialog, feel free to
         // integrate them differently in your workflow
         ISDKAppDelegateHelper.registerForNotifications()
