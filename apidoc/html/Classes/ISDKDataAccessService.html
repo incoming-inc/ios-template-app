@@ -106,7 +106,23 @@
 					<div class="section section-overview">
 						<a title="Overview" name="overview"></a>
 						<h2 class="subtitle subtitle-overview">Overview</h2>
-						<p>This class is used to access video data from the Incominv PVN SDK.</p>
+						<p>Download complete NSNotification name and userInfo keys
+The host application may be notified of video download events as follow:</p>
+
+<p>register the notification:</p>
+
+<p>[[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(videoDownloaded:) ISDK_EVENT_DOWNLOAD_COMPLETE object:nil];</p>
+
+<p>and handle it:</p>
+
+<ul>
+<li>(void)videoAdded:(NSNotification <em>)notification
+{
+  ISDKVideoDescriptor </em>videoDescriptor = [[notification userInfo] objectForKey:ISDK_NOTIFICATION_EVENT_DESCRIPTOR_KEY];</li>
+</ul>
+
+
+<p>}</p>
 					</div>
 					
 					
@@ -138,7 +154,7 @@
 			
 		    
 
-			<div class="method-subsection method-declaration"><code>- (void)getDownloadedVideosWithCompletionHandler:(void ( ^ ) ( NSArray *currentVideos ))<em>completionHandler</em></code></div>
+			<div class="method-subsection method-declaration"><code>- (void)getDownloadedVideosWithCompletionHandler:(void ( ^ _Nonnull ) ( NSArray&lt;ISDKVideoDescriptor*&gt; *_Nonnull videos ))<em>completionHandler</em></code></div>
 
 		    
 			
@@ -148,7 +164,7 @@
 				
 					<tr>
 						<th scope="row" class="argument-name"><code>completionHandler</code></th>
-						<td><p>will be called when completed, passing an NSArray of <a href="../Classes/ISDKVideoDescriptor.html">ISDKVideoDescriptor</a> objects</p></td>
+						<td><p>block to be called when completed, passing an NSArray of <a href="../Classes/ISDKVideoDescriptor.html">ISDKVideoDescriptor</a> objects</p></td>
 					</tr>
 				
 				</table>
@@ -197,7 +213,7 @@ is being downloaded, not all properties may be available</p>
 			
 		    
 
-			<div class="method-subsection method-declaration"><code>- (void)getInProgressVideosWithCompletionHandler:(void ( ^ ) ( NSArray *currentVideos ))<em>completionHandler</em></code></div>
+			<div class="method-subsection method-declaration"><code>- (void)getInProgressVideosWithCompletionHandler:(void ( ^ _Nonnull ) ( NSArray&lt;ISDKVideoDescriptor*&gt; *_Nonnull videos ))<em>completionHandler</em></code></div>
 
 		    
 			
@@ -207,7 +223,7 @@ is being downloaded, not all properties may be available</p>
 				
 					<tr>
 						<th scope="row" class="argument-name"><code>completionHandler</code></th>
-						<td><p>will be called when completed, passing an NSArray of <a href="../Classes/ISDKVideoDescriptor.html">ISDKVideoDescriptor</a> objects</p></td>
+						<td><p>block to be called when completed, passing an NSArray of <a href="../Classes/ISDKVideoDescriptor.html">ISDKVideoDescriptor</a> objects</p></td>
 					</tr>
 				
 				</table>
@@ -256,7 +272,7 @@ is being downloaded, not all properties may be available</p>
 			
 		    
 
-			<div class="method-subsection method-declaration"><code>- (ISDKVideoDescriptor *)getVideoWithID:(NSString *)<em>videoId</em></code></div>
+			<div class="method-subsection method-declaration"><code>- (nullable ISDKVideoDescriptor *)getVideoWithID:(nonnull NSString *)<em>videoID</em></code></div>
 
 		    
 			
@@ -265,8 +281,8 @@ is being downloaded, not all properties may be available</p>
 				<table class="argument-def parameter-def">
 				
 					<tr>
-						<th scope="row" class="argument-name"><code>videoId</code></th>
-						<td><p>the videoId being queried</p></td>
+						<th scope="row" class="argument-name"><code>videoID</code></th>
+						<td><p>the videoID being queried</p></td>
 					</tr>
 				
 				</table>
@@ -321,7 +337,7 @@ videos to specific users.</p>
 			
 		    
 
-			<div class="method-subsection method-declaration"><code>- (void)setUserFilteringKeys:(NSDictionary *)<em>filterInfo</em> error:(NSError **)<em>error</em></code></div>
+			<div class="method-subsection method-declaration"><code>- (void)setUserFilteringKeys:(nonnull NSDictionary&lt;NSString*,NSArray*&gt; *)<em>filterInfo</em> error:(NSError *_Nullable *_Nullable)<em>error</em></code></div>
 
 		    
 			
@@ -331,7 +347,9 @@ videos to specific users.</p>
 				
 					<tr>
 						<th scope="row" class="argument-name"><code>filterInfo</code></th>
-						<td><p>a dictionary of key-values to be used for targeting the user. All keys of this dictionary should be NSString instances. All values should be NSArray. (any other type will be discarded, and the error parameter set).</p></td>
+						<td><p>a dictionary of key-values to be used for targeting the user.
+All keys of this dictionary should be NSString instances. All values should be NSArray.
+(any other type will be discarded, and the error parameter set).</p></td>
 					</tr>
 				
 					<tr>
@@ -391,7 +409,7 @@ Note that storage cleanup is not performed when the application is in the foregr
 			
 		    
 
-			<div class="method-subsection method-declaration"><code>- (void)markVideoWithID:(NSString *)<em>videoID</em> asLockedUntil:(NSDate *)<em>lockedDate</em> completionHandler:(void ( ^ ) ( ))<em>completionHandler</em></code></div>
+			<div class="method-subsection method-declaration"><code>- (void)markVideoWithID:(nonnull NSString *)<em>videoID</em> asLockedUntil:(nullable NSDate *)<em>lockedDate</em> completionHandler:(void ( ^ _Nullable ) ( ))<em>completionHandler</em></code></div>
 
 		    
 			
@@ -461,7 +479,7 @@ Note that storage cleanup is not performed when the application is in the foregr
 			
 		    
 
-			<div class="method-subsection method-declaration"><code>- (void)unlockVideoWithID:(NSString *)<em>videoID</em> completionHandler:(void ( ^ ) ( ))<em>completionHandler</em></code></div>
+			<div class="method-subsection method-declaration"><code>- (void)unlockVideoWithID:(nonnull NSString *)<em>videoID</em> completionHandler:(void ( ^ _Nullable ) ( ))<em>completionHandler</em></code></div>
 
 		    
 			
@@ -521,7 +539,7 @@ Note that storage cleanup is not performed when the application is in the foregr
 				<footer>
 					<div class="footer-copyright">
 						
-						<p class="copyright">Copyright &copy; 2016 Incoming Inc. All rights reserved. Updated: 2016-01-14</p>
+						<p class="copyright">Copyright &copy; 2016 Incoming Inc. All rights reserved. Updated: 2016-05-05</p>
 						
 						
 						<p class="generator">Generated by <a href="http://appledoc.gentlebytes.com">appledoc 2.2.1 (build 1333)</a>.</p>

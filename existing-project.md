@@ -98,6 +98,11 @@ The minimum code to add to your application delegate is as follows.
 	{
 		[ISDKAppDelegateHelper application:[UIApplication sharedApplication] didFinishLaunchingWithOptions:launchOptions];
 
+		// this registers for remote notifications on iOS > 8. It must be called
+		// at some stage in your app initialization. Note that this method will never
+		// result in a notification permission dialog being shown to the user. 
+		[ISDKAppDelegateHelper registerForRemoteNotifications];
+
 		// This will pop-up the OS permission dialog, feel free to
 		// integrate them differently in your workflow
 		[ISDKAppDelegateHelper registerForNotifications];
