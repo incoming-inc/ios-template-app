@@ -3,14 +3,14 @@ title: Incoming iOS PVN SDK - Upgrade instructions
 layout: default 
 ---
 
-v1.12.4 - May 2016
+v1.12-129 - May 2016
 --------------------
 - Remove the old Incoming-PVN.{bundle,framework} from your project, and add the new ones.
 - Added [ISDKAppDelegateHelper registerForRemoteNotifications] method. This method must now be called at some point during the app initialisation for the PushVideo Service to function. 
 
 
-v1.12.3 - Fev 2016
-------------------
+v1.12 - Fev 2016
+----------------
 - No breaking API change introduced in this version. Just remove the old Incoming-PVN.{bundle,framework} from your project, and add the new ones.
 
 v1.10 - January 2016
