@@ -8,10 +8,6 @@ This document describe the steps needed to integrate the Incoming Push Video Not
 with your application. To access the SDK distribution zip and obtain access to your 
 project's control panel, contact your Incoming representative.
 
-Note: For instructions on how to integrate the iOS Today Extension widget, please refer 
-to the documentation in the Incoming Push Video SDK widget add-on distribution zip
-
-
 # Integrate the Push Video SDK #
 
 The Incoming Push Video SDK can be used in a [new project](./new-project.html) by cloning the 
