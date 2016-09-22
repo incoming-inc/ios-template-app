@@ -7,9 +7,10 @@
 //
 
 import UIKit
+import UserNotifications
 
 @UIApplicationMain
-class AppDelegate: UIResponder, UIApplicationDelegate {
+class AppDelegate: UIResponder, UIApplicationDelegate, UNUserNotificationCenterDelegate {
 
     var window: UIWindow?
 
@@ -17,7 +18,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     func application(application: UIApplication, didFinishLaunchingWithOptions launchOptions: [NSObject: AnyObject]?) -> Bool {
         
         // ISDK method forward
-        ISDKAppDelegateHelper.application(application, didFinishLaunchingWithOptions:launchOptions)
+        ISDKAppDelegateHelper.application(application, didFinishLaunchingWithOptions:launchOptions!)
         
         // Register for remote notifications. The Incoming PVN uses silent remote notifications for content updates. 
         // You must call this method at some stage for the push video service to operate correctly. 
@@ -26,6 +27,12 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         // This will pop-up the OS permission dialog, feel free to
         // integrate them differently in your workflow
         ISDKAppDelegateHelper.registerForNotifications()
+        
+        // set UNNUserNotificationCenter delegate
+        if #available(iOS 10.0, *) {
+            let notificationCenter = UNUserNotificationCenter.currentNotificationCenter()
+            notificationCenter.delegate = self
+        }
         
         
         // the two following calls are optional. They enable location and motion data collection
@@ -41,16 +48,14 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     }
     
     
-    func application(application: UIApplication, openURL url: NSURL, sourceApplication: String?, annotation: AnyObject?) -> Bool {
+    func application(application: UIApplication, openURL url: NSURL, sourceApplication: String?, annotation: AnyObject) -> Bool {
         
         // ISDK method forward
-        if (ISDKAppDelegateHelper.handleOpenURL(url, sourceApplication: sourceApplication, annotation: annotation) == false)
+        if (ISDKAppDelegateHelper.handleOpenURL(url, sourceApplication: sourceApplication!, annotation: annotation) == false)
         {
-           // perform handling of your app URL here
-            
+            // perform handling of your app URL here
             
         }
-        
         return true
     }
     
@@ -145,6 +150,30 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
     func applicationWillTerminate(application: UIApplication) {
         // Called when the application is about to terminate. Save data if appropriate. See also applicationDidEnterBackground:.
+    }
+    
+    @available(iOS 10.0, *)
+    func userNotificationCenter(center: UNUserNotificationCenter, didReceive response: UNNotificationResponse, withCompletionHandler completionHandler: () -> Void) {
+        
+        // forward to ISDK
+        ISDKAppDelegateHelper.userNotificationCenter(center, didReceiveNotificationResponse: response) { (processed: Bool) -> Void in
+            if !processed {
+                // this notification is not ISDK, handle your app notification response here as needed
+            }
+            
+            completionHandler()
+        }
+    }
+    
+    @available(iOS 10.0, *)
+    func userNotificationCenter(center: UNUserNotificationCenter, willPresent notification: UNNotification, withCompletionHandler completionHandler: (UNNotificationPresentationOptions) -> Void) {
+        ISDKAppDelegateHelper.userNotificationCenter(center, willPresentNotification: notification) { (processed: Bool) -> Void in
+            if !processed {
+                // this notification is not ISDK
+                // process your app notification here
+                // and call the completion handler if needed ..
+            }
+        }
     }
 
 

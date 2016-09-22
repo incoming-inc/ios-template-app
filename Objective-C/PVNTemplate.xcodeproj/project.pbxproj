@@ -26,6 +26,8 @@
 		8586110E1946CF00008E86EB /* CoreData.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8586110D1946CF00008E86EB /* CoreData.framework */; };
 		858611101946CF38008E86EB /* CoreMedia.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8586110F1946CF38008E86EB /* CoreMedia.framework */; };
 		858611121946CFCE008E86EB /* CoreLocation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 858611111946CFCE008E86EB /* CoreLocation.framework */; };
+		96D778761D52E4BF008FB65F /* UserNotifications.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 96D778741D52E4BF008FB65F /* UserNotifications.framework */; settings = {ATTRIBUTES = (Weak, ); }; };
+		96D778771D52E4BF008FB65F /* UserNotificationsUI.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 96D778751D52E4BF008FB65F /* UserNotificationsUI.framework */; settings = {ATTRIBUTES = (Weak, ); }; };
 		96ECF7C11A7F31D00016432E /* libz.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 96ECF7C01A7F31D00016432E /* libz.dylib */; };
 /* End PBXBuildFile section */
 
@@ -58,6 +60,8 @@
 		8586110D1946CF00008E86EB /* CoreData.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreData.framework; path = System/Library/Frameworks/CoreData.framework; sourceTree = SDKROOT; };
 		8586110F1946CF38008E86EB /* CoreMedia.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreMedia.framework; path = System/Library/Frameworks/CoreMedia.framework; sourceTree = SDKROOT; };
 		858611111946CFCE008E86EB /* CoreLocation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreLocation.framework; path = System/Library/Frameworks/CoreLocation.framework; sourceTree = SDKROOT; };
+		96D778741D52E4BF008FB65F /* UserNotifications.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UserNotifications.framework; path = System/Library/Frameworks/UserNotifications.framework; sourceTree = SDKROOT; };
+		96D778751D52E4BF008FB65F /* UserNotificationsUI.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UserNotificationsUI.framework; path = System/Library/Frameworks/UserNotificationsUI.framework; sourceTree = SDKROOT; };
 		96ECF7C01A7F31D00016432E /* libz.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libz.dylib; path = usr/lib/libz.dylib; sourceTree = SDKROOT; };
 /* End PBXFileReference section */
 
@@ -66,6 +70,8 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				96D778761D52E4BF008FB65F /* UserNotifications.framework in Frameworks */,
+				96D778771D52E4BF008FB65F /* UserNotificationsUI.framework in Frameworks */,
 				96ECF7C11A7F31D00016432E /* libz.dylib in Frameworks */,
 				852709161947F4D30018A0CF /* Accelerate.framework in Frameworks */,
 				858611121946CFCE008E86EB /* CoreLocation.framework in Frameworks */,
@@ -105,6 +111,8 @@
 		858610A51946A0FC008E86EB /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				96D778741D52E4BF008FB65F /* UserNotifications.framework */,
+				96D778751D52E4BF008FB65F /* UserNotificationsUI.framework */,
 				96ECF7C01A7F31D00016432E /* libz.dylib */,
 				852709151947F4D30018A0CF /* Accelerate.framework */,
 				858611111946CFCE008E86EB /* CoreLocation.framework */,
