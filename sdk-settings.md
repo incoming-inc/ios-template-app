@@ -35,4 +35,5 @@ To configure remote push notifications, follow the instructions in the "APNs cer
 at [https://push-video.incoming.tv/help](https://push-video.incoming.tv/help)
 
 
+Proceed to the [Widget integration](./widget-integration.html)
 

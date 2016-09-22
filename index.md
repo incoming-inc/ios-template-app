@@ -19,14 +19,15 @@ by dropping the SDK distribution folder into your project, and adding a small am
  * Integration [FAQ](./faq.html)
  * [SDK settings](./sdk-settings.html)
  * [Today widget integration](./widget-integration.html)
+ * [Custom notification UI](./custom-notification-ui.html)
 
 # Optional configuration #
  
  * [Re-engagement deep-linking](./deep-linking.html)
  * [Third Party Advertising SDK Integration](./advertising.html)
  * [Audience segmentation](./targeting.html)
- * [Testing](./testing.html)
- 
+
+
 # API documentation #
  * [PVN SDK API Documentation](./apidoc/html/index.html)
 

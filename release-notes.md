@@ -3,6 +3,25 @@ title: Incoming iOS PVN SDK - Release notes
 layout: default 
 ---
 
+PVN SDK v1.13 - Sept. 2016
+-------------------------
+- Support for iOS 10 UNNotification framework. Note: the SDK will now emit UNNotifications instead of UILocalNotification when running on iOS10. 
+- Support for iOS 10 UNNotificationUI framework, for in-notification video playback
+- The widget, notification UI and main SDK are now distributed in a single zip file. 
+
+PVN SDK v1.12 - July 2016
+---------------------------
+- Fix CoreData-related crash on iOS 10 betas
+- Fix potential bitcode-related issue
+
+
+PVN SDK v1.12-129 - May 2016
+----------------------------
+- Minor bug fixes
+- ISDKDataAccessService / ISDKVideoDescriptor now exposes video learning features and weights, enabling "recommended because"-type features 
+- ISDKDataAccessService now returns video in notification display sort order
+
+
 PVN SDK v1.10 - January 2016
 ----------------------------
 - Enhance video download retry mechanism, leading to improved download reliability in highly transient networking environments (wifi on/off)

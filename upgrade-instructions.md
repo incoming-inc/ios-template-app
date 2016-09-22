@@ -3,6 +3,16 @@ title: Incoming iOS PVN SDK - Upgrade instructions
 layout: default 
 ---
 
+PVN SDK v1.13 - Aug. 2016
+-------------------------
+- 1.13 brings support for UNUserNotifications and generally iOS 10 support
+- To update, remove the old Incoming-PVN.{bundle,framework} and ISDKWidget.{bundle,framework} from your project, replacing with the new ones
+- You must call the 
+	- [ISDKAppDelegateHelper userNotificationCenter:didReceiveNotificationResponse:withCompletionHandler:completionHandler]
+	- [ISDKAppDelegateHelper userNotificationCenter:willPresentNotification:withCompletionHandler]
+methods from your UNUserNotificationCenterDelegate. C.f. example at [https://github.com/incoming-inc/ios-template-app](https://github.com/incoming-inc/ios-template-app)
+
+
 v1.12-129 - May 2016
 --------------------
 - Remove the old Incoming-PVN.{bundle,framework} from your project, and add the new ones.

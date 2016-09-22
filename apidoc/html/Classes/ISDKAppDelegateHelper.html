@@ -104,6 +104,8 @@
 		
 		<option value="//api/name/registerForNotifications">+ registerForNotifications</option>
 		
+		<option value="//api/name/registerForNotificationsWithCompletionHandler:">+ registerForNotificationsWithCompletionHandler:</option>
+		
 		<option value="//api/name/registerForRemoteNotifications">+ registerForRemoteNotifications</option>
 		
 		<option value="//api/name/setAdAdapter:">+ setAdAdapter:</option>
@@ -117,6 +119,10 @@
 		<option value="//api/name/setNotificationsDisplayActive:">+ setNotificationsDisplayActive:</option>
 		
 		<option value="//api/name/setProjectKey:">+ setProjectKey:</option>
+		
+		<option value="//api/name/userNotificationCenter:didReceiveNotificationResponse:withCompletionHandler:">+ userNotificationCenter:didReceiveNotificationResponse:withCompletionHandler:</option>
+		
+		<option value="//api/name/userNotificationCenter:willPresentNotification:withCompletionHandler:">+ userNotificationCenter:willPresentNotification:withCompletionHandler:</option>
 		
 		<option value="//api/name/widgetWasEverShown">+ widgetWasEverShown</option>
 		
@@ -189,7 +195,7 @@ didFinishLaunchingWithOptions:(NSDictionary </em>)launchOptions method</p>
 			
 		    
 
-			<div class="method-subsection method-declaration"><code>+ (void)application:(UIApplication *)<em>application</em> didFinishLaunchingWithOptions:(NSDictionary *)<em>launchOptions</em></code></div>
+			<div class="method-subsection method-declaration"><code>+ (void)application:(nonnull UIApplication *)<em>application</em> didFinishLaunchingWithOptions:(nonnull NSDictionary *)<em>launchOptions</em></code></div>
 
 		    
 			
@@ -254,7 +260,7 @@ openURL:(NSURL </em>)url sourceApplication:(NSString *)sourceApplication annotat
 			
 		    
 
-			<div class="method-subsection method-declaration"><code>+ (BOOL)handleOpenURL:(NSURL *)<em>url</em> sourceApplication:(NSString *)<em>sourceApplication</em> annotation:(id)<em>annotation</em></code></div>
+			<div class="method-subsection method-declaration"><code>+ (BOOL)handleOpenURL:(nonnull NSURL *)<em>url</em> sourceApplication:(nonnull NSString *)<em>sourceApplication</em> annotation:(nullable id)<em>annotation</em></code></div>
 
 		    
 			
@@ -329,7 +335,7 @@ performFetchWithCompletionHandler:(void (^)(UIBackgroundFetchResult result))comp
 			
 		    
 
-			<div class="method-subsection method-declaration"><code>+ (void)application:(UIApplication *)<em>application</em> performFetchWithCompletionHandler:(void ( ^ ) ( UIBackgroundFetchResult ))<em>completionHandler</em></code></div>
+			<div class="method-subsection method-declaration"><code>+ (void)application:(nonnull UIApplication *)<em>application</em> performFetchWithCompletionHandler:(nonnull void ( ^ ) ( UIBackgroundFetchResult ))<em>completionHandler</em></code></div>
 
 		    
 			
@@ -394,7 +400,7 @@ handleEventsForBackgroundURLSession:(NSString </em>)identifier completionHandler
 			
 		    
 
-			<div class="method-subsection method-declaration"><code>+ (void)application:(UIApplication *)<em>application</em> handleEventsForBackgroundURLSession:(NSString *)<em>identifier</em> completionHandler:(void ( ^ ) ( ))<em>completionHandler</em></code></div>
+			<div class="method-subsection method-declaration"><code>+ (void)application:(nonnull UIApplication *)<em>application</em> handleEventsForBackgroundURLSession:(nonnull NSString *)<em>identifier</em> completionHandler:(nonnull void ( ^ ) ( ))<em>completionHandler</em></code></div>
 
 		    
 			
@@ -466,7 +472,7 @@ use this method to check if a NSURLSession identifier belongs to the ISDK or not
 			
 		    
 
-			<div class="method-subsection method-declaration"><code>+ (BOOL)canHandleBackgroundURLSession:(NSString *)<em>identifier</em></code></div>
+			<div class="method-subsection method-declaration"><code>+ (BOOL)canHandleBackgroundURLSession:(nonnull NSString *)<em>identifier</em></code></div>
 
 		    
 			
@@ -530,7 +536,7 @@ use this method to check if a NSURLSession identifier belongs to the ISDK or not
 			
 		    
 
-			<div class="method-subsection method-declaration"><code>+ (void)application:(UIApplication *)<em>application</em> didRegisterForRemoteNotificationsWithDeviceToken:(NSData *)<em>deviceToken</em></code></div>
+			<div class="method-subsection method-declaration"><code>+ (void)application:(nonnull UIApplication *)<em>application</em> didRegisterForRemoteNotificationsWithDeviceToken:(nonnull NSData *)<em>deviceToken</em></code></div>
 
 		    
 			
@@ -593,7 +599,7 @@ use this method to check if a NSURLSession identifier belongs to the ISDK or not
 			
 		    
 
-			<div class="method-subsection method-declaration"><code>+ (void)application:(UIApplication *)<em>application</em> didFailToRegisterForRemoteNotificationsWithError:(NSError *)<em>error</em></code></div>
+			<div class="method-subsection method-declaration"><code>+ (void)application:(nonnull UIApplication *)<em>application</em> didFailToRegisterForRemoteNotificationsWithError:(nullable NSError *)<em>error</em></code></div>
 
 		    
 			
@@ -657,7 +663,7 @@ didReceiveLocalNotification:(UILocalNotification </em>)notification method</p>
 			
 		    
 
-			<div class="method-subsection method-declaration"><code>+ (BOOL)application:(UIApplication *)<em>application</em> didReceiveLocalNotification:(UILocalNotification *)<em>notification</em></code></div>
+			<div class="method-subsection method-declaration"><code>+ (BOOL)application:(nonnull UIApplication *)<em>application</em> didReceiveLocalNotification:(nonnull UILocalNotification *)<em>notification</em></code></div>
 
 		    
 			
@@ -728,7 +734,7 @@ fetchCompletionHandler:(void (^)(UIBackgroundFetchResult result))handler method<
 			
 		    
 
-			<div class="method-subsection method-declaration"><code>+ (BOOL)application:(UIApplication *)<em>application</em> didReceiveRemoteNotification:(NSDictionary *)<em>userInfo</em> fetchCompletionHandler:(void ( ^ ) ( UIBackgroundFetchResult ))<em>completionHandler</em></code></div>
+			<div class="method-subsection method-declaration"><code>+ (BOOL)application:(nonnull UIApplication *)<em>application</em> didReceiveRemoteNotification:(nonnull NSDictionary *)<em>userInfo</em> fetchCompletionHandler:(nullable void ( ^ ) ( UIBackgroundFetchResult ))<em>completionHandler</em></code></div>
 
 		    
 			
@@ -807,7 +813,7 @@ didReceiveRemoteNotification:(NSDictionary </em>)userInfo method</p>
 			
 		    
 
-			<div class="method-subsection method-declaration"><code>+ (BOOL)application:(UIApplication *)<em>application</em> didReceiveRemoteNotification:(NSDictionary *)<em>userInfo</em></code></div>
+			<div class="method-subsection method-declaration"><code>+ (BOOL)application:(nonnull UIApplication *)<em>application</em> didReceiveRemoteNotification:(nullable NSDictionary *)<em>userInfo</em></code></div>
 
 		    
 			
@@ -822,7 +828,7 @@ didReceiveRemoteNotification:(NSDictionary </em>)userInfo method</p>
 				
 					<tr>
 						<th scope="row" class="argument-name"><code>userInfo</code></th>
-						<td><p>the NSDictionary paramter passed to the host application delegate method</p></td>
+						<td><p>the NSDictionary parameter passed to the host application delegate method</p></td>
 					</tr>
 				
 				</table>
@@ -861,6 +867,151 @@ didReceiveRemoteNotification:(NSDictionary </em>)userInfo method</p>
 		</div>
 	</div>
 </div><div class="section-method">
+	<a name="//api/name/userNotificationCenter:didReceiveNotificationResponse:withCompletionHandler:" title="userNotificationCenter:didReceiveNotificationResponse:withCompletionHandler:"></a>
+	<h3 class="method-title"><code><a href="#//api/name/userNotificationCenter:didReceiveNotificationResponse:withCompletionHandler:">+&nbsp;userNotificationCenter:didReceiveNotificationResponse:withCompletionHandler:</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+			
+			<div class="method-subsection brief-description">
+				<p>The host application' UNNotificationCenterDelegate must call this method from its own -(void)userNotificationCenter:(UNUserNotificationCenter <em>)center
+didReceiveNotificationResponse:(UNNotificationResponse </em>)response withCompletionHandler:(nonnull void (^)())completionHandler method</p>
+			</div>
+			
+		    
+
+			<div class="method-subsection method-declaration"><code>+ (void)userNotificationCenter:(nonnull UNUserNotificationCenter *)<em>center</em> didReceiveNotificationResponse:(nonnull UNNotificationResponse *)<em>response</em> withCompletionHandler:(nonnull void ( ^ ) ( BOOL processed ))<em>completionHandler</em></code></div>
+
+		    
+			
+			<div class="method-subsection arguments-section parameters">
+				<h4 class="method-subtitle parameter-title">Parameters</h4>
+				<table class="argument-def parameter-def">
+				
+					<tr>
+						<th scope="row" class="argument-name"><code>center</code></th>
+						<td><p>the UNUserNotificationCenter object passed to the host application UNUserNotificationCenterDelegate method</p></td>
+					</tr>
+				
+					<tr>
+						<th scope="row" class="argument-name"><code>response</code></th>
+						<td><p>the UNNotificationResponse parameter passed to the host applicaton UNUserNotificationCenterDelegate method</p></td>
+					</tr>
+				
+					<tr>
+						<th scope="row" class="argument-name"><code>completionHandler</code></th>
+						<td><p>a completion block, where the processed parameter will be set to YES if the notification was ISDK-related,
+NO otherwise. If this method returns NO, the notification response received is therefore available for the host application to process.</p>
+
+<p>NB: Your application is responsible for calling the iOS completion handler passed to the UNUserNotificationCenterDelegate method</p></td>
+					</tr>
+				
+				</table>
+			</div>
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection discussion-section">
+				<h4 class="method-subtitle">Discussion</h4>
+				<p>The host application' UNNotificationCenterDelegate must call this method from its own -(void)userNotificationCenter:(UNUserNotificationCenter <em>)center
+didReceiveNotificationResponse:(UNNotificationResponse </em>)response withCompletionHandler:(nonnull void (^)())completionHandler method</p>
+			</div>
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection declared-in-section">
+				<h4 class="method-subtitle">Declared In</h4>
+				<p><code class="declared-in-ref">ISDKAppDelegateHelper.h</code></p>
+			</div>
+			
+			
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/userNotificationCenter:willPresentNotification:withCompletionHandler:" title="userNotificationCenter:willPresentNotification:withCompletionHandler:"></a>
+	<h3 class="method-title"><code><a href="#//api/name/userNotificationCenter:willPresentNotification:withCompletionHandler:">+&nbsp;userNotificationCenter:willPresentNotification:withCompletionHandler:</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+			
+			<div class="method-subsection brief-description">
+				<p>The host application' UNNotificationCenterDelegate must call this method from its own -(void)userNotificationCenter:(UNUserNotificationCenter <em>)center
+willPresentNotification:(UNNotification </em>)notification withCompletionHandler:(void (^)(UNNotificationPresentationOptions options))method</p>
+			</div>
+			
+		    
+
+			<div class="method-subsection method-declaration"><code>+ (void)userNotificationCenter:(nonnull UNUserNotificationCenter *)<em>center</em> willPresentNotification:(nonnull UNNotification *)<em>notification</em> withCompletionHandler:(nonnull void ( ^ ) ( BOOL processed ))<em>completionHandler</em></code></div>
+
+		    
+			
+			<div class="method-subsection arguments-section parameters">
+				<h4 class="method-subtitle parameter-title">Parameters</h4>
+				<table class="argument-def parameter-def">
+				
+					<tr>
+						<th scope="row" class="argument-name"><code>center</code></th>
+						<td><p>the UNUserNotificationCenter object passed to the host application UNUserNotificationCenterDelegate method</p></td>
+					</tr>
+				
+					<tr>
+						<th scope="row" class="argument-name"><code>notification</code></th>
+						<td><p>the UNNotificationResponse parameter passed to the host applicaton UNUserNotificationCenterDelegate method</p></td>
+					</tr>
+				
+					<tr>
+						<th scope="row" class="argument-name"><code>completionHandler</code></th>
+						<td><p>a completion block, where the processed parameter will be set to YES if the notification was ISDK-related,
+NO otherwise. If this method returns NO, the notification received is therefore available for the host application to process.
+NB: Your application is responsible for calling the iOS completion handler passed to the UNUserNotificationCenterDelegate method</p></td>
+					</tr>
+				
+				</table>
+			</div>
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection discussion-section">
+				<h4 class="method-subtitle">Discussion</h4>
+				<p>The host application' UNNotificationCenterDelegate must call this method from its own -(void)userNotificationCenter:(UNUserNotificationCenter <em>)center
+willPresentNotification:(UNNotification </em>)notification withCompletionHandler:(void (^)(UNNotificationPresentationOptions options))method</p>
+			</div>
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection declared-in-section">
+				<h4 class="method-subtitle">Declared In</h4>
+				<p><code class="declared-in-ref">ISDKAppDelegateHelper.h</code></p>
+			</div>
+			
+			
+		</div>
+	</div>
+</div><div class="section-method">
 	<a name="//api/name/application:handleActionWithIdentifier:forLocalNotification:completionHandler:" title="application:handleActionWithIdentifier:forLocalNotification:completionHandler:"></a>
 	<h3 class="method-title"><code><a href="#//api/name/application:handleActionWithIdentifier:forLocalNotification:completionHandler:">+&nbsp;application:handleActionWithIdentifier:forLocalNotification:completionHandler:</a></code>
 </h3>
@@ -880,7 +1031,7 @@ completionHandler:(void (^)(void))completionHandler method</p>
 			
 		    
 
-			<div class="method-subsection method-declaration"><code>+ (BOOL)application:(UIApplication *)<em>application</em> handleActionWithIdentifier:(NSString *)<em>identifier</em> forLocalNotification:(UILocalNotification *)<em>notification</em> completionHandler:(void ( ^ ) ( ))<em>completionHandler</em></code></div>
+			<div class="method-subsection method-declaration"><code>+ (BOOL)application:(nonnull UIApplication *)<em>application</em> handleActionWithIdentifier:(nullable NSString *)<em>identifier</em> forLocalNotification:(nullable UILocalNotification *)<em>notification</em> completionHandler:(nullable void ( ^ ) ( ))<em>completionHandler</em></code></div>
 
 		    
 			
@@ -916,8 +1067,8 @@ completionHandler:(void (^)(void))completionHandler method</p>
 			<div class="method-subsection return">
 				<h4 class="method-subtitle parameter-title">Return Value</h4>
 				<p>YES if the notification was ISDK-related, NO otherwise. If this method returns NO, the
-notification received is  therefore available for the host application to process, and the host application
-must call the completion handler. If this method  return YES, the notification was processed by the ISDK, and
+notification left for the host application to process, and the host application
+should call the completion handler. If this method  return YES, the notification was processed by the ISDK, and
 the host application should not attempt to process it, and should not call the completion handler.</p>
 			</div>
 			
@@ -964,7 +1115,7 @@ completionHandler:(void (^)(void))completionHandler method</p>
 			
 		    
 
-			<div class="method-subsection method-declaration"><code>+ (void)application:(UIApplication *)<em>application</em> didRegisterUserNotificationSettings:(UIUserNotificationSettings *)<em>notificationSettings</em></code></div>
+			<div class="method-subsection method-declaration"><code>+ (void)application:(nonnull UIApplication *)<em>application</em> didRegisterUserNotificationSettings:(nonnull UIUserNotificationSettings *)<em>notificationSettings</em></code></div>
 
 		    
 			
@@ -1027,7 +1178,7 @@ completionHandler:(void (^)(void))completionHandler method</p>
 			
 		    
 
-			<div class="method-subsection method-declaration"><code>+ (void)setAdAdapter:(id&lt;ISDKAdAdapter&gt;)<em>adapter</em></code></div>
+			<div class="method-subsection method-declaration"><code>+ (void)setAdAdapter:(nullable id&lt;ISDKAdAdapter&gt;)<em>adapter</em></code></div>
 
 		    
 			
@@ -1085,7 +1236,7 @@ completionHandler:(void (^)(void))completionHandler method</p>
 			
 		    
 
-			<div class="method-subsection method-declaration"><code>+ (void)setDelegate:(id&lt;ISDKDelegate&gt;)<em>delegate</em></code></div>
+			<div class="method-subsection method-declaration"><code>+ (void)setDelegate:(nullable id&lt;ISDKDelegate&gt;)<em>delegate</em></code></div>
 
 		    
 			
@@ -1146,7 +1297,7 @@ to use the <a href="#//api/name/registerForNotifications">registerForNotificatio
 			
 		    
 
-			<div class="method-subsection method-declaration"><code>+ (UIUserNotificationSettings *)getISDKUserNotificationSettings</code></div>
+			<div class="method-subsection method-declaration"><code>+ (nonnull UIUserNotificationSettings *)getISDKUserNotificationSettings</code></div>
 
 		    
 			
@@ -1167,6 +1318,72 @@ to use the <a href="#//api/name/registerForNotifications">registerForNotificatio
 method to merge your own application UIUserNotificationSettings and call UIApplication&rsquo;s
 registerForRemoteNotificationTypes method. Note that if you use this method, you shouldn&rsquo;t have
 to use the <a href="#//api/name/registerForNotifications">registerForNotifications</a> method below. Also note</p>
+			</div>
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection declared-in-section">
+				<h4 class="method-subtitle">Declared In</h4>
+				<p><code class="declared-in-ref">ISDKAppDelegateHelper.h</code></p>
+			</div>
+			
+			
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/registerForNotificationsWithCompletionHandler:" title="registerForNotificationsWithCompletionHandler:"></a>
+	<h3 class="method-title"><code><a href="#//api/name/registerForNotificationsWithCompletionHandler:">+&nbsp;registerForNotificationsWithCompletionHandler:</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+			
+			<div class="method-subsection brief-description">
+				<p>Register for user notification, using the Incoming PVN SDK notification settings.
+Calling this method may result in the iOS notification permission dialog being shown to the user.
+The host application may therefore choose to call this method at an appropriate time, e.g. after
+educating the user about the value of those notifications.</p>
+			</div>
+			
+		    
+
+			<div class="method-subsection method-declaration"><code>+ (void)registerForNotificationsWithCompletionHandler:(nullable void ( ^ ) ( BOOL granted , NSError *__nullable error ))<em>completionHandler</em></code></div>
+
+		    
+			
+			<div class="method-subsection arguments-section parameters">
+				<h4 class="method-subtitle parameter-title">Parameters</h4>
+				<table class="argument-def parameter-def">
+				
+					<tr>
+						<th scope="row" class="argument-name"><code>completionHandler</code></th>
+						<td><p>a block which will be called with the user&rsquo;s response to notification permissions, and
+any error that has occured. On iOS >=10, the granted parameter will return the user response to the prompt.
+On iOS &lt; 10, the block always return YES.</p></td>
+					</tr>
+				
+				</table>
+			</div>
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection discussion-section">
+				<h4 class="method-subtitle">Discussion</h4>
+				<p>Register for user notification, using the Incoming PVN SDK notification settings.
+Calling this method may result in the iOS notification permission dialog being shown to the user.
+The host application may therefore choose to call this method at an appropriate time, e.g. after
+educating the user about the value of those notifications.</p>
 			</div>
 			
 
@@ -1352,7 +1569,7 @@ choose to call this method at an appropriate time, e.g. after educating the user
 			
 		    
 
-			<div class="method-subsection method-declaration"><code>+ (void)setProjectKey:(NSString *)<em>projectKey</em></code></div>
+			<div class="method-subsection method-declaration"><code>+ (void)setProjectKey:(nonnull NSString *)<em>projectKey</em></code></div>
 
 		    
 			
@@ -1847,7 +2064,7 @@ By default, video downloads are enabled.</p>
 			
 		    
 
-			<div class="method-subsection method-declaration"><code>+ (NSString *)getISDKVersionString</code></div>
+			<div class="method-subsection method-declaration"><code>+ (nonnull NSString *)getISDKVersionString</code></div>
 
 		    
 			
@@ -1939,7 +2156,7 @@ By default, video downloads are enabled.</p>
 			
 		    
 
-			<div class="method-subsection method-declaration"><code>+ (ISDKDataAccessService *)getDataAccessService</code></div>
+			<div class="method-subsection method-declaration"><code>+ (nonnull ISDKDataAccessService *)getDataAccessService</code></div>
 
 		    
 			
@@ -2044,7 +2261,7 @@ notification for content updates.</p>
 				<footer>
 					<div class="footer-copyright">
 						
-						<p class="copyright">Copyright &copy; 2016 Incoming Inc. All rights reserved. Updated: 2016-05-05</p>
+						<p class="copyright">Copyright &copy; 2016 Incoming Inc. All rights reserved. Updated: 2016-09-22</p>
 						
 						
 						<p class="generator">Generated by <a href="http://appledoc.gentlebytes.com">appledoc 2.2.1 (build 1333)</a>.</p>

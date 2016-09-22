@@ -21,7 +21,14 @@ The distribution zip file contains a directory named incoming-ios-sdk, which its
 * a sample configuration file sample-incoming-ios-sdk.plist
 * README and CHANGELOG
 
-Drag and drop the incoming-ios-sdk onto your XCode project. Tick "Copy items if needed".
+The distribution zip also contains:
+
+* incoming-ios-widget: the widget target helper which allows to play Incoming video right in the Notification Center
+* incoming-ios-notificationui: the notification UI, which allows to play Incoming video right in the Notifications, on iOS 10
+
+Integration for these two items are covered in separate pages, c.f. [Today widget integration](./widget-integration.html) and [Custom notification UI (iOS 10)](./custom-notification-ui.html)
+
+To add the Incoming PVN SDK to your project, drag and drop the incoming-ios-sdk folder onto your XCode project. Tick "Copy items if needed".
 ![Add SDK to project dialog](./images/add_sdk_to_project_dialog.png)
 
 Proceed to the [SDK settings configuration](./sdk-settings.html)

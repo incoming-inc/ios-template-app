@@ -3,28 +3,22 @@ title: Widget Integration
 layout: default 
 ---
 
-The Incoming PVN widget uses the app extensions feature of iOS8, and shows a summary of the last notified video, within the iOS Notification centre. When tapped, the widget opens your application and plays the PVN video. This document describes how to integrate the widget in your application. 
+The Incoming PVN widget uses the app extensions feature of iOS 8 and later, to play the last notified video right within the iOS Notification centre. When tapped, the widget opens your application and resume playing the PVN video. This document describes how to integrate the widget in your application. 
 
 ## Widget types ##
 
 The Incoming PVN widget can be configured in three mode: 
 
 * Video widget: the widget plays video straight in the Today view. The video player start muted by default, and can be unmuted by the user. 
-* Static thumbnail: the widget shows the thumbnail, 
-* Animated thumbnail: the widget shows a series of thumbnails in sequence, automatically extracted from the video
+* Static thumbnail: the widget shows the thumbnail, title and duration of the video 
 
 ## Widget designs ##
 
-The widget appearance can be customised. The Incoming SDK supplementary archive provides an implementation with two widget designs, which are automatically shown depending on the iOS device screen size and orientation.
+A simple adaptive widget design is included with the SDK, which appearance can be customised. 
 
-![Portrait widget example](./images/portrait_widget.png){: .center-image }
+![Widget design](./images/widget-design.png)
 
-![Landscape widget example](./images/landscape_widget.png){: .center-image }
-
-Which widget is shown is implemented using iOS [size classes](https://developer.apple.com/library/ios/documentation/UserExperience/Conceptual/MobileHIG/LayoutandAppearance.html). The "portrait" widget layout is adopted for (wCompact, hRegular) class - i.e. all iPhones in portrait, while the "landscape" widget layout is used for the (wRegular, hAny) and (wAny, hCompact) size classes (all iPhones in landscape, and all iPads). 
-
-As of v1.8, the widget zip archive now includes the interface builder source, so this can be customised to suit your needs, c.f. [customisation](#customisation) section below. 
-
+As of v1.8, the widget zip archive includes the interface builder source which can be customised to suit your needs, c.f. [customisation](#customisation) section below. 
  
 ## Pre-requisites
 
@@ -33,7 +27,6 @@ You will need:
 * XCode 7 or above
 * Access to the apple developer portal for your app ID
 * Your app project, [configured to use the Incoming Push Video Notification SDK](./). 
-* the _incoming-ios-sdk-widget-*.zip_ supplementary archive, available from the Incoming Control Panel
 
 
 ## Apple developer portal configuration ##
@@ -77,7 +70,9 @@ In the Apple Developer portal, select “Identifiers” / "App IDs” and enable
 
 ### Re-generate provisioning profiles ###
 
-Provisioning profiles must be re­generated so that the app group service is enabled when building your application. In the Apple Developer Portal, go to “Provisioning Profiles”,and generate a provisioning profile __for each app ID__.
+__Note: If you are using XCode 8 automatic provisioning feature, you may skip this section__
+
+Provisioning profiles must be re­generated so that the app group service is enabled when building your application. In the Apple Developer Portal, go to “Provisioning Profiles”, and generate a provisioning profile __for each app ID__.
 
 ## XCode project configuration
 
@@ -151,7 +146,6 @@ Edit the _incoming-widget.plist_ file as follows:
 * edit the `widget_type` key using the a number, with values 0, 1 or 2, as follows:
   * 0 : Video widget: the widget plays video straight in the Today view. The video player start muted by default, and can be unmuted by the user.
   * 1 : Static thumbnail: the widget shows the thumbnail
-  * 2 : Animated thumbnail: the widget shows a series of thumbnails in sequence, automatically extracted from the video
 
 * replace the `security_application_group` entry with the security group previously defined in the Apple Developer portal, e.g. `group.com.yourcompany.yourapp`
 * replace the `app_url_scheme` key, and enter the url scheme defined in the ‘Add application launch URL scheme’ section above
@@ -177,22 +171,18 @@ To test that the widget is working correctly, start your application, background
  * When hitting the close button, the widget should be hidden, only to be revealed again when the next push notification is fired 
 
 
-### <a name="customisation">Customisation</a>
+### Customisation
 
-As of version 1.8, the widget supplied with the Incoming PVN SDK includes allows for a limited customisation opportunity, as the Interface Builder file implementing the widget design is included in the archive. The ISDKWidget.storyboard file includes both portrait and landscape designs, which are coded using [iOS size classes](https://developer.apple.com/library/ios/documentation/UserExperience/Conceptual/MobileHIG/LayoutandAppearance.html). 
-
-The "portrait" widget layout is adopted for (wCompact,hRegular) class - i.e. all iPhones in portrait, while the "lansdcape" widget layout is used for the (wRegular,hAny) and (wAny,hCompact) size classes (all iPhones in landscape, and all iPads). 
-
-For both designs, the following UI elements can be safely customised:
+As of version 1.8, the widget supplied with the Incoming PVN SDK includes allows for a limited customisation opportunity, as the Interface Builder file implementing the widget design is included in the archive. The ISDKWidget.storyboard file allows the following UI elements to be safely customised:
 
 - Background color
 - Label sizes and position, font size and color 
 
-Note that to display properly using any thumbnail / video aspect ratio, additional constraints are applied to the landscape design at run time, in code. This may interfere with any change in the constraints you make. 
+Note that to adapt the display to any video aspect ratio, additional constraints are applied to the view at runtime, in code. This may interfere with any change in the constraints you make. 
 
 Please contact your Incoming representative for further customisation opportunities. 
 
-
+Proceed to the [Notification UI integration](./custom-notification-ui.html)
 
 
 
