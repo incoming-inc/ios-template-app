@@ -5,14 +5,19 @@ layout: default
 
 iOS 10 introduced the ability to customise how user notifications are presented, through the [UserNotificationUI framework](https://developer.apple.com/reference/usernotificationsui). 
 
-Leveraging this iOS feature, from version 1.13 and onward, the Incoming PVN SDK can play video right into the notification UI. This document outlines how to implement a custom user notification UI using the Incoming Push Video SDK.
+Leveraging this iOS feature, from version 1.13 and onward, the Incoming PVN SDK can play videos right into the notification UI. This feature can be accessed by users by hard-pressing a notification on 3D touch devices, or by sliding on non-3D touch devices. 
+
+![Notification UI Overview](images/notification-ui-overview.png)      ![Notification UI Player](images/notification-ui-player.png)
+
+This document outlines how to implement a custom user notification UI using the Incoming Push Video SDK.
 
 
 ## Overview
 
 Custom user notification UI are implemented in iOS 10 as an [_app extension_](https://developer.apple.com/library/ios/documentation/General/Conceptual/ExtensibilityPG/). 
 
-While iOS provides the ability to add video media attachments to notification, the video file sizes are restricted to 50MB. To go around this limitation, the Incoming PVN SDK uses the app sandbox to share video assets between the app and the Notification content target.  
+
+While iOS provides the ability to add video media attachments to notifications, iOS restricts the video file attachments to under 50MB in size. To go around this limitation, the Incoming PVN SDK uses an iOS [shared container](https://developer.apple.com/library/content/documentation/General/Conceptual/ExtensibilityPG/ExtensionScenarios.html#//apple_ref/doc/uid/TP40014214-CH21-SW6) to share files between the app and the Notification Content extension.  
 
 __Note: The following steps are quite similar to the steps needed to [configure the today widget](./widget-integration.html), so if you have already done that - you will find these can be be significantly shortened__
 
