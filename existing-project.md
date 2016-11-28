@@ -112,6 +112,12 @@ The minimum code to add to your application delegate is as follows.
 	- (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions
 	{
 		[ISDKAppDelegateHelper application:[UIApplication sharedApplication] didFinishLaunchingWithOptions:launchOptions];
+		
+		// Set the UNUserNotificationCenterDelegate - iOS > 10
+		if (NSClassFromString(@"UNUserNotificationCenter")) {
+	        UNUserNotificationCenter *center = [UNUserNotificationCenter currentNotificationCenter];
+	        center.delegate = self;
+	    }
 
 		// this registers for remote notifications on iOS > 8. It must be called
 		// at some stage in your app initialization. Note that this method will never
