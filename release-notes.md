@@ -3,6 +3,12 @@ title: Incoming iOS PVN SDK - Release notes
 layout: default 
 ---
 
+PVN SDK v2.0-160 - March 2017
+-----------------------------
+- New project-wide campaign mode feature to support displaying videos multiple times
+- Bug fixes 
+
+
 PVN SDK v1.13 - Sept. 2016
 -------------------------
 - Support for iOS 10 UNNotification framework. Note: the SDK will now emit UNNotifications instead of UILocalNotification when running on iOS10. 

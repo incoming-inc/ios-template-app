@@ -17,8 +17,9 @@ You will find both these values in the Incoming media control panel, by going to
 
 In addition, this file may contain the following optional keys:
 
- * `notification_prefix`: (String) Prefix the notification text. E.g. "New video! ". Don't forget to include a space at the end. 
- * `notification_sound`: (string) - Filename of the sound to play when showing a notification, e.g. sound1.caf. 
+ * `campaign_mode`: set to YES or NO. Settings this flag to YES will result in each video played several times, until the campaign budget is expired. To set this flag to YES, you should also have the project configured in campaign_mode in the Incoming control panel. Please contact your Incoming representative to discuss this feature if unsure.  
+ * `notification_prefix`: Prefix the notification text. E.g. "New video! ". Don't forget to include a space at the end. 
+ * `notification_sound`: Filename of the sound to play when showing a notification, e.g. sound1.caf. 
 	The corresponding sound file need to be added to your main app target's bundle. For information about 
 	supported sound file formats, c.f. [the official doc](https://developer.apple.com/library/ios/documentation/NetworkingInternet/Conceptual/RemoteNotificationsPG/Chapters/IPhoneOSClientImp.html#//apple_ref/doc/uid/TP40008194-CH103-SW6) 
 
