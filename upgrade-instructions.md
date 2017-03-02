@@ -3,6 +3,12 @@ title: Incoming iOS PVN SDK - Upgrade instructions
 layout: default 
 ---
 
+
+PVN SDK v2.0-160 - March 2017
+-----------------------------
+- No breaking API change introduced in this version. Just remove the old Incoming-PVN.{bundle,framework} from your project, and add the new ones.
+
+
 PVN SDK v1.13 - Aug. 2016
 -------------------------
 - 1.13 brings support for UNUserNotifications and generally iOS 10 support
