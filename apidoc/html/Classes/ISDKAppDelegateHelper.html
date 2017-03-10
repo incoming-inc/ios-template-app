@@ -94,9 +94,13 @@
 		
 		<option value="//api/name/hasEverAskedForNotificationPermissions">+ hasEverAskedForNotificationPermissions</option>
 		
+		<option value="//api/name/isInterstitialReady">+ isInterstitialReady</option>
+		
 		<option value="//api/name/isNotificationDisplayActive">+ isNotificationDisplayActive</option>
 		
 		<option value="//api/name/notificationPermissionsOk">+ notificationPermissionsOk</option>
+		
+		<option value="//api/name/playInterstitialFromViewController:">+ playInterstitialFromViewController:</option>
 		
 		<option value="//api/name/registerForLocationUpdates">+ registerForLocationUpdates</option>
 		
@@ -119,6 +123,8 @@
 		<option value="//api/name/setNotificationsDisplayActive:">+ setNotificationsDisplayActive:</option>
 		
 		<option value="//api/name/setProjectKey:">+ setProjectKey:</option>
+		
+		<option value="//api/name/shouldPlayInterstitial">+ shouldPlayInterstitial</option>
 		
 		<option value="//api/name/userNotificationCenter:didReceiveNotificationResponse:withCompletionHandler:">+ userNotificationCenter:didReceiveNotificationResponse:withCompletionHandler:</option>
 		
@@ -1173,7 +1179,8 @@ completionHandler:(void (^)(void))completionHandler method</p>
 			
 			
 			<div class="method-subsection brief-description">
-				<p>Configure an <a href="../Protocols/ISDKAdAdapter.html">ISDKAdAdapter</a></p>
+				<p>Configure an <a href="../Protocols/ISDKAdAdapter.html">ISDKAdAdapter</a>. Those adapters are to be used
+to show pre or post-roll advertisement using third party ad SDK</p>
 			</div>
 			
 		    
@@ -1202,7 +1209,8 @@ completionHandler:(void (^)(void))completionHandler method</p>
 			
 			<div class="method-subsection discussion-section">
 				<h4 class="method-subtitle">Discussion</h4>
-				<p>Configure an <a href="../Protocols/ISDKAdAdapter.html">ISDKAdAdapter</a></p>
+				<p>Configure an <a href="../Protocols/ISDKAdAdapter.html">ISDKAdAdapter</a>. Those adapters are to be used
+to show pre or post-roll advertisement using third party ad SDK</p>
 			</div>
 			
 
@@ -1413,7 +1421,7 @@ educating the user about the value of those notifications.</p>
 			
 			<div class="method-subsection brief-description">
 				<p>Register for notifications, using the Incoming PVN SDK notification settings.
-Calling this method may result in the iOS notification permission dialog being shown to the user.
+Calling this method may result in the iOS user notification permission dialog being shown to the user.
 The host application may therefore choose to call this method at an appropriate time, e.g. after
 educating the user about the value of those notifications.</p>
 			</div>
@@ -1433,7 +1441,7 @@ educating the user about the value of those notifications.</p>
 			<div class="method-subsection discussion-section">
 				<h4 class="method-subtitle">Discussion</h4>
 				<p>Register for notifications, using the Incoming PVN SDK notification settings.
-Calling this method may result in the iOS notification permission dialog being shown to the user.
+Calling this method may result in the iOS user notification permission dialog being shown to the user.
 The host application may therefore choose to call this method at an appropriate time, e.g. after
 educating the user about the value of those notifications.</p>
 			</div>
@@ -1915,8 +1923,10 @@ By default, notifications are enabled.</p>
 			<div class="method-subsection discussion-section">
 				<h4 class="method-subtitle">Discussion</h4>
 				<p>Activate or de-activate ISDK notifications display.
-By default, notifications are enabled.</p><div class="note"><p><strong>Note:</strong> As notifications and widget are synchronized, a side effect
-of this method is that disabling notifications will disable widget updates.</p></div><div class="note"><p><strong>Note:</strong> Disabling notifications using this method will also disable downloads</p></div>
+By default, notifications are enabled.</p><div class="note"><p><strong>Note:</strong> notifications and widget are synchronized, a side effect
+of this method is that disabling notifications will disable widget updates.</p></div><div class="note"><p><strong>Note:</strong> As of ISDK v2.0, disabli, disabling notifications using
+this method will not disable downloads. To disable downloads,
+use [ISDKAppDelegateHelper setDownloadsEnabled:NO]</p></div>
 			</div>
 			
 
@@ -2203,7 +2213,7 @@ By default, video downloads are enabled.</p>
 from UIApplication. In iOS &lt; 8, this method has no effect (remote notifications are
 then registered with user notifications, when calling <a href="#//api/name/registerForNotifications">[ISDKAppDelegateHelper registerForNotifications]</a>
 This method must be called, e.g. at the app startup time for the Incoming Push video service
-to work. Note that this method will only register for remote notifications and will never prompt
+to work. Note that this method will only register for silent remote notifications and will never prompt
 the user for notification permissions. The Incoming push video service relies on silent remote
 notification for content updates.</p>
 			</div>
@@ -2226,9 +2236,181 @@ notification for content updates.</p>
 from UIApplication. In iOS &lt; 8, this method has no effect (remote notifications are
 then registered with user notifications, when calling <a href="#//api/name/registerForNotifications">[ISDKAppDelegateHelper registerForNotifications]</a>
 This method must be called, e.g. at the app startup time for the Incoming Push video service
-to work. Note that this method will only register for remote notifications and will never prompt
+to work. Note that this method will only register for silent remote notifications and will never prompt
 the user for notification permissions. The Incoming push video service relies on silent remote
 notification for content updates.</p>
+			</div>
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection declared-in-section">
+				<h4 class="method-subtitle">Declared In</h4>
+				<p><code class="declared-in-ref">ISDKAppDelegateHelper.h</code></p>
+			</div>
+			
+			
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/isInterstitialReady" title="isInterstitialReady"></a>
+	<h3 class="method-title"><code><a href="#//api/name/isInterstitialReady">+&nbsp;isInterstitialReady</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+			
+			<div class="method-subsection brief-description">
+				<p>Check if there is a interstitial available to be played now</p>
+			</div>
+			
+		    
+
+			<div class="method-subsection method-declaration"><code>+ (BOOL)isInterstitialReady</code></div>
+
+		    
+			
+
+			
+			<div class="method-subsection return">
+				<h4 class="method-subtitle parameter-title">Return Value</h4>
+				<p>YES if an interstitial is currently available to play</p>
+			</div>
+			
+
+			
+
+			
+			<div class="method-subsection discussion-section">
+				<h4 class="method-subtitle">Discussion</h4>
+				<p>Check if there is a interstitial available to be played now</p>
+			</div>
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection declared-in-section">
+				<h4 class="method-subtitle">Declared In</h4>
+				<p><code class="declared-in-ref">ISDKAppDelegateHelper.h</code></p>
+			</div>
+			
+			
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/shouldPlayInterstitial" title="shouldPlayInterstitial"></a>
+	<h3 class="method-title"><code><a href="#//api/name/shouldPlayInterstitial">+&nbsp;shouldPlayInterstitial</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+			
+			<div class="method-subsection brief-description">
+				<p>Check if the app should be playing an interstitial.
+This method will return YES when the ISDK moment selection
+algorithm has detected that now is a good time to show an interstitial.
+Using this method allows to show interstitial ad the rate specified in the</p>
+			</div>
+			
+		    
+
+			<div class="method-subsection method-declaration"><code>+ (BOOL)shouldPlayInterstitial</code></div>
+
+		    
+			
+
+			
+			<div class="method-subsection return">
+				<h4 class="method-subtitle parameter-title">Return Value</h4>
+				<p>YES if there is an intestitial video ready to play, and if the ISDK moment selection
+algorithm has detected that now is a good time to show an interstitial. NO otherwise.</p>
+			</div>
+			
+
+			
+
+			
+			<div class="method-subsection discussion-section">
+				<h4 class="method-subtitle">Discussion</h4>
+				<p>Check if the app should be playing an interstitial.
+This method will return YES when the ISDK moment selection
+algorithm has detected that now is a good time to show an interstitial.
+Using this method allows to show interstitial ad the rate specified in the</p>
+			</div>
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection declared-in-section">
+				<h4 class="method-subtitle">Declared In</h4>
+				<p><code class="declared-in-ref">ISDKAppDelegateHelper.h</code></p>
+			</div>
+			
+			
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/playInterstitialFromViewController:" title="playInterstitialFromViewController:"></a>
+	<h3 class="method-title"><code><a href="#//api/name/playInterstitialFromViewController:">+&nbsp;playInterstitialFromViewController:</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+			
+			<div class="method-subsection brief-description">
+				<p>Present and play an interstitial video</p>
+			</div>
+			
+		    
+
+			<div class="method-subsection method-declaration"><code>+ (BOOL)playInterstitialFromViewController:(nonnull UIViewController *)<em>viewController</em></code></div>
+
+		    
+			
+			<div class="method-subsection arguments-section parameters">
+				<h4 class="method-subtitle parameter-title">Parameters</h4>
+				<table class="argument-def parameter-def">
+				
+					<tr>
+						<th scope="row" class="argument-name"><code>viewController</code></th>
+						<td><p>the UIViewController to present on</p></td>
+					</tr>
+				
+				</table>
+			</div>
+			
+
+			
+			<div class="method-subsection return">
+				<h4 class="method-subtitle parameter-title">Return Value</h4>
+				<p>YES if the Incoming video player was presented, NO if there has been an error (e.g. there was no interstitial to play)</p>
+			</div>
+			
+
+			
+
+			
+			<div class="method-subsection discussion-section">
+				<h4 class="method-subtitle">Discussion</h4>
+				<p>Present and play an interstitial video</p><div class="note"><p><strong>Note:</strong> your app should first check if there is an interstitial video to play using the isIntestitialReady method</p></div><div class="note"><p><strong>Note:</strong> the <a href="../Protocols/ISDKDelegate.html">ISDKDelegate</a> optional method didPlayVideoWithPercentagePlayed will be called upon completion</p></div>
 			</div>
 			
 
@@ -2258,7 +2440,7 @@ notification for content updates.</p>
 				<footer>
 					<div class="footer-copyright">
 						
-						<p class="copyright">Copyright &copy; 2017 Incoming Inc. All rights reserved. Updated: 2017-03-02</p>
+						<p class="copyright">Copyright &copy; 2017 Incoming Inc. All rights reserved. Updated: 2017-03-10</p>
 						
 						
 						<p class="generator">Generated by <a href="http://appledoc.gentlebytes.com">appledoc 2.2.1 (build 1333)</a>.</p>

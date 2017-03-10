@@ -3,6 +3,12 @@ title: Incoming iOS PVN SDK - Release notes
 layout: default 
 ---
 
+PVN SDK v2.0-176 - March 2017
+-----------------------------
+- Minor bug fixes
+- New features: in-app interstitial playback
+
+
 PVN SDK v2.0-160 - March 2017
 -----------------------------
 - New project-wide campaign mode feature to support displaying videos multiple times
