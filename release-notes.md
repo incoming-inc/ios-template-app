@@ -3,6 +3,11 @@ title: Incoming iOS PVN SDK - Release notes
 layout: default 
 ---
 
+PVN SDK v2.1.0-233 - May 2017
+-----------------------------
+- Unify campaign mode feature with PVN. Feature can be activated on individual videos through the control panel. 
+- Minor bug fixes and performance improvements. 
+
 PVN SDK v2.0-176 - March 2017
 -----------------------------
 - Minor bug fixes

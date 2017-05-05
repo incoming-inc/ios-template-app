@@ -21,8 +21,8 @@ In addition, this file may contain the following optional keys:
   * `notification_sound`: (String) Filename of the sound to play when showing a notification, e.g. sound1.caf, or empty or missing if no sound is to be played 
 	The corresponding sound file need to be added to your main app target's bundle. For information about 
 	supported sound file formats, c.f. [the official doc](https://developer.apple.com/library/ios/documentation/NetworkingInternet/Conceptual/RemoteNotificationsPG/Chapters/IPhoneOSClientImp.html#//apple_ref/doc/uid/TP40008194-CH103-SW6) 
-  * [New in 2.0-160] `campaign_mode`: (Boolean) Settings this flag to YES will result in each video played several times, until a campaign budget is expired. To set this flag to YES, you should also have the project configured in campaign_mode in the Incoming control panel. Please contact your Incoming representative to discuss this feature if unsure. (Default to NO).	
-  * [New in v2.0-176] `video_controls`: (Boolean) Settings this flag to NO will disable video controls, forcing the user to complete video playback. Default to YES. 
+  * [New in 2.0-160] [Retired in 2.1-233] `campaign_mode`	
+  * [New in v2.0-176] `video_controls`: (Boolean) Settings this flag to NO will disable video controls, forcing the user to complete video playback. 
 
 The SDK is now operational. When running your app, the SDK will download video content in the background, and reveal push video notifications or show interstitial according to your project settings.  
 

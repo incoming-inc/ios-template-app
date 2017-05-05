@@ -24,7 +24,6 @@ by dropping the SDK distribution folder into your project, and adding a small am
 # Optional configuration #
  
  * [Re-engagement deep-linking](./deep-linking.html)
- * [Third Party Advertising SDK Integration](./advertising.html)
  * [Audience segmentation](./targeting.html)
 
 
