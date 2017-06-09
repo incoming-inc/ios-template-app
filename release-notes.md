@@ -3,6 +3,11 @@ title: Incoming iOS PVN SDK - Release notes
 layout: default 
 ---
 
+PVN SDK v2.1-26 - June 2017
+---------------------------
+- Fix content storage issue arising when notification UI nor widget are NOT configured, and app is re-installed / upgraded.
+
+
 PVN SDK v2.1.0-233 - May 2017
 -----------------------------
 - Unify campaign mode feature with PVN. Feature can be activated on individual videos through the control panel. 
