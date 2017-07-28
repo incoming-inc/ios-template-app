@@ -3,10 +3,11 @@ title: Incoming iOS PVN SDK - Release notes
 layout: default 
 ---
 
-PVN SDK v2.2-1 - July 2017
+PVN SDK v2.2.1 - Aug 2017
 --------------------------
 - Per-video configurable reveal option (in app, notification).
-- Minor bug fixes and performance improvements. 
+- (optional) Cocoapod SDK packaging
+- Minor bug fixes and performance improvements.
 
 
 PVN SDK v2.1-26 - June 2017
@@ -14,7 +15,7 @@ PVN SDK v2.1-26 - June 2017
 - Fix content storage issue arising when notification UI nor widget are NOT configured, and app is re-installed / upgraded.
 
 
-PVN SDK v2.1.0-233 - May 2017
+PVN SDK v2.1-233 - May 2017
 -----------------------------
 - Unify campaign mode feature with PVN. Feature can be activated on individual videos through the control panel. 
 - Minor bug fixes and performance improvements. 
@@ -35,7 +36,8 @@ PVN SDK v1.13 - Sept. 2016
 -------------------------
 - Support for iOS 10 UNNotification framework. Note: the SDK will now emit UNNotifications instead of UILocalNotification when running on iOS10. 
 - Support for iOS 10 UNNotificationUI framework, for in-notification video playback
-- The widget, notification UI and main SDK are now distributed in a single zip file. 
+- The widget, notification UI and main SDK are now distributed in a single zip file
+
 
 PVN SDK v1.12 - July 2016
 ---------------------------
