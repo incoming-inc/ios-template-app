@@ -3,9 +3,9 @@
 <plist version="1.0">
 <dict>
 	<key>app_url_scheme</key>
-	<string>pvnsample</string>
+	<string>companyapp</string>
 	<key>security_application_group</key>
-	<string>group.com.incoming.pvnsample</string>
+	<string>group.com.company.app</string>
 	<key>widget_type</key>
 	<string>2</string>
 </dict>
