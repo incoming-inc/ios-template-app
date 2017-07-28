@@ -8,6 +8,7 @@
 
 import UIKit
 import UserNotifications
+import IncomingPVN
 
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate, UNUserNotificationCenterDelegate {
@@ -15,7 +16,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate, UNUserNotificationCenterD
     var window: UIWindow?
 
 
-    func application(application: UIApplication, didFinishLaunchingWithOptions launchOptions: [NSObject: AnyObject]?) -> Bool {
+    func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplicationLaunchOptionsKey: Any]?) -> Bool {
         
         // ISDK method forward
         ISDKAppDelegateHelper.application(application, didFinishLaunchingWithOptions:launchOptions!)
@@ -25,15 +26,14 @@ class AppDelegate: UIResponder, UIApplicationDelegate, UNUserNotificationCenterD
         ISDKAppDelegateHelper.registerForRemoteNotifications()
         
         // This will pop-up the OS permission dialog, feel free to
-        // integrate them differently in your workflow
+        // integrate them differently in your workflow, e.g. after prompting the user if they'd agree to do so
         ISDKAppDelegateHelper.registerForNotifications()
         
         // set UNNUserNotificationCenter delegate
         if #available(iOS 10.0, *) {
-            let notificationCenter = UNUserNotificationCenter.currentNotificationCenter()
+            let notificationCenter = UNUserNotificationCenter.current()
             notificationCenter.delegate = self
         }
-        
         
         // the two following calls are optional. They enable location and motion data collection
         // which improves the timing prediction of Push Video Notifications.
@@ -42,16 +42,15 @@ class AppDelegate: UIResponder, UIApplicationDelegate, UNUserNotificationCenterD
         ISDKAppDelegateHelper.registerForLocationUpdates()
         ISDKAppDelegateHelper.registerForMotionActivity()
         
-        
         // <insert your app initialization code here>
         return true
     }
     
     
-    func application(application: UIApplication, openURL url: NSURL, sourceApplication: String?, annotation: AnyObject) -> Bool {
+    func application(_ application: UIApplication, open url: URL, sourceApplication: String?, annotation: Any) -> Bool {
         
         // ISDK method forward
-        if (ISDKAppDelegateHelper.handleOpenURL(url, sourceApplication: sourceApplication!, annotation: annotation) == false)
+        if (ISDKAppDelegateHelper.handleOpen(url, sourceApplication: sourceApplication!, annotation: annotation) == false)
         {
             // perform handling of your app URL here
             
@@ -60,21 +59,21 @@ class AppDelegate: UIResponder, UIApplicationDelegate, UNUserNotificationCenterD
     }
     
     
-    func application(application: UIApplication, performFetchWithCompletionHandler completionHandler: (UIBackgroundFetchResult) -> Void) {
+    func application(_ application: UIApplication, performFetchWithCompletionHandler completionHandler: @escaping (UIBackgroundFetchResult) -> Void) {
         
         // ISDK method forward
         ISDKAppDelegateHelper.application(application, performFetchWithCompletionHandler:completionHandler)
         
     }
     
-    func application(application: UIApplication, handleEventsForBackgroundURLSession identifier: String, completionHandler: () -> Void) {
+    func application(_ application: UIApplication, handleEventsForBackgroundURLSession identifier: String, completionHandler: @escaping () -> Void) {
         
         // ISDK method forward
         ISDKAppDelegateHelper.application(application, handleEventsForBackgroundURLSession: identifier, completionHandler: completionHandler)
         
     }
     
-    func application(application: UIApplication, didRegisterForRemoteNotificationsWithDeviceToken deviceToken: NSData) {
+    func application(_ application: UIApplication, didRegisterForRemoteNotificationsWithDeviceToken deviceToken: Data) {
         
         // ISDK method forward
         ISDKAppDelegateHelper.application(application, didRegisterForRemoteNotificationsWithDeviceToken: deviceToken)
@@ -82,100 +81,84 @@ class AppDelegate: UIResponder, UIApplicationDelegate, UNUserNotificationCenterD
     }
     
     
-    func application(application: UIApplication, didFailToRegisterForRemoteNotificationsWithError error: NSError) {
+    func application(_ application: UIApplication, didFailToRegisterForRemoteNotificationsWithError error: Error) {
         
         // ISDK method forward
         ISDKAppDelegateHelper.application(application, didFailToRegisterForRemoteNotificationsWithError:error)
     }
     
-    func application(application: UIApplication, didReceiveRemoteNotification userInfo: [NSObject : AnyObject]) {
+    func application(_ application: UIApplication, didReceiveRemoteNotification userInfo: [AnyHashable: Any]) {
         
         // ISDK method forward
-        if ISDKAppDelegateHelper.application(application, didReceiveRemoteNotification: userInfo) == false
-        {
+        if ISDKAppDelegateHelper.application(application, didReceiveRemoteNotification: userInfo) == false {
             // process your app's remote notification here
 
         }
     }
     
-    func application(application: UIApplication, didReceiveLocalNotification notification: UILocalNotification) {
+    func application(_ application: UIApplication, didReceive notification: UILocalNotification) {
         
         // ISDK method forward
-        if (ISDKAppDelegateHelper.application(application, didReceiveLocalNotification: notification) == false)
-        {
+        if (ISDKAppDelegateHelper.application(application, didReceive: notification) == false) {
             // process your app local notification here
             
         }
     }
     
     
-    func application(application: UIApplication, handleActionWithIdentifier identifier: String?, forLocalNotification notification: UILocalNotification, completionHandler: () -> Void) {
+    func application(_ application: UIApplication, handleActionWithIdentifier identifier: String?, for notification: UILocalNotification, completionHandler: @escaping () -> Void) {
         
         // ISDK method forward
-        if (ISDKAppDelegateHelper.application(application, handleActionWithIdentifier: identifier, forLocalNotification: notification, completionHandler: completionHandler) == false)
-        {
+        if (ISDKAppDelegateHelper.application(application, handleActionWithIdentifier: identifier, for: notification, completionHandler: completionHandler) == false) {
+            
             // process your app local notification here
-            
-            
-            // call completion handler
+            // when done, call the OS completion block
             completionHandler();
         }
     }
     
 
-    func applicationWillResignActive(application: UIApplication) {
-        
-        // ISDK method calls
-        
-        
-        // Sent when the application is about to move from active to inactive state. This can occur for certain types of temporary interruptions (such as an incoming phone call or SMS message) or when the user quits the application and it begins the transition to the background state.
-        // Use this method to pause ongoing tasks, disable timers, and throttle down OpenGL ES frame rates. Games should use this method to pause the game.
-        
-        
-        
+    func applicationWillResignActive(_ application: UIApplication) {
     }
 
-    func applicationDidEnterBackground(application: UIApplication) {
-        // Use this method to release shared resources, save user data, invalidate timers, and store enough application state information to restore your application to its current state in case it is terminated later.
-        // If your application supports background execution, this method is called instead of applicationWillTerminate: when the user quits.
+    func applicationDidEnterBackground(_ application: UIApplication) {
     }
 
-    func applicationWillEnterForeground(application: UIApplication) {
-        // Called as part of the transition from the background to the inactive state; here you can undo many of the changes made on entering the background.
+    func applicationWillEnterForeground(_ application: UIApplication) {
     }
 
-    func applicationDidBecomeActive(application: UIApplication) {
-        // Restart any tasks that were paused (or not yet started) while the application was inactive. If the application was previously in the background, optionally refresh the user interface.
+    func applicationDidBecomeActive(_ application: UIApplication) {
     }
 
-    func applicationWillTerminate(application: UIApplication) {
-        // Called when the application is about to terminate. Save data if appropriate. See also applicationDidEnterBackground:.
+    func applicationWillTerminate(_ application: UIApplication) {
     }
     
     @available(iOS 10.0, *)
-    func userNotificationCenter(center: UNUserNotificationCenter, didReceive response: UNNotificationResponse, withCompletionHandler completionHandler: () -> Void) {
+    func userNotificationCenter(_ center: UNUserNotificationCenter, didReceive response: UNNotificationResponse, withCompletionHandler completionHandler: @escaping () -> Void) {
         
         // forward to ISDK
-        ISDKAppDelegateHelper.userNotificationCenter(center, didReceiveNotificationResponse: response) { (processed: Bool) -> Void in
+        ISDKAppDelegateHelper.userNotificationCenter(center, didReceive: response) { (processed: Bool) -> Void in
+            
             if !processed {
                 // this notification is not ISDK, handle your app notification response here as needed
             }
             
+            // when done, call the OS completion block
             completionHandler()
         }
     }
     
     @available(iOS 10.0, *)
-    func userNotificationCenter(center: UNUserNotificationCenter, willPresent notification: UNNotification, withCompletionHandler completionHandler: (UNNotificationPresentationOptions) -> Void) {
-        ISDKAppDelegateHelper.userNotificationCenter(center, willPresentNotification: notification) { (processed: Bool) -> Void in
+    func userNotificationCenter(_ center: UNUserNotificationCenter, willPresent notification: UNNotification, withCompletionHandler completionHandler: @escaping (UNNotificationPresentationOptions) -> Void) {
+        
+        ISDKAppDelegateHelper.userNotificationCenter(center, willPresent: notification) { (processed: Bool) -> Void in
             if !processed {
                 // this notification is not ISDK
                 // process your app notification here
                 // and call the completion handler if needed ..
+
             }
         }
     }
-
-
 }
 
