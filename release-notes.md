@@ -3,6 +3,12 @@ title: Incoming iOS PVN SDK - Release notes
 layout: default 
 ---
 
+PVN SDK v2.2-1 - July 2017
+--------------------------
+- Per-video configurable reveal option (in app, notification).
+- Minor bug fixes and performance improvements. 
+
+
 PVN SDK v2.1-26 - June 2017
 ---------------------------
 - Fix content storage issue arising when notification UI nor widget are NOT configured, and app is re-installed / upgraded.
