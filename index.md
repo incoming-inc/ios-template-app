@@ -12,10 +12,11 @@ project's control panel, contact your Incoming representative.
 
 The Incoming Push Video SDK can be used in a [new project](./new-project.html) by cloning the 
 simple template application (swift or Objective-C), or integrated in an [existing project](./existing-project.html),
-by dropping the SDK distribution folder into your project, and adding a small amount of code.
+through cocoapod, or by dropping the SDK distribution folder into your project, and adding a small amount of code.
 
  * [New project from template](./new-project.html)
- * [Existing project](./existing-project.html)
+ * [Existing project, manual integration](./existing-project.html)
+ * [Existing project, cocoapod integration](./existing-project-cocoapod.html)
  * Integration [FAQ](./faq.html)
  * [SDK settings](./sdk-settings.html)
  * [Today widget integration](./widget-integration.html)

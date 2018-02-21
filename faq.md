@@ -46,7 +46,9 @@ layout: default
 	Check that you have correctly configured the app_url_scheme key in the incoming-ios-sdk.plist configuration file. 
 	
 	
+* **My custom notification content extension doesn't work, I can't see the video when pressing the notification**
 
+	In your notification content target's Info pane, check that you have correctly configured the _UNNotificationExtensionCategory_ value to `isdk-notifications`, as per [the documentation](./custom-notification-ui.html)
 
 
 

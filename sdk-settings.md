@@ -8,6 +8,9 @@ layout: default
 In XCode, Navigate to the incoming-ios-sdk group in your project explorer, rename the file sample-incoming-ios-sdk.plist to 
 incoming-ios-sdk.plist if necessary. 
 
+If you used cocoapod, navigate to the IncomingPVN cocoapod Resource folder (in the source navigation, select the Pods target, then the Pods folder and IncomingPVN/IncomingPVN/Resources) and copy the sample-incoming-ios-sdk.plist to your app's bundle. Rename it to incoming-ios-sdk.plist. 
+
+
 This incoming-ios-sdk.plist file is the main SDK configuration file, it must contain at minimum the following keys
 
  * `api_endpoint`: the Incoming API endpoint to connect to, e.g. api-sandbox.incoming.tv

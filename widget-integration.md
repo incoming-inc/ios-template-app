@@ -32,7 +32,7 @@ You will need:
 ## Apple developer portal configuration ##
 
 The widget is an iOS 8 app extension of the “Today View” type (c.f. [https://developer.apple.com/app­extensions/](https://developer.apple.com/app­extensions/))​.
-Its code therefore reside in a separate target under your XCode project, with a separate Bundle ID (‘app id’). You must therefore configure two bundle ID in the apple developer portal: one for your application and one for the widget. In addition, the SDK and the widget must be part of the same apple app group, to be able to communicate and exchange data (c.f. the “Sharing Data with your Container app” section at [https://developer.apple.com/library/ios/documentation/General/Conceptual/ExtensibilityPG/Ext ensionScenarios.html](https://developer.apple.com/library/ios/documentation/General/Conceptual/ExtensibilityPG/Ext ensionScenarios.html)).
+Its code therefore reside in a separate target under your XCode project, with a separate Bundle ID (‘app id’). You need to configure two bundle ID in the apple developer portal: one for your application and one for the widget. In addition, the SDK and the widget must be part of the same apple __app group__, to be able to communicate and exchange data (c.f. the “Sharing Data with your Container app” section at [https://developer.apple.com/library/ios/documentation/General/Conceptual/ExtensibilityPG/Ext ensionScenarios.html](https://developer.apple.com/library/ios/documentation/General/Conceptual/ExtensibilityPG/Ext ensionScenarios.html)).
 
 
 ### Create the bundle IDs ###
@@ -90,11 +90,7 @@ Note: You may want to have the widget's target bundle version number identical t
 
 In XCode, click on the widget, the go to the "General" configuration tab. In the "Deployment Target" area, enter "8.0" (or higher if your app doesn't support 8.0) for the deployment target. 
 
-### Configure the widget target Linker Flags
 
-In XCode, click on the widget's target, then on the "Build Settings" tag. Search for 'Other Linker Flags' in the top right search box, and enter '-ObjC' for the 'Other Linker Flags' option.  
-
-![Configure widget target linker flags in Xcode](./images/widget_other_linker_flags.png)
 
 ### Configure the app and widget target capabilities
 
@@ -112,7 +108,7 @@ This step ensures that the Incoming PVN SDK addresses the right widget. Edit the
 
 ![Configure SDK configuration file](./images/widget_sdk_configuration_file.png)
 
-### Configure target provisioning profiles
+### Configure the target provisioning profiles
 
 This step ensure that each target embeds the right provisioning profile. In both main app and widget target’s build settings, scroll down to the “Code Signing” and check that the “Provisioning Profile” setting is set to “Automatic”. Alternatively, select the provisioning profiles previously created in the Apple Developer Portal.
 
@@ -129,31 +125,50 @@ In addition, you need to add the URL to the _incoming­-ios-­sdk.plist_ file, i
 
 ![Configure SDK configuration file](./images/widget_app_url_sdk_config.png)
 
-### Add the Incoming widget library and assets to your project
+### Add the Incoming widget library and assets to your Today Widget target
 
-Unzip the _incoming-ios-sdk-widget-*.zip_ supplementary archive. Add all the files to your project, adding them to widget target.
+You can add the Incoming widget library using either cocoapod. 
+
+#### Cocoapod method
+
+To add the widget library to your Today Widget target, amend your Podfile using the following
+
+        # (Replate MyAppWidget with your target name)
+        target 'MyAppWidget' do
+            pod 'IncomingSDK/TodayWidget'
+        end
+		
+then run `pod install`
+
+#### Zip Archive method
+
+From the Incoming PVN SDK zip archive distribution, drag the TodayWidget subfolder to your project, adding them to widget target.
+
+##### Configure the widget target Linker Flags
+
+(This step can be skipped if using cocoapod). In XCode, click on the widget's target, then on the "Build Settings" tag. Search for 'Other Linker Flags' in the top right search box, and enter '-ObjC' for the 'Other Linker Flags' option.  
+
+![Configure widget target linker flags in Xcode](./images/widget_other_linker_flags.png)
+
+### Configure your Today Widget target
 
 Set the widget target's main interface file, by clicking on your widget's target, then the 'General' tab, and the 'main interface' settings in the 'General' tab. 
 
 ![Configure widget target's main interface](./images/widget_setup_target.png)
 
-Note: the widget is entirely implemented in the supplied framework and bundle. However, the target must contain at least one compilable source file so that the framework can be linked against something. 
+__Note__: the widget is entirely implemented in the supplied framework and bundle. However, the target must contain at least one compilable source file so that the framework can be linked against something. 
 
 ### Edit widget configuration
 
 Edit the _incoming-widget.plist_ file as follows:
 
-* edit the `widget_type` key using the a number, with values 0, 1 or 2, as follows:
+* edit the `widget_type` key using the a number, with values 0 or 1, as follows:
   * 0 : Video widget: the widget plays video straight in the Today view. The video player start muted by default, and can be unmuted by the user.
   * 1 : Static thumbnail: the widget shows the thumbnail
 
 * replace the `security_application_group` entry with the security group previously defined in the Apple Developer portal, e.g. `group.com.yourcompany.yourapp`
 * replace the `app_url_scheme` key, and enter the url scheme defined in the ‘Add application launch URL scheme’ section above
 
-
-### Edit the widget configuration file
-
- and . In addition, edit .
 
 ![Edit widget configuration file](./images/widget_edit_widget_config.png)
 
@@ -182,7 +197,7 @@ Note that to adapt the display to any video aspect ratio, additional constraints
 
 Please contact your Incoming representative for further customisation opportunities. 
 
-Proceed to the [Notification UI integration](./custom-notification-ui.html)
+__Next step:__ Proceed to the [Notification UI integration](./custom-notification-ui.html)
 
 
 

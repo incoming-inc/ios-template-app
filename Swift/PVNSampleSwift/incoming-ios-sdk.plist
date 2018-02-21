@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>project_key</key>
+	<string>&lt;&lt;ENTER YOUR PROJECT KEY&gt;&gt;</string>
+	<key>api_endpoint</key>
+	<string>api-sandbox.incoming.tv</string>
+	<key>app_url_scheme</key>
+	<string>companyapp</string>
+	<key>security_application_group</key>
+	<string>group.com.company.app</string>
+	<key>widget_bundle_id</key>
+	<string>com.company.app.TodayWidget</string>
+	<key>video_controls</key>
+	<true/>
+</dict>
+</plist>

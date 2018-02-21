@@ -3,12 +3,13 @@ title: Incoming iOS PVN SDK - Release notes
 layout: default 
 ---
 
-PVN SDK v2.2.1 - Aug 2017
+
+PVN SDK v2.2.2 - Aug 2017
 --------------------------
-- Per-video configurable reveal option (in app, notification).
-- By default, video downloads are now enabled. To disable downloads, clients need to explicitely call [ISDKAppDelegateHelper setDownloadsEnabled:NO]
+- Per-video configurable reveal option: in app, notification
+- By default, video downloads are now enabled regardless of notification permissions. To disable downloads, clients need to explicitely call [ISDKAppDelegateHelper setDownloadsEnabled:NO]
 - (optional) Cocoapod SDK packaging
-- Minor bug fixes and performance improvements.
+- Minor bug fixes and performance improvements
 
 
 PVN SDK v2.1-26 - June 2017

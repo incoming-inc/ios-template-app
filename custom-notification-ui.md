@@ -11,13 +11,11 @@ Leveraging this iOS feature, from version 1.13 and onward, the Incoming PVN SDK 
 
 This document outlines how to implement a custom user notification UI using the Incoming Push Video SDK.
 
-
 ## Overview
 
 Custom user notification UI are implemented in iOS 10 as an [_app extension_](https://developer.apple.com/library/ios/documentation/General/Conceptual/ExtensibilityPG/). 
 
-
-While iOS provides the ability to add video media attachments to notifications, iOS restricts the video file attachments to under 50MB in size. To go around this limitation, the Incoming PVN SDK uses an iOS [shared container](https://developer.apple.com/library/content/documentation/General/Conceptual/ExtensibilityPG/ExtensionScenarios.html#//apple_ref/doc/uid/TP40014214-CH21-SW6) to share files between the app and the Notification Content extension.  
+While iOS provides the ability to add video media attachments to notifications, iOS restricts the video file attachments to a 50MB file size. To work around this limitation, the Incoming PVN SDK uses an iOS [shared container](https://developer.apple.com/library/content/documentation/General/Conceptual/ExtensibilityPG/ExtensionScenarios.html#//apple_ref/doc/uid/TP40014214-CH21-SW6) to share files between the app and the Notification Content extension.  
 
 __Note: The following steps are quite similar to the steps needed to [configure the today widget](./widget-integration.html), so if you have already done that - you will find these can be be significantly shortened__
 
@@ -76,7 +74,7 @@ In the Apple Developer portal, select “Identifiers” / "App IDs” and enable
 
 ### Re-generate provisioning profiles ###
 
-Provisioning profiles must be re­generated so that the app group service is enabled when building your application. In the Apple Developer Portal, go to “Provisioning Profiles”,and generate a provisioning profile __for each app ID__.
+Provisioning profiles must be re­generated so that the app group service is enabled when building your application. In the Apple Developer Portal, go to “Provisioning Profiles”, and __generate a provisioning profile for each app ID__.
 
 ## XCode project configuration
 
@@ -93,15 +91,43 @@ Configure the new target's notification category. Select your target, navigate t
 
 ![Configure the new target's UNNotificationExtensionCategory value](./images/notificationui_configure_target.png)
 
-Configure the target's initial aspect ratio. If your video content is mostly 16:9 ratio, configure the `UNNotificationExtensionInitialContentSizeRatio` value to 9:16, i.e. 0.5625 
+Configure the target's initial aspect ratio. If your video content is mostly 16:9 ratio, configure the `UNNotificationExtensionInitialContentSizeRatio` value to match your content aspect ratio. E.g. for 16:9 content enter a value of 0.5625 (9:16). 
 
 In the XCode project navigator, select your project, then your Notification Content target, and select the Capability pane. Scroll down to “App Group”, and select the app group previously created in the Apple Developer Portal. If you don’t see your app group, click the reload button (next to the ‘+’ button). Note that all Incoming-related targets (main app, Widget, and Notification Content) must be configured with the same app group capability. 
+
 ![Configure the new target's app group capability](./images/notificationui-appgroup.png)
 
-### Import the Incoming PVN SDK notification UI code
 
-Drag the incoming-ios-notificationui folder from the incoming distribution folder over onto your project. When prompted, add the content to your newly created Notification Content target. 
-![Add the Incoming bundle to the Notification Content target](./images/notification_ui_copy_incomingsdk.png)
+### Add the Incoming Notification UI library and assets to your target
+
+#### Cocoapod method
+
+To add the widget library to your Notification Content Extension target using cocoapod, amend your Podfile using the following
+
+        # (Replate MyAppNotificationContentExtension with your target name)
+        target 'MyAppNotificationContentExtension' do
+          platform :ios, '10.0'
+          pod 'IncomingSDK/NotificationUI'
+        end
+
+and run `pod install`
+
+#### Zip Archive method
+
+From the Incoming PVN SDK zip archive distribution, drag the NotificationUI subfolder to your project, adding them to Notification Content Extension target.
+
+##### Configure the target Linker Flags
+
+_(This step can be skipped if using cocoapod)_
+In XCode, click on the notification content extension target, then select the 'Build Settings' tab, and search for 'Other Linker Flags' in the top right search box. Enter '-ObjC' for the 'Other Linker Flags' option. 
+
+##### Set up Frameworks 
+
+_(This step can be skipped if using cocoapod)_
+Select your Notification Content Extension target, navigate to the _Build Phases_ pane, and add the _AVFoundation_ and _MobileCoreServices_ framework. 
+![Add the AVFoundation framework to the target build phases](./images/notificationui_add_frameworks.png)
+
+
 
 ### Configure the Notification Content target storyboard
 
@@ -109,10 +135,7 @@ In the XCode project navigator, select your project, then your Notification Cont
 
 ![Configure the Notification Content target storyboard](./images/notificationui-storyboard.png)
 
-### Set up Frameworks 
-
-Select your target, navigate to the _Build Phases_ pane, and add the _AVFoundation_ and _MobileCoreServices_ framework. 
-![Add the AVFoundation framework to the target build phases](./images/notificationui_add_frameworks.png)
+__Note__: the Notification Content Extenstion UI is entirely implemented in the supplied framework and bundle. However, the target must contain at least one compilable source file so that the framework can be linked against something. 
 
 
 ### Configure the Incoming Push Notification SDK
