@@ -19,7 +19,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate, UNUserNotificationCenterD
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplicationLaunchOptionsKey: Any]?) -> Bool {
         
         // ISDK method forward
-        ISDKAppDelegateHelper.application(application, didFinishLaunchingWithOptions:launchOptions!)
+        ISDKAppDelegateHelper.application(application, didFinishLaunchingWithOptions:launchOptions)
         
         // Register for remote notifications. The Incoming PVN uses silent remote notifications for content updates. 
         // You must call this method at some stage for the push video service to operate correctly. 

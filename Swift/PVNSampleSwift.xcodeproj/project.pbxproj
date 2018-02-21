@@ -18,7 +18,6 @@
 		962F4C5A1F2AF07B00A3539D /* NotificationUI.appex in Embed App Extensions */ = {isa = PBXBuildFile; fileRef = 962F4C4C1F2AF07B00A3539D /* NotificationUI.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
 		962F4C6B1F2AF75000A3539D /* incoming-notification-ui.plist in Resources */ = {isa = PBXBuildFile; fileRef = 962F4C6A1F2AF75000A3539D /* incoming-notification-ui.plist */; };
 		962F4C6D1F2AF78100A3539D /* incoming-widget.plist in Resources */ = {isa = PBXBuildFile; fileRef = 962F4C6C1F2AF78100A3539D /* incoming-widget.plist */; };
-		962F4C6F1F2AF7A400A3539D /* incoming-ios-sdk.plist in Resources */ = {isa = PBXBuildFile; fileRef = 962F4C6E1F2AF7A400A3539D /* incoming-ios-sdk.plist */; };
 		965032B11A89DDA500DE4D73 /* libz.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 965032B01A89DDA500DE4D73 /* libz.dylib */; };
 		96ECF8521A843BB40016432E /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 96ECF8511A843BB40016432E /* AppDelegate.swift */; };
 		96ECF8541A843BB40016432E /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 96ECF8531A843BB40016432E /* ViewController.swift */; };
@@ -84,9 +83,9 @@
 		962F4C691F2AF69D00A3539D /* NotificationUI.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = NotificationUI.entitlements; sourceTree = "<group>"; };
 		962F4C6A1F2AF75000A3539D /* incoming-notification-ui.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "incoming-notification-ui.plist"; sourceTree = "<group>"; };
 		962F4C6C1F2AF78100A3539D /* incoming-widget.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "incoming-widget.plist"; sourceTree = "<group>"; };
-		962F4C6E1F2AF7A400A3539D /* incoming-ios-sdk.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "incoming-ios-sdk.plist"; sourceTree = "<group>"; };
 		965032621A89D0C700DE4D73 /* ISDK-Bridging-Header.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = "ISDK-Bridging-Header.h"; path = "../ISDK-Bridging-Header.h"; sourceTree = "<group>"; };
 		965032B01A89DDA500DE4D73 /* libz.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libz.dylib; path = usr/lib/libz.dylib; sourceTree = SDKROOT; };
+		96CFD75F203D2AC200BFDA52 /* incoming-ios-sdk.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; name = "incoming-ios-sdk.plist"; path = "../Pods/IncomingSDK/IncomingPVN/incoming-ios-sdk.plist"; sourceTree = "<group>"; };
 		96ECF84C1A843BB40016432E /* PVNSampleSwift.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = PVNSampleSwift.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		96ECF8501A843BB40016432E /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		96ECF8511A843BB40016432E /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -162,7 +161,7 @@
 		962F4C701F2AF7AE00A3539D /* ISDK Config */ = {
 			isa = PBXGroup;
 			children = (
-				962F4C6E1F2AF7A400A3539D /* incoming-ios-sdk.plist */,
+				96CFD75F203D2AC200BFDA52 /* incoming-ios-sdk.plist */,
 			);
 			name = "ISDK Config";
 			sourceTree = "<group>";
@@ -293,11 +292,12 @@
 			isa = PBXProject;
 			attributes = {
 				LastSwiftUpdateCheck = 0830;
-				LastUpgradeCheck = 0800;
+				LastUpgradeCheck = 0920;
 				ORGANIZATIONNAME = "Incoming Inc.";
 				TargetAttributes = {
 					962F4C351F2AF06E00A3539D = {
 						CreatedOnToolsVersion = 8.3.3;
+						LastSwiftMigration = 0920;
 						ProvisioningStyle = Automatic;
 						SystemCapabilities = {
 							com.apple.ApplicationGroups.iOS = {
@@ -307,6 +307,7 @@
 					};
 					962F4C4B1F2AF07B00A3539D = {
 						CreatedOnToolsVersion = 8.3.3;
+						LastSwiftMigration = 0920;
 						ProvisioningStyle = Automatic;
 						SystemCapabilities = {
 							com.apple.ApplicationGroups.iOS = {
@@ -316,7 +317,7 @@
 					};
 					96ECF84B1A843BB40016432E = {
 						CreatedOnToolsVersion = 6.1;
-						LastSwiftMigration = 0830;
+						LastSwiftMigration = 0920;
 						SystemCapabilities = {
 							com.apple.BackgroundModes = {
 								enabled = 1;
@@ -371,7 +372,6 @@
 				96ECF8571A843BB40016432E /* Main.storyboard in Resources */,
 				96ECF85C1A843BB40016432E /* LaunchScreen.xib in Resources */,
 				96ECF8591A843BB40016432E /* Images.xcassets in Resources */,
-				962F4C6F1F2AF7A400A3539D /* incoming-ios-sdk.plist in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -470,7 +470,8 @@
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SKIP_INSTALL = YES;
 				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
-				SWIFT_VERSION = 3.0;
+				SWIFT_OBJC_BRIDGING_HEADER = "";
+				SWIFT_VERSION = 4.0;
 			};
 			name = Debug;
 		};
@@ -490,7 +491,8 @@
 				PRODUCT_BUNDLE_IDENTIFIER = com.incoming.PVNSampleSwift.TodayWidget;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SKIP_INSTALL = YES;
-				SWIFT_VERSION = 3.0;
+				SWIFT_OBJC_BRIDGING_HEADER = "";
+				SWIFT_VERSION = 4.0;
 			};
 			name = Release;
 		};
@@ -510,7 +512,8 @@
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SKIP_INSTALL = YES;
 				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
-				SWIFT_VERSION = 3.0;
+				SWIFT_OBJC_BRIDGING_HEADER = "";
+				SWIFT_VERSION = 4.0;
 			};
 			name = Debug;
 		};
@@ -530,7 +533,8 @@
 				PRODUCT_BUNDLE_IDENTIFIER = com.incoming.PVNSampleSwift.NotificationUI;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SKIP_INSTALL = YES;
-				SWIFT_VERSION = 3.0;
+				SWIFT_OBJC_BRIDGING_HEADER = "";
+				SWIFT_VERSION = 4.0;
 			};
 			name = Release;
 		};
@@ -542,14 +546,20 @@
 				CLANG_CXX_LIBRARY = "libc++";
 				CLANG_ENABLE_MODULES = YES;
 				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
 				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
 				CLANG_WARN_CONSTANT_CONVERSION = YES;
 				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
 				CLANG_WARN_EMPTY_BODY = YES;
 				CLANG_WARN_ENUM_CONVERSION = YES;
 				CLANG_WARN_INFINITE_RECURSION = YES;
 				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
 				CLANG_WARN_SUSPICIOUS_MOVE = YES;
 				CLANG_WARN_UNREACHABLE_CODE = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
@@ -591,14 +601,20 @@
 				CLANG_CXX_LIBRARY = "libc++";
 				CLANG_ENABLE_MODULES = YES;
 				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
 				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
 				CLANG_WARN_CONSTANT_CONVERSION = YES;
 				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
 				CLANG_WARN_EMPTY_BODY = YES;
 				CLANG_WARN_ENUM_CONVERSION = YES;
 				CLANG_WARN_INFINITE_RECURSION = YES;
 				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
 				CLANG_WARN_SUSPICIOUS_MOVE = YES;
 				CLANG_WARN_UNREACHABLE_CODE = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
@@ -635,14 +651,13 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				LIBRARY_SEARCH_PATHS = (
 					"$(inherited)",
-					"$(PROJECT_DIR)/PVNSampleSwift/incoming-ios-sdk",
 					"$(PROJECT_DIR)/PVNSampleSwift",
 					"$(PROJECT_DIR)",
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = "com.incoming.$(PRODUCT_NAME:rfc1034identifier)";
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_OBJC_BRIDGING_HEADER = "ISDK-Bridging-Header.h";
-				SWIFT_VERSION = 3.0;
+				SWIFT_OBJC_BRIDGING_HEADER = "";
+				SWIFT_VERSION = 4.0;
 			};
 			name = Debug;
 		};
@@ -656,14 +671,13 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				LIBRARY_SEARCH_PATHS = (
 					"$(inherited)",
-					"$(PROJECT_DIR)/PVNSampleSwift/incoming-ios-sdk",
 					"$(PROJECT_DIR)/PVNSampleSwift",
 					"$(PROJECT_DIR)",
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = "com.incoming.$(PRODUCT_NAME:rfc1034identifier)";
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_OBJC_BRIDGING_HEADER = "ISDK-Bridging-Header.h";
-				SWIFT_VERSION = 3.0;
+				SWIFT_OBJC_BRIDGING_HEADER = "";
+				SWIFT_VERSION = 4.0;
 			};
 			name = Release;
 		};
