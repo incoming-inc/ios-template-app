@@ -5,11 +5,8 @@ layout: default
 
 ### Create or Edit the Incoming SDK Configuration File ###
 
-In XCode, Navigate to the incoming-ios-sdk group in your project explorer, rename the file sample-incoming-ios-sdk.plist to 
-incoming-ios-sdk.plist if necessary. 
 
-If you used cocoapod, navigate to the IncomingPVN cocoapod Resource folder (in the source navigation, select the Pods target, then the Pods folder and IncomingPVN/IncomingPVN/Resources) and copy the sample-incoming-ios-sdk.plist to your app's bundle. Rename it to incoming-ios-sdk.plist. 
-
+Download the [incoming-ios-sdk.plist](./incoming-ios-sdk.plist) and add it to your project, in your main app's target. Make sure to check "copy files if needed", it needs to be be added to the app bundle. 
 
 This incoming-ios-sdk.plist file is the main SDK configuration file, it must contain at minimum the following keys
 

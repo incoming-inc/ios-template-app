@@ -128,7 +128,6 @@ Select your Notification Content Extension target, navigate to the _Build Phases
 ![Add the AVFoundation framework to the target build phases](./images/notificationui_add_frameworks.png)
 
 
-
 ### Configure the Notification Content target storyboard
 
 In the XCode project navigator, select your project, then your Notification Content target, and select the General pane. Scroll down to the 'Deployment Info' section, and set the main interface to the ISDKNotification.storyboard. 
@@ -140,13 +139,11 @@ __Note__: the Notification Content Extenstion UI is entirely implemented in the 
 
 ### Configure the Incoming Push Notification SDK
 
-This step ensures that the Incoming PVN SDK uses the right app group. If you have already configured the widget, you have already done it. Edit the _incoming-­ios-­sdk.plist_ file in your project, and add this entries:
+This step ensures that the Incoming PVN SDK uses the right app group. Download the [incoming-notification-ui.plist](./incoming-notification-ui.plist) configuration file and add it to your project, by dragging it onto your newly created notification UI target in XCode. Make sure to check "copy files if needed", it needs to be be added to the notification UI bundle.
+
+Edit the _incoming-notification--ui.plist_ file, and add this entries:
 
  * `security_application_group`​ set to your group name, e.g. group.com.yourcompany.yourapp
-
-![Configure SDK configuration file](./images/widget_sdk_configuration_file.png)
-
-Additionally, configure the _incoming--notification--ui.plist_ file in your project, and add the same entry. 
 
 ![Configure SDK notification UI file](./images/notificationui-config-file.png)
 

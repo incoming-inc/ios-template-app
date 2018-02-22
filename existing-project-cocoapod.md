@@ -13,24 +13,13 @@ Below is an example of cocoapod file. You need to replace the target names with 
 For instructions on how to create the today widget and notification UI targets, c.f. the widget [Today widget integration](./widget-integration.html)
 and [Custom notification UI](./custom-notification-ui.html) integration pages. 
 
-        platform :ios, '8.0'
-
+        platform :ios, '8.0' # or whichever version your app is targetting. 8.0 is the minimum for the PVN SDK
         use_frameworks!
 
         target 'MyApp' do
           pod 'IncomingSDK/IncomingPVN'
         end
 
-        # optional, if you want the video widget
-        target 'MyAppWidget' do
-            pod 'IncomingSDK/TodayWidget'
-        end
-
-        # optional, if you want the notification content extension
-        target 'MyAppNotificationUI' do
-          platform :ios, '10.0'
-          pod 'IncomingSDK/NotificationUI'
-        end
 
 Once added, run `pod install`.
 

@@ -1,9 +1,10 @@
 ### Configure Background Modes ###
 
 Using XCode, configure the application background modes:
+
  * click on your app target, then select `Capabilities`.
  * Turn on `Background Modes`
- * In Background Modes, enable `Background fetch and Remote Notifications`
+ * In Background Modes, enable `Background fetch` and `Remote Notifications`
 
 ![Background mode configuration ](./images/setup_target_capabilities.png)
 

@@ -91,7 +91,6 @@ Note: You may want to have the widget's target bundle version number identical t
 In XCode, click on the widget, the go to the "General" configuration tab. In the "Deployment Target" area, enter "8.0" (or higher if your app doesn't support 8.0) for the deployment target. 
 
 
-
 ### Configure the app and widget target capabilities
 
 In the XCode project navigator, select your project, then your application target, and select the Capability pane. Scroll down to “App Group”, and select the app group previously created in the Apple Developer Portal. If you don’t see your app group, click the reload button (next to the ‘+’ button). Repeat this step for the widget target. Both targets must be configured with the App Group capability.
@@ -99,9 +98,11 @@ In the XCode project navigator, select your project, then your application targe
 ![Configure widget target capabilities](./images/widget_configure_target_capabilities.png)
 
 
-### Configure the Incoming Push Notification SDK
+### Configure the Incoming Push Notification SDK widget
 
-This step ensures that the Incoming PVN SDK addresses the right widget. Edit the _incoming-­ios-­sdk.plist_ file in your project, and add these two entries:
+This step ensures that the Incoming PVN SDK addresses the right widget. Download the [incoming-widget.plist](./incoming-widget.plist) configuration file and add it to your project, by dragging it onto your newly created widget target in XCode. Make sure to check "copy files if needed", it needs to be be added to the widget bundle.
+
+Edit the _incoming-widget.plist_ file in your project, and add these two entries:
 
  * `widget_bundle_id`​ set to your widget bundle id, e.g. com.yourcompany.yourapp.widget
  * `security_application_group`​ set to your group name, e.g. group.com.yourcompany.yourapp
