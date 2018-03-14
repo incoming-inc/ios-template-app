@@ -3,6 +3,10 @@ title: Incoming iOS PVN SDK - Release notes
 layout: default 
 ---
 
+PVN SDK v2.3.1
+-------------------
+- Fix build issue when archiving host application under some circumstances
+
 
 PVN SDK v2.2.2 - Aug 2017
 --------------------------
