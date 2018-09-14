@@ -36,6 +36,6 @@ can therefore test the SDK functionality without completing this step, but it is
 To configure remote push notifications, follow the instructions in the "APNs certificate and keys" section
 at [https://push-video.incoming.tv/help](https://push-video.incoming.tv/help)
 
+Once done, you may want to proceed to the [Apple Push Notification configuration](./apns.html) 
 
-Proceed to the [Widget integration](./widget-integration.html)
 

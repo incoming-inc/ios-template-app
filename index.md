@@ -17,8 +17,10 @@ through cocoapod, or by dropping the SDK distribution folder into your project, 
  * [New project from template](./new-project.html)
  * [Existing project, manual integration](./existing-project.html)
  * [Existing project, cocoapod integration](./existing-project-cocoapod.html)
+ * [Apple Remote Push Notifications configuration](./apns.html)
  * Integration [FAQ](./faq.html)
  * [SDK settings](./sdk-settings.html)
+ * [Testing / Logging facility](./testing-logging.html)
  * [Today widget integration](./widget-integration.html)
  * [Custom notification UI](./custom-notification-ui.html)
 

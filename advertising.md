@@ -19,61 +19,53 @@ The resulting object, implementing the ISDKAdAdapter protocol, then needs to be 
 
 An example of this integration for an hypothetical Ad SDK called SomeAdSDK is shown below.
 
+~~~~
+@interface HAMyAdSDKAdapter : NSObject <ISDKAdAdapter, SomeAdSDKDelegate>
+@end
 
-	@interface HAMyAdSDKAdapter : NSObject <ISDKAdAdapter, SomeAdSDKDelegate>
-	@end
-	
-	
-	@implementation HAMyAdSDKAdapter
 
-	-(void)showPrerollWithCompletionHandler:(void (^)(BOOL adShown, BOOL shouldProceed, NSError **error))isdkCompletionHandler
+@implementation HAMyAdSDKAdapter
+
+-(void)showPrerollWithCompletionHandler:(void (^)(BOOL adShown, BOOL shouldProceed, NSError **error))isdkCompletionHandler
+{
+	if ([SomeAdSDK isAdAvailable])
 	{
-		if ([SomeAdSDK isAdAvailable])
-		{
-			// SomeAdSDK has an ad to show, show this ad, then call the isdkCompletionHandler
-			[SomeAdSDK showADWithCompletionHandler~{
-				isdkCompletionHandler(YES, YES, nil);
-			}];
-		} else {
-			// no ad available, call ISDK completion handler with adShown = NO
-			isdkCompletionHandler(NO, YES, nil);
-		}
+		// SomeAdSDK has an ad to show, show this ad, then call the isdkCompletionHandler
+		[SomeAdSDK showADWithCompletionHandler~{
+			isdkCompletionHandler(YES, YES, nil);
+		}];
+	} else {
+		// no ad available, call ISDK completion handler with adShown = NO
+		isdkCompletionHandler(NO, YES, nil);
 	}
-	
-	// this method will be called by the ISDK every time the app launches or comes back to the foreground.
-	// You can use it to perform any initialization required by your chosen Ad SDK 
-	- (void) prefetchAdIfPossible 
-	{
-		// optional
-		[SomeAdSDK initAds];
-	}
-	
-	@end
-	
+}
+
+// this method will be called by the ISDK every time the app launches or comes back to the foreground.
+// You can use it to perform any initialization required by your chosen Ad SDK 
+- (void) prefetchAdIfPossible 
+{
+	// optional
+	[SomeAdSDK initAds];
+}
+
+@end
+~~~~
 	
 And in your app delegate, register the HAMyAdSDKAdapter with the ISDK as follow
-	
-	- (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions
-	{
-		...
-	    [ISDKAppDelegateHelper application:[UIApplication sharedApplication] didFinishLaunchingWithOptions:launchOptions];
-	
-	    id<ISDKAdAdapter> adAdapter = [[SomeAdSDKs alloc] init];
-	    [ISDKAppDelegateHelper setAdAdapter:adAdapter];
-		// optional method, if you 
-	    [adAdapter prefetchAdIfPossible];
-	}
 
+~~~~
+- (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions
+{
+	...
+	[ISDKAppDelegateHelper application:[UIApplication sharedApplication] didFinishLaunchingWithOptions:launchOptions];
 
+	id<ISDKAdAdapter> adAdapter = [[SomeAdSDKs alloc] init];
+	[ISDKAppDelegateHelper setAdAdapter:adAdapter];
+	// optional method, if you 
+	[adAdapter prefetchAdIfPossible];
+}
+~~~~
 
-
-
-	
-	
-	
-	
-	
-	
 
 
 

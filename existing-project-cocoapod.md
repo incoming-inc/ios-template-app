@@ -13,12 +13,14 @@ Below is an example of cocoapod file. You need to replace the target names with 
 For instructions on how to create the today widget and notification UI targets, c.f. the widget [Today widget integration](./widget-integration.html)
 and [Custom notification UI](./custom-notification-ui.html) integration pages. 
 
-        platform :ios, '8.0' # or whichever version your app is targetting. 8.0 is the minimum for the PVN SDK
-        use_frameworks!
+~~~~
+    platform :ios, '8.0' # or whichever version your app is targetting. 8.0 is the minimum for the PVN SDK
+    use_frameworks!
 
-        target 'MyApp' do
-          pod 'IncomingSDK/IncomingPVN'
-        end
+    target 'MyApp' do
+      pod 'IncomingSDK/IncomingPVN'
+    end
+~~~~
 
 
 Once added, run `pod install`.

@@ -35,9 +35,10 @@ The minimum code to add to your application delegate is as follows.
 
 #### Swift ####
 
-
+~~~~
 	import UIKit
 	import UserNotifications
+	import IncomingPVN
 
 	@UIApplicationMain
 	class AppDelegate: UIResponder, UIApplicationDelegate, UNUserNotificationCenterDelegate {
@@ -47,6 +48,9 @@ The minimum code to add to your application delegate is as follows.
 
 	    func application(application: UIApplication, didFinishLaunchingWithOptions launchOptions: [NSObject: AnyObject]?) -> Bool {
 
+			// turn on debug logging
+			ISDKAppDelegateHelper.setDebugLogging(true);
+		
 	        // ISDK method forward
 	        ISDKAppDelegateHelper.application(application, didFinishLaunchingWithOptions:launchOptions!)
 
@@ -90,101 +94,106 @@ The minimum code to add to your application delegate is as follows.
 	    }
 
 
-    func application(_ application: UIApplication, performFetchWithCompletionHandler completionHandler: @escaping (UIBackgroundFetchResult) -> Void) {
-        // ISDK method forward
-        ISDKAppDelegateHelper.application(application, performFetchWithCompletionHandler:completionHandler)
-    }
+	    func application(_ application: UIApplication, performFetchWithCompletionHandler completionHandler: @escaping (UIBackgroundFetchResult) -> Void) {
+	        // ISDK method forward
+	        ISDKAppDelegateHelper.application(application, performFetchWithCompletionHandler:completionHandler)
+	    }
 
-    func application(_ application: UIApplication, handleEventsForBackgroundURLSession identifier: String, completionHandler: @escaping () -> Void) {
-        // ISDK method forward
-        ISDKAppDelegateHelper.application(application, handleEventsForBackgroundURLSession: identifier, completionHandler: completionHandler)
-    }
+	    func application(_ application: UIApplication, handleEventsForBackgroundURLSession identifier: String, completionHandler: @escaping () -> Void) {
+	        // ISDK method forward
+	        ISDKAppDelegateHelper.application(application, handleEventsForBackgroundURLSession: identifier, completionHandler: completionHandler)
+	    }
     
-    func application(_ application: UIApplication, didRegisterForRemoteNotificationsWithDeviceToken deviceToken: Data) {
-        // ISDK method forward
-        ISDKAppDelegateHelper.application(application, didRegisterForRemoteNotificationsWithDeviceToken: deviceToken)
-    }
+	    func application(_ application: UIApplication, didRegisterForRemoteNotificationsWithDeviceToken deviceToken: Data) {
+	        // ISDK method forward
+	        ISDKAppDelegateHelper.application(application, didRegisterForRemoteNotificationsWithDeviceToken: deviceToken)
+	    }
     
-    func application(_ application: UIApplication, didFailToRegisterForRemoteNotificationsWithError error: Error) {
-        // ISDK method forward
-        ISDKAppDelegateHelper.application(application, didFailToRegisterForRemoteNotificationsWithError:error)
-    }
+	    func application(_ application: UIApplication, didFailToRegisterForRemoteNotificationsWithError error: Error) {
+	        // ISDK method forward
+	        ISDKAppDelegateHelper.application(application, didFailToRegisterForRemoteNotificationsWithError:error)
+	    }
 
-    func application(_ application: UIApplication, didReceiveRemoteNotification userInfo: [AnyHashable : Any], fetchCompletionHandler completionHandler: @escaping (UIBackgroundFetchResult) -> Void) {
-        // ISDK method forward
-        if ISDKAppDelegateHelper.application(application, didReceiveRemoteNotification: userInfo) == false
-        {
-            // process your app's remote notification here
+	    func application(_ application: UIApplication, didReceiveRemoteNotification userInfo: [AnyHashable : Any], fetchCompletionHandler completionHandler: @escaping (UIBackgroundFetchResult) -> Void) {
+	        // ISDK method forward
+	        if ISDKAppDelegateHelper.application(application, didReceiveRemoteNotification: userInfo) == false
+	        {
+	            // process your app's remote notification here
 
-        }
-        completionHandler(.newData)
-    }
+	        }
+	        completionHandler(.newData)
+	    }
     
-    func application(_ application: UIApplication, didReceiveRemoteNotification userInfo: [AnyHashable : Any]) {
-        // ISDK method forward
-        if ISDKAppDelegateHelper.application(application, didReceiveRemoteNotification: userInfo) == false
-        {
-            // process your app's remote notification here
+	    func application(_ application: UIApplication, didReceiveRemoteNotification userInfo: [AnyHashable : Any]) {
+	        // ISDK method forward
+	        if ISDKAppDelegateHelper.application(application, didReceiveRemoteNotification: userInfo) == false
+	        {
+	            // process your app's remote notification here
             
-        }
-    }
+	        }
+	    }
     
-    // Note: if you are targetting iOS 10 and up, this method is not needed
-    func application(_ application: UIApplication, didReceive notification: UILocalNotification) {
-        // ISDK method forward
-        if (ISDKAppDelegateHelper.application(application, didReceive: notification) == false)
-        {
-            // process your app local notification here
+	    // Note: if you are targetting iOS 10 and up, this method is not needed
+	    func application(_ application: UIApplication, didReceive notification: UILocalNotification) {
+	        // ISDK method forward
+	        if (ISDKAppDelegateHelper.application(application, didReceive: notification) == false)
+	        {
+	            // process your app local notification here
             
-        }
-    }
+	        }
+	    }
     
-    // Note: if you are targetting iOS 10 and up, this method is not needed
-    func application(_ application: UIApplication, handleActionWithIdentifier identifier: String?, for notification: UILocalNotification, completionHandler: @escaping () -> Void) {
-        // ISDK method forward
-        if (ISDKAppDelegateHelper.application(application, handleActionWithIdentifier: identifier, for: notification, completionHandler: completionHandler) == false)
-        {
-            // process your app local notification here
+	    // Note: if you are targetting iOS 10 and up, this method is not needed
+	    func application(_ application: UIApplication, handleActionWithIdentifier identifier: String?, for notification: UILocalNotification, completionHandler: @escaping () -> Void) {
+	        // ISDK method forward
+	        if (ISDKAppDelegateHelper.application(application, handleActionWithIdentifier: identifier, for: notification, completionHandler: completionHandler) == false)
+	        {
+	            // process your app local notification here
             
             
-            // call completion handler
-            completionHandler();
-        }
-    }
+	            // call completion handler
+	            completionHandler();
+	        }
+	    }
 	
-    @available(iOS 10.0, *)
-    func userNotificationCenter(_ center: UNUserNotificationCenter, didReceive response: UNNotificationResponse, withCompletionHandler completionHandler: @escaping () -> Void) {
+	    @available(iOS 10.0, *)
+	    func userNotificationCenter(_ center: UNUserNotificationCenter, didReceive response: UNNotificationResponse, withCompletionHandler completionHandler: @escaping () -> Void) {
         
-        // forward to ISDK
-        ISDKAppDelegateHelper.userNotificationCenter(center, didReceive: response) { (processed: Bool) -> Void in
-            if !processed {
-                // this notification is not ISDK, handle your app notification response here as needed
-            }
+	        // forward to ISDK
+	        ISDKAppDelegateHelper.userNotificationCenter(center, didReceive: response) { (processed: Bool) -> Void in
+	            if !processed {
+	                // this notification is not ISDK, handle your app notification response here as needed
+	            }
             
-            completionHandler()
-        }
-    }
+	            completionHandler()
+	        }
+	    }
     
-    @available(iOS 10.0, *)
-    func userNotificationCenter(_ center: UNUserNotificationCenter, willPresent notification: UNNotification, withCompletionHandler completionHandler: @escaping (UNNotificationPresentationOptions) -> Void) {
-        ISDKAppDelegateHelper.userNotificationCenter(center, willPresent: notification) { (processed: Bool) -> Void in
-            if !processed {
-                // this notification is not ISDK
-                // process your app notification here
-                // and call the completion handler if needed ..
-            }
-        }
-    }
-
+	    @available(iOS 10.0, *)
+	    func userNotificationCenter(_ center: UNUserNotificationCenter, willPresent notification: UNNotification, withCompletionHandler completionHandler: @escaping (UNNotificationPresentationOptions) -> Void) {
+	        ISDKAppDelegateHelper.userNotificationCenter(center, willPresent: notification) { (processed: Bool) -> Void in
+	            if !processed {
+	                // this notification is not ISDK
+	                // process your app notification here
+	                // and call the completion handler if needed ..
+	            }
+	        }
+	    }
+~~~~
 
 #### Objective-C ####
 
+~~~~
 	#import "ISDKAppDelegateHelper.h"
 	...
 
 
 	- (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions
 	{
+		
+		// turn on debug logging 
+		[ISDKAppDelegateHelper setDebugLogging:YES];
+		
 		[ISDKAppDelegateHelper application:[UIApplication sharedApplication] didFinishLaunchingWithOptions:launchOptions];
 		
 		// Set the UNUserNotificationCenterDelegate - iOS > 10
@@ -206,8 +215,8 @@ The minimum code to add to your application delegate is as follows.
 		// which improves the timing prediction of Push Video Notifications
 		// calling these methods may also result in the OS permission dialog being presented
 		// to the user.
-		[ISDKAppDelegateHelper registerForMotionActivity];
-		[ISDKAppDelegateHelper registerForLocationUpdates];
+		//[ISDKAppDelegateHelper registerForMotionActivity];
+		//[ISDKAppDelegateHelper registerForLocationUpdates];
 
 		return YES;
 	}
@@ -293,7 +302,7 @@ The minimum code to add to your application delegate is as follows.
 	        }
 	    }];
 	}
-
+~~~~
 
 	
 

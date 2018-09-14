@@ -104,11 +104,13 @@ In the XCode project navigator, select your project, then your Notification Cont
 
 To add the widget library to your Notification Content Extension target using cocoapod, amend your Podfile using the following
 
+~~~~
         # (Replate MyAppNotificationContentExtension with your target name)
         target 'MyAppNotificationContentExtension' do
           platform :ios, '10.0'
           pod 'IncomingSDK/NotificationUI'
         end
+~~~~
 
 and run `pod install`
 
@@ -154,8 +156,8 @@ This step ensure that each target embeds the right provisioning profile. In both
 
 
 
+Once done, you may want to proceed to the [Testing / logging page](./testing-logging.html)
 
-Proceed to the [FAQ](./faq.html)
 
 
 

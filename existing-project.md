@@ -32,6 +32,7 @@ To add the Incoming PVN SDK to your project, drag and drop the incoming-ios-sdk 
 Go into your app’s target’s Build Phases screen and add the following frameworks to
 the *Link Binary With Libraries* section
 
+~~~~
 	* AVFoundation.framework
 	* MediaPlayer.framework
 	* SystemConfiguration.framework
@@ -48,7 +49,7 @@ the *Link Binary With Libraries* section
 	* UIKit.framework
 	* libz.dylib
 	* NotificationCenter.framework (status can be set to “Optional” if you want to support iOS7
-
+~~~~
 
 ### Set linker flags ###
 
