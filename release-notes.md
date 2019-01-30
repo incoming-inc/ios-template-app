@@ -3,6 +3,11 @@ title: Incoming iOS PVN SDK - Release notes
 layout: default 
 ---
 
+
+Incoming SDK v2.5.0
+-------------------
+- Fix critical video player issue on iOS 12.0
+
 Incoming SDK v2.4.0
 --------------------
 - Add custom analytics events, clarify logging
