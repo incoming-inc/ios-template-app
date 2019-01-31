@@ -3,6 +3,9 @@ title: Incoming iOS PVN SDK - Release notes
 layout: default 
 ---
 
+Incoming SDK v2.5.1
+-------------------
+- Fix build issue with widget and notification UI dependent libraries 
 
 Incoming SDK v2.5.0
 -------------------
