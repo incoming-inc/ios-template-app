@@ -5,6 +5,10 @@ layout: default
 
 Incoming SDK v2.5.1
 -------------------
+- Fix build issue resulting in asset catalog from ISDKWidget target being merged in host application's bundle
+
+Incoming SDK v2.5.1
+-------------------
 - Fix build issue with widget and notification UI dependent libraries 
 
 Incoming SDK v2.5.0

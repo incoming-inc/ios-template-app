@@ -3,6 +3,9 @@ title: Incoming iOS PVN SDK - Upgrade instructions
 layout: default 
 ---
 
+Incoming SDK v2.5.2
+-------------------
+- No breaking API change introduced in this version. Just remove the old Incoming-PVN.{bundle,framework} from your project, and add the new ones, or use `pod update IncomingSDK`. 
 
 Incoming SDK v2.5.1
 -------------------
