@@ -3,11 +3,11 @@ title: Widget Integration
 layout: default 
 ---
 
-The Incoming PVN widget uses the app extensions features of iOS8, to display a thumbnail of last shown notification in the Today view. When tapped, the widget opens your application and plays the PVN video. This document describes how to integrate the widget in your application. Download the widget supplementary archive from the Incoming Control panel, or speak to your Incoming representative. 
+The Sourse PVN widget uses the app extensions features of iOS8, to display a thumbnail of last shown notification in the Today view. When tapped, the widget opens your application and plays the PVN video. This document describes how to integrate the widget in your application. Download the widget supplementary archive from the Sourse Control panel, or speak to your Sourse representative. 
 
 __Note__:
 
-___The This document provides an example of how to create and integrate a today widget, with source code provided alongside the ISDK. However, you are free to implement your own widget code and skip most of this document. In this case, the PVN SDK can provide access to the video meta-data, and thumbnail image to display in your widget. For this, you will want to check the ISDKWidget.h and ISDKWidgetHelper class in the widget zip archive, and go through the 'Edit the widget configuration file' and 'Edit the Incoming PVN SDK configuration file' sections of this document___.
+___The This document provides an example of how to create and integrate a today widget, with source code provided alongside the ISDK. However, you are free to implement your own widget code and skip most of this document. In this case, the PVN SDK can provide access to the video meta-data, and thumbnail image to display in your widget. For this, you will want to check the ISDKWidget.h and ISDKWidgetHelper class in the widget zip archive, and go through the 'Edit the widget configuration file' and 'Edit the Sourse PVN SDK configuration file' sections of this document___.
 
 
 ## Widget designs ##
@@ -25,8 +25,8 @@ You will need:
 
 * XCode 6 or above
 * Access to the apple developer portal for your app ID
-* Your app project, [configured to use the Incoming Push Video Notification SDK](./). 
-* the _incoming-ios-sdk-widget-*.zip_ supplementary archive, available from the Incoming Control Panel
+* Your app project, [configured to use the Sourse Push Video Notification SDK](./). 
+* the _incoming-ios-sdk-widget-*.zip_ supplementary archive, available from the Sourse Control Panel
 
 
 ## Apple developer portal configuration ##
@@ -46,7 +46,7 @@ Create two app IDs with the following structure:
  * `com.yourcompany.yourapp` (if not created already)
  * `com.yourcompany.yourapp.widget`
 
-Note: The host application cannot use a wildcard app id (in the form com.yourcompany.*), as the Incoming Push Video Notification requires push notifications
+Note: The host application cannot use a wildcard app id (in the form com.yourcompany.*), as the Sourse Push Video Notification requires push notifications
 
 
 ### Create the app group ### 
@@ -95,9 +95,9 @@ In the XCode project navigator, select your project, then your application targe
 ![Configure widget target capabilities](./images/widget_configure_target_capabilities.png)
 
 
-### Configure the Incoming Push Notification SDK
+### Configure the Sourse Push Notification SDK
 
-This step ensures that the Incoming PVN SDK addresses the right widget. Edit the _incoming-­ios-­sdk.plist_ file in your project, and add these two entries:
+This step ensures that the Sourse PVN SDK addresses the right widget. Edit the _incoming-­ios-­sdk.plist_ file in your project, and add these two entries:
 
  * `widget_bundle_id`​ set to your widget bundle id, e.g. com.yourcompany.yourapp.widget
  * `security_application_group`​ set to your group name, e.g. group.com.yourcompany.yourapp
@@ -121,7 +121,7 @@ In addition, you need to add the URL to the _incoming­-ios-­sdk.plist_ file, i
 
 ![Configure SDK configuration file](./images/widget_app_url_sdk_config.png)
 
-### Add the Incoming widget code to your project
+### Add the Sourse widget code to your project
 
 Unzip the _incoming-ios-sdk-widget-*.zip_ supplementary archive. Add all the files to your project, adding them to widget target.
 

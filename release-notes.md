@@ -1,29 +1,29 @@
 ---
-title: Incoming iOS PVN SDK - Release notes
+title: Sourse iOS PVN SDK - Release notes
 layout: default 
 ---
 
-Incoming SDK v2.5.1
+Sourse SDK v2.5.1
 -------------------
 - Fix build issue resulting in asset catalog from ISDKWidget target being merged in host application's bundle
 
-Incoming SDK v2.5.1
+Sourse SDK v2.5.1
 -------------------
 - Fix build issue with widget and notification UI dependent libraries 
 
-Incoming SDK v2.5.0
+Sourse SDK v2.5.0
 -------------------
 - Fix critical video player issue on iOS 12.0
 
-Incoming SDK v2.4.0
+Sourse SDK v2.4.0
 --------------------
 - Add custom analytics events, clarify logging
 
-Incoming SDK v2.3.5
+Sourse SDK v2.3.5
 -------------------
 - Remove obsolete CoreMotion framework requirement in podspec 
 
-Incoming SDK v2.3.3
+Sourse SDK v2.3.3
 -------------------
 - Fix packaging issue resulting in iTunes connect validation errors 
 
@@ -136,7 +136,7 @@ PVN SDK v1.3-148 - 16th June 2015
 - FIX #95095918 - SDK will not download if notification user denies notification permissions
 - FIX #92341456 - Crash in certain conditions when thumbnail downloads a corrupt image file or thumbnail download fails
 - FIX #92308604 - Crash in background under certain conditions "with iOS message this request has been neutered"
-- FIX #90868644 - Incoming Video player orientation problem: on lansdscape-supporting apps, when pausing and exiting the app while playing
+- FIX #90868644 - Sourse Video player orientation problem: on lansdscape-supporting apps, when pausing and exiting the app while playing
 
 
 

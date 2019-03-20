@@ -3,17 +3,17 @@ title: Advertising SDK Integration
 layout: default 
 ---
 
-Advertising SDK support is available in version 1.3.X and above of the Push Video SDK. The choice of Ad SDK, and responsibility of integrating and implementing the chosen Ad SDK remains the responsibility of the host app developer. Incoming then provides the necessary callback mechanism, to allows the ad SDK to display an Ad along side an Incoming push video notification. Currently only pre-roll is supported, i.e. the ad is shown immediately prior to showing the ISDK video player. 
+Advertising SDK support is available in version 1.3.X and above of the Push Video SDK. The choice of Ad SDK, and responsibility of integrating and implementing the chosen Ad SDK remains the responsibility of the host app developer. Sourse then provides the necessary callback mechanism, to allows the ad SDK to display an Ad along side an Sourse push video notification. Currently only pre-roll is supported, i.e. the ad is shown immediately prior to showing the ISDK video player. 
 
 ### Supported Ad SDK
 
-Any ad SDK is supported in principle. A set of approved SDK providing high-quality video pre-roll advertisements are however preferred. Contact your Incoming representative to discuss your specific needs. 
+Any ad SDK is supported in principle. A set of approved SDK providing high-quality video pre-roll advertisements are however preferred. Contact your Sourse representative to discuss your specific needs. 
 
 ### Implementation
 
 The ISDK provides a protocol allowing the host application to define. This protocol is defined in [ISDKAdDelegateHelper.h](apidoc/html/Protocols/ISDKAdAdapter.html). 
 
-To integrate your chosen Ad SDK, first follow the instructions provided by the SDK. Then implement the ISDKAdAdapter protocol using a new or existing class from your host application. In particular, in the `- (void) showPrerollWithCompletionHandler:(void (^)(BOOL adShown, BOOL shouldProceed, NSError **error))completionHandler` method, call the Ad SDK method to show the pre-roll. Once the Ad was shown, your implementation is then required to call the supplied completion handler, to allow the Incoming SDK to show the push video notification. 
+To integrate your chosen Ad SDK, first follow the instructions provided by the SDK. Then implement the ISDKAdAdapter protocol using a new or existing class from your host application. In particular, in the `- (void) showPrerollWithCompletionHandler:(void (^)(BOOL adShown, BOOL shouldProceed, NSError **error))completionHandler` method, call the Ad SDK method to show the pre-roll. Once the Ad was shown, your implementation is then required to call the supplied completion handler, to allow the Sourse SDK to show the push video notification. 
 
 The resulting object, implementing the ISDKAdAdapter protocol, then needs to be registered with the ISDK using the `[ISDKAppDelegateHelper setAdAdapter:]` method. 
 

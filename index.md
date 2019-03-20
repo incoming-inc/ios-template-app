@@ -4,13 +4,13 @@ layout: default
 ---
 
 
-This document describe the steps needed to integrate the Incoming Push Video Notification SDK 
+This document describe the steps needed to integrate the Sourse Push Video Notification SDK 
 with your application. To access the SDK distribution zip and obtain access to your 
-project's control panel, contact your Incoming representative.
+project's control panel, contact your Sourse representative.
 
 # Integrate the Push Video SDK #
 
-The Incoming Push Video SDK can be used in a [new project](./new-project.html) by cloning the 
+The Sourse Push Video SDK can be used in a [new project](./new-project.html) by cloning the 
 simple template application (swift or Objective-C), or integrated in an [existing project](./existing-project.html),
 through cocoapod, or by dropping the SDK distribution folder into your project, and adding a small amount of code.
 

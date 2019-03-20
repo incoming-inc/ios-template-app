@@ -11,7 +11,7 @@ layout: default
 	Yes, c.f. [ISDKAppDelegateHelper setLogOn:YES] in [ISDKAppDelegateHelper](./apidoc/html/Classes/ISDKAppDelegateHelper.html)
 	
 
-* **Can my app make use of Apple remote push notifications as well as the Incoming SDK notifications?**
+* **Can my app make use of Apple remote push notifications as well as the Sourse SDK notifications?**
 
 	Yes. c.f. [ISDKAppDelegateHelper application:(UIApplication *)application didReceiveRemoteNotification:(NSDictionary *)userInfo fetchCompletionHandler:(void (^)(UIBackgroundFetchResult))completionHandler] method of [ISDKAppDelegateHelper](./apidoc/html/Classes/ISDKAppDelegateHelper.html)
 

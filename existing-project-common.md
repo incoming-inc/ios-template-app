@@ -12,7 +12,7 @@ Using XCode, configure the application capabilities:
 
 ### Configure ATS
 
-iOS 8 introduced [App Transport Security](https://developer.apple.com/library/content/documentation/General/Reference/InfoPlistKeyReference/Articles/CocoaKeys.html). __This step must be completed if and only if your content server exposes assets over plain HTTP__. If you use the Incoming Video Distribution service, you do not need this and can skip to the next section.  
+iOS 8 introduced [App Transport Security](https://developer.apple.com/library/content/documentation/General/Reference/InfoPlistKeyReference/Articles/CocoaKeys.html). __This step must be completed if and only if your content server exposes assets over plain HTTP__. If you use the Sourse Video Distribution service, you do not need this and can skip to the next section.  
 
 Start by choosing the main target of your app, select the Info tab, and add the 'App Transport Security Settings' key, with a subkey 'Allow Arbitrary Loads' to YES. 
 assas
@@ -55,7 +55,7 @@ The minimum code to add to your application delegate is as follows.
 	        // ISDK method forward
 	        ISDKAppDelegateHelper.application(application, didFinishLaunchingWithOptions:launchOptions!)
 
-	        // Register for remote notifications. The Incoming PVN uses silent remote notifications for content updates. 
+	        // Register for remote notifications. The Sourse PVN uses silent remote notifications for content updates. 
 	        // You must call this method at some stage for the push video service to operate correctly. 
 	        ISDKAppDelegateHelper.registerForRemoteNotifications()
 

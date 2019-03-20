@@ -3,11 +3,11 @@ title: Widget Integration
 layout: default 
 ---
 
-The Incoming PVN widget uses the app extensions feature of iOS 8 and later, to play the last notified video right within the iOS Notification centre. When tapped, the widget opens your application and resume playing the PVN video. This document describes how to integrate the widget in your application. 
+The Sourse PVN widget uses the app extensions feature of iOS 8 and later, to play the last notified video right within the iOS Notification centre. When tapped, the widget opens your application and resume playing the PVN video. This document describes how to integrate the widget in your application. 
 
 ## Widget types ##
 
-The Incoming PVN widget can be configured in three mode: 
+The Sourse PVN widget can be configured in three mode: 
 
 * Video widget: the widget plays video straight in the Today view. The video player start muted by default, and can be unmuted by the user. 
 * Static thumbnail: the widget shows the thumbnail, title and duration of the video 
@@ -26,7 +26,7 @@ You will need:
 
 * XCode 7 or above
 * Access to the apple developer portal for your app ID
-* Your app project, [configured to use the Incoming Push Video Notification SDK](./). 
+* Your app project, [configured to use the Sourse Push Video Notification SDK](./). 
 
 
 ## Apple developer portal configuration ##
@@ -46,7 +46,7 @@ Create two app IDs with the following structure:
  * `com.yourcompany.yourapp` (if not created already)
  * `com.yourcompany.yourapp.widget`
 
-Note: The host application cannot use a wildcard app id (in the form com.yourcompany.*), as the Incoming Push Video Notification requires push notifications
+Note: The host application cannot use a wildcard app id (in the form com.yourcompany.*), as the Sourse Push Video Notification requires push notifications
 
 
 ### Create the app group ### 
@@ -98,9 +98,9 @@ In the XCode project navigator, select your project, then your application targe
 ![Configure widget target capabilities](./images/widget_configure_target_capabilities.png)
 
 
-### Configure the Incoming Push Notification SDK widget
+### Configure the Sourse Push Notification SDK widget
 
-This step ensures that the Incoming PVN SDK addresses the right widget. Download the [incoming-widget.plist](./incoming-widget.plist) configuration file and add it to your project, by dragging it onto your newly created widget target in XCode. Make sure to check "copy files if needed", it needs to be be added to the widget bundle.
+This step ensures that the Sourse PVN SDK addresses the right widget. Download the [incoming-widget.plist](./incoming-widget.plist) configuration file and add it to your project, by dragging it onto your newly created widget target in XCode. Make sure to check "copy files if needed", it needs to be be added to the widget bundle.
 
 Edit the _incoming-widget.plist_ file in your project, and add these two entries:
 
@@ -126,9 +126,9 @@ In addition, you need to add the URL to the _incoming­-ios-­sdk.plist_ file, i
 
 ![Configure SDK configuration file](./images/widget_app_url_sdk_config.png)
 
-### Add the Incoming widget library and assets to your Today Widget target
+### Add the Sourse widget library and assets to your Today Widget target
 
-You can add the Incoming widget library using either cocoapod. 
+You can add the Sourse widget library using either cocoapod. 
 
 #### Cocoapod method
 
@@ -143,7 +143,7 @@ then run `pod install`
 
 #### Zip Archive method
 
-From the Incoming PVN SDK zip archive distribution, drag the TodayWidget subfolder to your project, adding them to widget target.
+From the Sourse PVN SDK zip archive distribution, drag the TodayWidget subfolder to your project, adding them to widget target.
 
 ##### Configure the widget target Linker Flags
 
@@ -189,14 +189,14 @@ To test that the widget is working correctly, start your application, background
 
 ### Customisation
 
-As of version 1.8, the widget supplied with the Incoming PVN SDK includes allows for a limited customisation opportunity, as the Interface Builder file implementing the widget design is included in the archive. The ISDKWidget.storyboard file allows the following UI elements to be safely customised:
+As of version 1.8, the widget supplied with the Sourse PVN SDK includes allows for a limited customisation opportunity, as the Interface Builder file implementing the widget design is included in the archive. The ISDKWidget.storyboard file allows the following UI elements to be safely customised:
 
 - Background color
 - Label sizes and position, font size and color 
 
 Note that to adapt the display to any video aspect ratio, additional constraints are applied to the view at runtime, in code. This may interfere with any change in the constraints you make. 
 
-Please contact your Incoming representative for further customisation opportunities. 
+Please contact your Sourse representative for further customisation opportunities. 
 
 __Next step:__ Proceed to the [Notification UI integration](./custom-notification-ui.html)
 

@@ -3,17 +3,17 @@ title: SDK configuration
 layout: default 
 ---
 
-### Create or Edit the Incoming SDK Configuration File ###
+### Create or Edit the Sourse SDK Configuration File ###
 
 
 Download the [incoming-ios-sdk.plist](./incoming-ios-sdk.plist) and add it to your project, in your main app's target. Make sure to check "copy files if needed", it needs to be be added to the app bundle. 
 
 This incoming-ios-sdk.plist file is the main SDK configuration file, it must contain at minimum the following keys
 
- * `api_endpoint`: the Incoming API endpoint to connect to, e.g. api-sandbox.incoming.tv
- * `project_key`: your Incoming PVN project key
+ * `api_endpoint`: the Sourse API endpoint to connect to, e.g. api-sandbox.incoming.tv
+ * `project_key`: your Sourse PVN project key
 
-You will find both these values in the Incoming media control panel, by going to the 'App' page, in the top­left section titled _Download the push video SDK for iOS_
+You will find both these values in the Sourse media control panel, by going to the 'App' page, in the top­left section titled _Download the push video SDK for iOS_
 
 In addition, this file may contain the following optional keys:
 

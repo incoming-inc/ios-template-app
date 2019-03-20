@@ -5,17 +5,17 @@ layout: default
 
 iOS 10 introduced the ability to customise how user notifications are presented, through the [UserNotificationUI framework](https://developer.apple.com/reference/usernotificationsui). 
 
-Leveraging this iOS feature, from version 1.13 and onward, the Incoming PVN SDK can play videos right into the notification UI. This feature can be accessed by users by hard-pressing a notification on 3D touch devices, or by sliding on non-3D touch devices. 
+Leveraging this iOS feature, from version 1.13 and onward, the Sourse PVN SDK can play videos right into the notification UI. This feature can be accessed by users by hard-pressing a notification on 3D touch devices, or by sliding on non-3D touch devices. 
 
 ![Notification UI Overview](images/notification-ui-overview.png)      ![Notification UI Player](images/notification-ui-player.png)
 
-This document outlines how to implement a custom user notification UI using the Incoming Push Video SDK.
+This document outlines how to implement a custom user notification UI using the Sourse Push Video SDK.
 
 ## Overview
 
 Custom user notification UI are implemented in iOS 10 as an [_app extension_](https://developer.apple.com/library/ios/documentation/General/Conceptual/ExtensibilityPG/). 
 
-While iOS provides the ability to add video media attachments to notifications, iOS restricts the video file attachments to a 50MB file size. To work around this limitation, the Incoming PVN SDK uses an iOS [shared container](https://developer.apple.com/library/content/documentation/General/Conceptual/ExtensibilityPG/ExtensionScenarios.html#//apple_ref/doc/uid/TP40014214-CH21-SW6) to share files between the app and the Notification Content extension.  
+While iOS provides the ability to add video media attachments to notifications, iOS restricts the video file attachments to a 50MB file size. To work around this limitation, the Sourse PVN SDK uses an iOS [shared container](https://developer.apple.com/library/content/documentation/General/Conceptual/ExtensibilityPG/ExtensionScenarios.html#//apple_ref/doc/uid/TP40014214-CH21-SW6) to share files between the app and the Notification Content extension.  
 
 __Note: The following steps are quite similar to the steps needed to [configure the today widget](./widget-integration.html), so if you have already done that - you will find these can be be significantly shortened__
 
@@ -26,7 +26,7 @@ To add a custom notification ui you will need:
 
 * XCode 8 or above
 * Access to the apple developer portal for your app ID
-* Your app project, [configured to use the Incoming Push Video Notification SDK](./).
+* Your app project, [configured to use the Sourse Push Video Notification SDK](./).
 
 
 ## Apple developer portal configuration ##
@@ -48,7 +48,7 @@ You should therefore have three app IDs with the following structure:
  * `com.yourcompany.yourapp.widget`
  * `com.yourcompany.yourapp.notificationui`
 
-Note: The host application cannot use a wildcard app id (in the form com.yourcompany.*), as the Incoming Push Video Notification requires push notifications
+Note: The host application cannot use a wildcard app id (in the form com.yourcompany.*), as the Sourse Push Video Notification requires push notifications
 
 
 ### Create the app group ### 
@@ -93,12 +93,12 @@ Configure the new target's notification category. Select your target, navigate t
 
 Configure the target's initial aspect ratio. If your video content is mostly 16:9 ratio, configure the `UNNotificationExtensionInitialContentSizeRatio` value to match your content aspect ratio. E.g. for 16:9 content enter a value of 0.5625 (9:16). 
 
-In the XCode project navigator, select your project, then your Notification Content target, and select the Capability pane. Scroll down to “App Group”, and select the app group previously created in the Apple Developer Portal. If you don’t see your app group, click the reload button (next to the ‘+’ button). Note that all Incoming-related targets (main app, Widget, and Notification Content) must be configured with the same app group capability. 
+In the XCode project navigator, select your project, then your Notification Content target, and select the Capability pane. Scroll down to “App Group”, and select the app group previously created in the Apple Developer Portal. If you don’t see your app group, click the reload button (next to the ‘+’ button). Note that all Sourse-related targets (main app, Widget, and Notification Content) must be configured with the same app group capability. 
 
 ![Configure the new target's app group capability](./images/notificationui-appgroup.png)
 
 
-### Add the Incoming Notification UI library and assets to your target
+### Add the Sourse Notification UI library and assets to your target
 
 #### Cocoapod method
 
@@ -139,9 +139,9 @@ In the XCode project navigator, select your project, then your Notification Cont
 __Note__: the Notification Content Extenstion UI is entirely implemented in the supplied framework and bundle. However, the target must contain at least one compilable source file so that the framework can be linked against something. 
 
 
-### Configure the Incoming Push Notification SDK
+### Configure the Sourse Push Notification SDK
 
-This step ensures that the Incoming PVN SDK uses the right app group. Download the [incoming-notification-ui.plist](./incoming-notification-ui.plist) configuration file and add it to your project, by dragging it onto your newly created notification UI target in XCode. Make sure to check "copy files if needed", it needs to be be added to the notification UI bundle.
+This step ensures that the Sourse PVN SDK uses the right app group. Download the [incoming-notification-ui.plist](./incoming-notification-ui.plist) configuration file and add it to your project, by dragging it onto your newly created notification UI target in XCode. Make sure to check "copy files if needed", it needs to be be added to the notification UI bundle.
 
 Edit the _incoming-notification--ui.plist_ file, and add this entries:
 
