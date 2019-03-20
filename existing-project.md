@@ -63,7 +63,7 @@ Start by choosing the main target for your app, selecting the Build Settings tab
 ### Add bridging header ###
 
 If your project doesn't use swift, you may skip to the next step. Swift users must add [this 
-bridging header](https://github.com/incoming-inc/ios-template-app/blob/master/Swift/ISDK-Bridging-Header.h) 
+bridging header](https://github.com/sourse-ai/ios-template-app/blob/master/Swift/ISDK-Bridging-Header.h) 
 to their project to be able to use the Sourse PVN sdk.
 
 {% include_relative existing-project-common.md %}

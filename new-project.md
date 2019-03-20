@@ -7,7 +7,7 @@ We provide a template application to make the SDK integration easy in a new proj
 
 ### Clone the Template Application ###
 
-```git clone https://github.com/incoming-inc/ios-template-app```
+```git clone https://github.com/sourse-ai/ios-template-app```
 
 ### Import the iOS SDK zip ###
 
