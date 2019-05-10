@@ -3,6 +3,27 @@ title: Sourse iOS PVN SDK - Release notes
 layout: default 
 ---
 
+
+Sourse SDK v2.5.6
+-------------------
+- Maintenance release
+
+Sourse SDK v2.5.5
+-------------------
+- Maintenance release
+
+Sourse SDK v2.5.4
+-------------------
+- Maintenance release
+
+Sourse SDK v2.5.3
+-------------------
+- Maintenance release
+
+Sourse SDK v2.5.2
+-------------------
+- Maintenance release
+
 Sourse SDK v2.5.1
 -------------------
 - Fix build issue resulting in asset catalog from ISDKWidget target being merged in host application's bundle
